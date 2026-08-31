@@ -58,9 +58,6 @@ export default function GalleryPreview() {
     ? GALLERY_IMAGES
     : GALLERY_IMAGES.filter((img) => img.category === activeFilter);
 
-  const openLightbox = (img) => setLightbox(img);
-  const closeLightbox = () => setLightbox(null);
-
   return (
     <section className="section-py bg-white" aria-labelledby="gallery-heading">
       <div className="container-site">
@@ -76,16 +73,17 @@ export default function GalleryPreview() {
         />
 
         {/* Filters */}
-        <div className="flex flex-wrap gap-2 justify-center mb-8" role="group" aria-label="Gallery filters">
+        <div className="flex flex-wrap gap-3 justify-center" style={{ marginBottom: '2rem' }} role="group" aria-label="Gallery filters">
           {FILTERS.map((f) => (
             <button
               key={f.value}
               onClick={() => setActiveFilter(f.value)}
-              className={`tamil px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
-                activeFilter === f.value
-                  ? 'bg-[#1a5c2e] text-white'
-                  : 'bg-gray-100 text-gray-600 hover:bg-[#e8f5ec] hover:text-[#1a5c2e]'
-              }`}
+              className="tamil text-sm font-semibold rounded-full transition-colors"
+              style={{
+                padding: '0.5rem 1.25rem',
+                background: activeFilter === f.value ? '#1a5c2e' : '#f0f0f0',
+                color: activeFilter === f.value ? '#fff' : '#4b5563',
+              }}
               aria-pressed={activeFilter === f.value}
             >
               {f.label}
@@ -94,12 +92,12 @@ export default function GalleryPreview() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {filtered.map((img, i) => (
             <button
               key={i}
               className="gallery-item aspect-square relative group focus-visible:outline-2 focus-visible:outline-[#d4a017]"
-              onClick={() => openLightbox(img)}
+              onClick={() => setLightbox(img)}
               aria-label={`View: ${img.captionTamil}`}
             >
               <img
@@ -111,8 +109,7 @@ export default function GalleryPreview() {
                 height={400}
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.parentElement.style.background =
-                    'linear-gradient(135deg, #e8f5ec, #fdf8e8)';
+                  e.target.parentElement.style.background = 'linear-gradient(135deg, #e8f5ec, #fdf8e8)';
                   e.target.style.display = 'none';
                 }}
               />
@@ -126,7 +123,7 @@ export default function GalleryPreview() {
           ))}
         </div>
 
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center" style={{ marginTop: '3rem' }}>
           <Link to="/gallery" className="btn-outline text-base">
             அனைத்து படங்களையும் காண்க
             <ArrowRight size={18} />
@@ -138,14 +135,14 @@ export default function GalleryPreview() {
       {lightbox && (
         <div
           className="lightbox-overlay"
-          onClick={closeLightbox}
+          onClick={() => setLightbox(null)}
           role="dialog"
           aria-modal="true"
           aria-label={lightbox.captionTamil}
         >
           <div className="relative max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
             <button
-              onClick={closeLightbox}
+              onClick={() => setLightbox(null)}
               className="absolute -top-10 right-0 text-white hover:text-[#f0cc5a] transition-colors"
               aria-label="Close lightbox"
             >
@@ -156,7 +153,9 @@ export default function GalleryPreview() {
               alt={lightbox.alt}
               className="w-full max-h-[80vh] object-contain rounded-xl"
             />
-            <p className="tamil text-white text-sm mt-3">{lightbox.captionTamil}</p>
+            <p className="tamil text-white text-center text-sm" style={{ marginTop: '0.75rem' }}>
+              {lightbox.captionTamil}
+            </p>
           </div>
         </div>
       )}

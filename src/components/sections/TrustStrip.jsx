@@ -11,28 +11,24 @@ const TRUST_ITEMS = [
 
 export default function TrustStrip() {
   return (
-    <section
-      className="trust-strip py-8"
-      aria-label="Trust indicators"
-    >
+    <section className="trust-strip" style={{ padding: '3rem 0' }} aria-label="Trust indicators">
       <div className="container-site">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {TRUST_ITEMS.map(({ Icon, title, desc }, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center text-center gap-2.5"
-            >
+            <div key={i} className="flex flex-col items-center text-center" style={{ gap: '0.875rem' }}>
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                className="rounded-xl flex items-center justify-center flex-shrink-0"
                 style={{
+                  width: '3.25rem',
+                  height: '3.25rem',
                   background: 'rgba(255,255,255,0.12)',
                   border: '1px solid rgba(255,255,255,0.18)',
                 }}
               >
-                <Icon size={22} color="#f0cc5a" strokeWidth={1.75} />
+                <Icon size={24} color="#f0cc5a" strokeWidth={1.75} />
               </div>
               <div>
-                <p className="tamil text-white font-bold text-sm leading-snug mb-0.5">
+                <p className="tamil text-white font-bold text-sm leading-snug" style={{ marginBottom: '0.3rem' }}>
                   {title}
                 </p>
                 <p className="tamil text-white/60 text-xs leading-relaxed hidden md:block">

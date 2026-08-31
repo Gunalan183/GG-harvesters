@@ -19,17 +19,14 @@ export default function ServicesSection() {
           subtitle="விவசாய பணிகள் முதல் நிலப் பணிகள் வரை — உங்கள் தேவைக்கேற்ப சரியான இயந்திரத்துடன் நாங்கள் வருகிறோம்."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {SERVICES.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
 
-        <div className="flex justify-center mt-10">
-          <Link
-            to="/services"
-            className="btn-outline text-base"
-          >
+        <div className="flex justify-center" style={{ marginTop: '3rem' }}>
+          <Link to="/services" className="btn-outline text-base">
             அனைத்து சேவைகளையும் காண்க
             <ArrowRight size={18} />
           </Link>

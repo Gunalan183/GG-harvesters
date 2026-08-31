@@ -20,16 +20,20 @@ export default function WhyChooseSection() {
           {TRUST_POINTS.map((point, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex items-start gap-4 border-l-4 border-l-[#1a5c2e] hover:shadow-lg transition-shadow"
+              className="bg-white rounded-2xl shadow-md border border-gray-100 border-l-4 border-l-[#1a5c2e] hover:shadow-lg transition-shadow flex items-start"
+              style={{ gap: '1rem', padding: '1.5rem' }}
             >
               <div
-                className="w-12 h-12 rounded-full bg-[#e8f5ec] flex items-center justify-center text-2xl flex-shrink-0"
+                className="rounded-full bg-[#e8f5ec] flex items-center justify-center text-2xl flex-shrink-0"
+                style={{ width: '3rem', height: '3rem' }}
                 aria-hidden="true"
               >
                 {point.icon}
               </div>
               <div>
-                <h3 className="tamil font-bold text-[#1a2e1a] mb-1 text-base">{point.title}</h3>
+                <h3 className="tamil font-bold text-[#1a2e1a] text-base" style={{ marginBottom: '0.4rem' }}>
+                  {point.title}
+                </h3>
                 <p className="tamil text-[#4b5563] text-sm leading-relaxed">{point.desc}</p>
               </div>
             </div>

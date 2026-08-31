@@ -97,8 +97,8 @@ export default function MachineryShowcase() {
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="tamil font-bold text-[#1a2e1a] mb-1">{machine.nameTamil}</h3>
-                <p className="tamil text-[#4b5563] text-sm mb-4">{machine.desc}</p>
+                <h3 className="tamil font-bold text-[#1a2e1a] mb-2">{machine.nameTamil}</h3>
+                <p className="tamil text-[#4b5563] text-sm mb-5 leading-relaxed">{machine.desc}</p>
                 <div className="flex gap-2">
                   <Link
                     to={`/services/${machine.service}`}

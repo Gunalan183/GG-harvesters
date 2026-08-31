@@ -53,8 +53,6 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -65,9 +63,15 @@ html {
 body {
   background-color: #f7fdf9;
   color: #1a2e1a;
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* Reset margins only for layout elements, not all elements */
+h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote {
+  margin: 0;
+  padding: 0;
 }
 
 ::selection {
