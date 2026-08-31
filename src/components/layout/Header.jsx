@@ -64,7 +64,7 @@ export default function Header() {
           aria-label="GG Harvester Home"
         >
           <img
-            src="/GG_harvester_and_Earth_Movers_Logo.png"
+            src="/GG_harvester_and_Earth_Movers_Logo_BG.png"
             alt="GG Harvester and Earth Movers Logo"
             className="h-11 w-auto object-contain"
             width={110}

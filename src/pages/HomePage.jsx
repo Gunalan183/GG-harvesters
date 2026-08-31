@@ -10,6 +10,7 @@ import VideosSection from '../components/sections/VideosSection';
 import HowItWorksSection from '../components/sections/HowItWorksSection';
 import ServiceAreasSection from '../components/sections/ServiceAreasSection';
 import ContactCTA from '../components/ui/ContactCTA';
+import OwnerContactSection from '../components/sections/OwnerContactSection';
 import { setPageMeta } from '../utils/seo';
 
 export default function HomePage() {
@@ -33,7 +34,7 @@ export default function HomePage() {
       <VideosSection />
       <HowItWorksSection />
       <ServiceAreasSection />
-      <ContactCTA />
+      <OwnerContactSection />
     </Layout>
   );
 }

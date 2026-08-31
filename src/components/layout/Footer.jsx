@@ -16,9 +16,9 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" aria-label="GG Harvester Home">
               <img
-                src="/GG_harvester_and_Earth_Movers_Logo.png"
+                src="/GG_harvester_and_Earth_Movers_Logo_BG.png"
                 alt="GG Harvester and Earth Movers Logo"
-                className="h-16 w-auto object-contain mb-4 brightness-0 invert"
+                className="h-16 w-auto object-contain mb-4"
                 width={160}
                 height={64}
                 loading="lazy"
@@ -53,49 +53,49 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Services — 3×3 grid */}
           <div>
-            <h3 className="tamil font-bold text-base mb-4 text-[#f0cc5a]">சேவைகள்</h3>
-            <ul className="space-y-2">
+            <h3 className="tamil font-bold text-base text-[#f0cc5a]" style={{ marginBottom: '1rem' }}>சேவைகள்</h3>
+            <div className="grid grid-cols-3 gap-2">
               {SERVICES.map((s) => (
-                <li key={s.id}>
-                  <Link
-                    to={`/services/${s.slug}`}
-                    className="tamil text-gray-300 text-sm hover:text-white transition-colors flex items-center gap-1.5"
-                  >
-                    <span className="text-xs">{s.icon}</span>
+                <Link
+                  key={s.id}
+                  to={`/services/${s.slug}`}
+                  className="flex flex-col items-center text-center gap-1 rounded-xl p-2 hover:bg-white/10 transition-colors"
+                >
+                  <span className="text-xl leading-none">{s.icon}</span>
+                  <span className="tamil text-gray-300 text-[0.65rem] leading-tight hover:text-white transition-colors">
                     {s.nameTamil}
-                  </Link>
-                </li>
+                  </span>
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
-          {/* Quick links */}
+          {/* Quick links — 3×3 grid */}
           <div>
-            <h3 className="tamil font-bold text-base mb-4 text-[#f0cc5a]">விரைவு இணைப்புகள்</h3>
-            <ul className="space-y-2">
+            <h3 className="tamil font-bold text-base text-[#f0cc5a]" style={{ marginBottom: '1rem' }}>விரைவு இணைப்புகள்</h3>
+            <div className="grid grid-cols-3 gap-2">
               {[
-                { label: 'முகப்பு', path: '/' },
+                { label: 'முகப்பு',        path: '/' },
                 { label: 'எங்களைப் பற்றி', path: '/about' },
-                { label: 'இயந்திரங்கள்', path: '/machinery' },
-                { label: 'எங்கள் பணிகள்', path: '/gallery' },
-                { label: 'வீடியோக்கள்', path: '/videos' },
+                { label: 'இயந்திரங்கள்',   path: '/machinery' },
+                { label: 'எங்கள் பணிகள்',  path: '/gallery' },
+                { label: 'வீடியோக்கள்',   path: '/videos' },
                 { label: 'சேவை பகுதிகள்', path: '/service-areas' },
-                { label: 'கேள்வி-பதில்', path: '/faq' },
-                { label: 'வலைப்பதிவு', path: '/blog' },
-                { label: 'சேவை பதிவு', path: '/book-service' },
+                { label: 'கேள்வி-பதில்',   path: '/faq' },
+                { label: 'வலைப்பதிவு',    path: '/blog' },
+                { label: 'சேவை பதிவு',    path: '/book-service' },
               ].map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="tamil text-gray-300 text-sm hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="tamil text-gray-300 text-[0.65rem] leading-tight text-center rounded-xl p-2 hover:bg-white/10 hover:text-white transition-colors"
+                >
+                  {link.label}
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Contact */}

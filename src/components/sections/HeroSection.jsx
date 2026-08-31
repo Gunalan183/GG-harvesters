@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Phone, MessageCircle, ArrowRight, MapPin, ChevronDown } from 'lucide-react';
 import { BUSINESS } from '../../data/siteData';
 import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
+import mobileBg from '../../assets/images/Hero-section_BG.png';
 
 export default function HeroSection() {
   return (
@@ -11,10 +12,24 @@ export default function HeroSection() {
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
+        {/* Mobile BG — shown only below md (768px) */}
+        <img
+          src={mobileBg}
+          alt=""
+          aria-hidden="true"
+          className="md:hidden w-full h-full object-cover object-center"
+          fetchpriority="high"
+          width={800}
+          height={1200}
+          onError={(e) => {
+            e.target.style.display = 'none';
+          }}
+        />
+        {/* Desktop BG — shown only at md and above */}
         <img
           src="/images/services/gg-paddy-harvester-service-kumbakonam.jpg"
           alt="GG Harvester paddy harvesting machine working in a rice field near Kumbakonam"
-          className="w-full h-full object-cover object-center"
+          className="hidden md:block w-full h-full object-cover object-center"
           fetchpriority="high"
           width={1600}
           height={900}
@@ -24,7 +39,7 @@ export default function HeroSection() {
               'linear-gradient(160deg, #0a2d16 0%, #1a5c2e 60%, #0f3d1e 100%)';
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/50 to-black/80" />
+        <div className="absolute inset-0" />
       </div>
 
       {/* Content */}
@@ -94,10 +109,10 @@ export default function HeroSection() {
           }}
         >
           <p
-            className="tamil text-white font-bold whitespace-nowrap leading-snug"
+            className="tamil text-white font-bold leading-snug"
             style={{ fontSize: 'clamp(0.82rem, 4vw, 1.1rem)' }}
           >
-            விவசாயம் மற்றும் நிலப் பணிகளுக்கு{' '}
+            விவசாயம் மற்றும் நிலப் பணிகளுக்கு<br />
             <span style={{ color: '#f0cc5a' }}>நம்பகமான இயந்திர சேவைகள்</span>
           </p>
         </div>
