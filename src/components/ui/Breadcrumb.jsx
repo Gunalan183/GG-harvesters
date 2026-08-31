@@ -13,7 +13,7 @@ export default function Breadcrumb({ items }) {
           {item.path ? (
             <Link
               to={item.path}
-              className="text-[#1a5c2e] hover:text-[#145224] font-medium transition-colors tamil"
+              className="text-[#d4a017] hover:text-[#b8870f] font-medium transition-colors tamil"
             >
               {item.label}
             </Link>

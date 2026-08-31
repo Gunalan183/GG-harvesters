@@ -54,7 +54,7 @@ export default function MachineryShowcase() {
           title={
             <>
               எங்கள்{' '}
-              <span className="text-[#1a5c2e]">இயந்திர சேகரிப்பு</span>
+              <span className="text-[#d4a017]">இயந்திர சேகரிப்பு</span>
             </>
           }
           subtitle="நன்கு பராமரிக்கப்பட்ட இயந்திரங்கள், அனுபவமிக்க ஆபரேட்டர்களுடன்."
@@ -78,7 +78,7 @@ export default function MachineryShowcase() {
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.parentElement.style.background =
-                      'linear-gradient(135deg, #e8f5ec, #fdf8e8)';
+                      'linear-gradient(135deg, #fdf8e8, #fdf8e8)';
                     e.target.style.display = 'none';
                   }}
                 />
@@ -88,7 +88,7 @@ export default function MachineryShowcase() {
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="tamil font-bold text-[#1a2e1a] mb-2">{machine.nameTamil}</h3>
+                <h3 className="tamil font-bold text-[#1a1814] mb-2">{machine.nameTamil}</h3>
                 <p className="tamil text-[#4b5563] text-sm mb-5 leading-relaxed">{machine.desc}</p>
                 <a
                   href={getServiceWhatsApp(machine.service)}

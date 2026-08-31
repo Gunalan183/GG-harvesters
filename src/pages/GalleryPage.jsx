@@ -87,7 +87,7 @@ export default function GalleryPage() {
         <div className="container-site">
           <SectionHeader
             badge="Gallery"
-            title={<>உண்மையான <span className="text-[#1a5c2e]">பணி படங்கள்</span></>}
+            title={<>உண்மையான <span className="text-[#d4a017]">பணி படங்கள்</span></>}
           />
 
           {/* Filters */}
@@ -98,8 +98,8 @@ export default function GalleryPage() {
                 onClick={() => setActiveFilter(f.value)}
                 className={`tamil px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
                   activeFilter === f.value
-                    ? 'bg-[#1a5c2e] text-white shadow-sm'
-                    : 'bg-gray-100 text-gray-300 hover:bg-[#e8f5ec] hover:text-[#1a5c2e]'
+                    ? 'bg-[#d4a017] text-white shadow-sm'
+                    : 'bg-gray-100 text-gray-300 hover:bg-[#fdf8e8] hover:text-[#d4a017]'
                 }`}
                 aria-pressed={activeFilter === f.value}
               >
@@ -126,7 +126,7 @@ export default function GalleryPage() {
                   height={300}
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.parentElement.style.background = 'linear-gradient(135deg, #e8f5ec, #c3e6cc)';
+                    e.target.parentElement.style.background = 'linear-gradient(135deg, #fdf8e8, #c3e6cc)';
                     e.target.style.display = 'none';
                   }}
                 />
@@ -142,7 +142,7 @@ export default function GalleryPage() {
 
           <p className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter text-sm text-gray-500 mt-6 tamil">
             📸 உண்மையான GG இயந்திர பணி படங்கள். சேவை பதிவு செய்ய{' '}
-            <a href="tel:+918608522042" className="text-[#1a5c2e] font-semibold">8608522042</a>-ல் அழைக்கவும்.
+            <a href="tel:+918608522042" className="text-[#d4a017] font-semibold">8608522042</a>-ல் அழைக்கவும்.
           </p>
         </div>
       </section>

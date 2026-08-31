@@ -43,9 +43,9 @@ export default function ServiceAreasPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             {/* Map placeholder */}
             <div>
-              <div className="bg-[#e8f5ec] rounded-2xl p-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter mb-6 min-h-[300px] flex flex-col items-center justify-center shadow-sm">
-                <MapPin size={48} className="text-[#1a5c2e] mb-4" />
-                <h3 className="tamil font-bold text-[#1a5c2e] text-xl mb-2">எங்கள் இடம்</h3>
+              <div className="bg-[#fdf8e8] rounded-2xl p-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter mb-6 min-h-[300px] flex flex-col items-center justify-center shadow-sm">
+                <MapPin size={48} className="text-[#d4a017] mb-4" />
+                <h3 className="tamil font-bold text-[#d4a017] text-xl mb-2">எங்கள் இடம்</h3>
                 <address className="tamil not-italic text-gray-300 text-sm leading-relaxed mb-4">
                   {BUSINESS.address.fullTamil}
                 </address>
@@ -61,18 +61,18 @@ export default function ServiceAreasPage() {
 
               {/* Service by area table */}
               <div className=" bg-slate-900/40 backdrop-blur-xl border border-white/5 shadow-lg hover:-translate-y-1 transition-all duration-300  rounded-2xl   border border-gray-100 overflow-hidden">
-                <div className="bg-[#1a5c2e] text-white px-5 py-3">
+                <div className="bg-[#d4a017] text-white px-5 py-3">
                   <h3 className="tamil font-bold">பகுதி வாரியான சேவைகள்</h3>
                 </div>
                 <div className="p-5 space-y-4">
                   {SERVICE_AREAS.primary.map((area) => (
                     <div key={area} className="border-b border-gray-100 pb-4 last:border-0 last:pb-0">
                       <h4 className="font-bold text-gray-50 mb-2 flex items-center gap-2">
-                        <MapPin size={14} className="text-[#1a5c2e]" /> {area}
+                        <MapPin size={14} className="text-[#d4a017]" /> {area}
                       </h4>
                       <div className="flex flex-wrap gap-1.5">
                         {SERVICES.map((s) => (
-                          <span key={s.id} className="text-xs bg-[#e8f5ec] text-[#1a5c2e] px-2 py-1 rounded-full tamil">
+                          <span key={s.id} className="text-xs bg-[#fdf8e8] text-[#d4a017] px-2 py-1 rounded-full tamil">
                             {s.icon} {s.nameTamil}
                           </span>
                         ))}
@@ -87,7 +87,7 @@ export default function ServiceAreasPage() {
             <div>
               <SectionHeader
                 badge="எங்கு சேவை கிடைக்கும்?"
-                title={<>சேவை <span className="text-[#1a5c2e]">பகுதிகள் விவரம்</span></>}
+                title={<>சேவை <span className="text-[#d4a017]">பகுதிகள் விவரம்</span></>}
                 center={false}
               />
 
@@ -99,7 +99,7 @@ export default function ServiceAreasPage() {
                   {SERVICE_AREAS.primary.map((area) => (
                     <div
                       key={area}
-                      className="bg-[#1a5c2e] text-white rounded-xl p-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter"
+                      className="bg-[#d4a017] text-white rounded-xl p-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter"
                     >
                       <MapPin size={20} className="mx-auto mb-2 text-[#f0c040]" />
                       <p className="tamil font-bold text-sm">{area}</p>
@@ -118,7 +118,7 @@ export default function ServiceAreasPage() {
                       key={area}
                       className="flex items-center gap-1.5 bg-gray-100 text-gray-300 px-3 py-2 rounded-full text-sm"
                     >
-                      <MapPin size={12} className="text-[#1a5c2e]" /> {area}
+                      <MapPin size={12} className="text-[#d4a017]" /> {area}
                     </span>
                   ))}
                 </div>
@@ -129,7 +129,7 @@ export default function ServiceAreasPage() {
                   <strong>குறிப்பு:</strong> {SERVICE_AREAS.note}
                   <br />
                   உங்கள் பகுதியில் சேவை கிடைக்குமா என்பதை அறிய{' '}
-                  <a href="tel:+918608522042" className="font-bold text-[#1a5c2e]">8608522042</a>
+                  <a href="tel:+918608522042" className="font-bold text-[#d4a017]">8608522042</a>
                   -ல் தொடர்பு கொள்ளுங்கள்.
                 </p>
               </div>
@@ -142,15 +142,15 @@ export default function ServiceAreasPage() {
                   <Link
                     key={s.id}
                     to={`/services/${s.slug}`}
-                    className="flex items-center justify-between bg-[#f9fafb] hover:bg-[#e8f5ec] rounded-xl px-4 py-3 transition-colors group"
+                    className="flex items-center justify-between bg-[#f9fafb] hover:bg-[#fdf8e8] rounded-xl px-4 py-3 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-xl">{s.icon}</span>
-                      <span className="tamil font-semibold text-gray-100 group-hover:text-[#1a5c2e] text-sm">
+                      <span className="tamil font-semibold text-gray-100 group-hover:text-[#d4a017] text-sm">
                         {s.nameTamil}
                       </span>
                     </div>
-                    <span className="text-gray-400 group-hover:text-[#1a5c2e] text-xs">→</span>
+                    <span className="text-gray-400 group-hover:text-[#d4a017] text-xs">→</span>
                   </Link>
                 ))}
               </div>

@@ -42,7 +42,7 @@ export default function MachineryPage() {
         <div className="container-site">
           <SectionHeader
             badge="நமது இயந்திரங்கள்"
-            title={<>GG-யின் <span className="text-[#1a5c2e]">இயந்திரங்கள்</span></>}
+            title={<>GG-யின் <span className="text-[#d4a017]">இயந்திரங்கள்</span></>}
             subtitle="விவசாயம் மற்றும் நிலப் பணிகளுக்காக தேர்ந்தெடுக்கப்பட்ட இயந்திரங்கள்."
           />
 
@@ -65,7 +65,7 @@ export default function MachineryPage() {
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.style.display = 'none';
-                      e.target.parentElement.style.background = 'linear-gradient(135deg, #e8f5ec, #c3e6cc)';
+                      e.target.parentElement.style.background = 'linear-gradient(135deg, #fdf8e8, #c3e6cc)';
                       e.target.parentElement.style.minHeight = '250px';
                     }}
                   />
@@ -86,7 +86,7 @@ export default function MachineryPage() {
                     <ul className="space-y-1.5">
                       {service.applications.map((app, j) => (
                         <li key={j} className="flex items-center gap-2 text-sm tamil text-gray-300">
-                          <span className="w-4 h-4 rounded-full bg-[#e8f5ec] text-[#1a5c2e] flex items-center justify-center text-xs flex-shrink-0">✓</span>
+                          <span className="w-4 h-4 rounded-full bg-[#fdf8e8] text-[#d4a017] flex items-center justify-center text-xs flex-shrink-0">✓</span>
                           {app}
                         </li>
                       ))}

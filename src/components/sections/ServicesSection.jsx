@@ -11,7 +11,7 @@ export default function ServicesSection() {
           title={
             <>
               நாங்கள் வழங்கும்{' '}
-              <span className="text-[#1a5c2e]">இயந்திர சேவைகள்</span>
+              <span className="text-[#d4a017]">இயந்திர சேவைகள்</span>
             </>
           }
           subtitle="விவசாய பணிகள் முதல் நிலப் பணிகள் வரை — உங்கள் தேவைக்கேற்ப சரியான இயந்திரத்துடன் நாங்கள் வருகிறோம்."

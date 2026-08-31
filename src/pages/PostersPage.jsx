@@ -120,11 +120,11 @@ function VisitingCard() {
         <div
           className="w-[340px] h-[200px] rounded-xl shadow-xl relative overflow-hidden bg-white border border-gray-200"
         >
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1a5c2e] via-[#2d7a42] to-[#1a5c2e]" />
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#d4a017] via-[#2d7a42] to-[#d4a017]" />
           <div className="p-4 flex gap-4 h-full">
             {/* Services */}
             <div className="flex-1">
-              <p className="tamil text-[#1a5c2e] font-bold text-xs mb-2">சேவைகள்</p>
+              <p className="tamil text-[#d4a017] font-bold text-xs mb-2">சேவைகள்</p>
               <ul className="space-y-0.5">
                 {SERVICES.map((s) => (
                   <li key={s.id} className="text-gray-300 text-[0.6rem] flex items-center gap-1">
@@ -136,7 +136,7 @@ function VisitingCard() {
             </div>
             {/* Contact */}
             <div className="w-28 text-right">
-              <p className="tamil text-[#1a5c2e] font-bold text-xs mb-2">தொடர்பு</p>
+              <p className="tamil text-[#d4a017] font-bold text-xs mb-2">தொடர்பு</p>
               <p className="text-gray-100 font-bold text-xs">{BUSINESS.phones[0]}</p>
               <p className="text-gray-100 font-bold text-xs">{BUSINESS.phones[1]}</p>
               <p className="tamil text-gray-500 text-[0.55rem] leading-relaxed mt-2">
@@ -146,7 +146,7 @@ function VisitingCard() {
               </p>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#1a5c2e] via-[#2d7a42] to-[#1a5c2e]" />
+          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#d4a017] via-[#2d7a42] to-[#d4a017]" />
         </div>
       </div>
     </div>
@@ -195,8 +195,8 @@ export default function PostersPage() {
           <h2 className="tamil text-2xl font-bold text-gray-50 mb-8">Visiting Card Design</h2>
           <VisitingCard />
 
-          <div className="mt-12 bg-[#e8f5ec] rounded-2xl p-6">
-            <p className="tamil text-[#1a5c2e] font-semibold text-base">
+          <div className="mt-12 bg-[#fdf8e8] rounded-2xl p-6">
+            <p className="tamil text-[#d4a017] font-semibold text-base">
               💡 இந்த வடிவமைப்புகளை திரையில் screenshot எடுத்து அல்லது print செய்து பயன்படுத்தலாம்.
               Professional print-ready files தேவைப்பட்டால் ஒரு graphic designer மூலம் export செய்யலாம்.
             </p>

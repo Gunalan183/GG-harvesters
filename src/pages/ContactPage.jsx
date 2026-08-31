@@ -41,14 +41,14 @@ export default function ContactPage() {
         <div className="container-site">
           <SectionHeader
             badge="தொடர்பு"
-            title={<>எங்களை <span className="text-[#1a5c2e]">தொடர்பு கொள்ளுங்கள்</span></>}
+            title={<>எங்களை <span className="text-[#d4a017]">தொடர்பு கொள்ளுங்கள்</span></>}
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* Contact cards */}
             <div className="space-y-5">
               {/* Phone */}
-              <div className="bg-[#1a5c2e] text-white rounded-2xl p-6">
+              <div className="bg-[#d4a017] text-white rounded-2xl p-6">
                 <h3 className="tamil font-bold text-xl mb-5 flex items-center gap-2">
                   <Phone size={20} className="text-[#f0c040]" />
                   தொலைபேசி
@@ -101,7 +101,7 @@ export default function ContactPage() {
               {/* Address */}
               <div className=" bg-slate-900/40 backdrop-blur-xl border border-white/5 shadow-lg hover:-translate-y-1 transition-all duration-300  rounded-2xl p-6   border border-gray-100">
                 <h3 className="tamil font-bold text-gray-50 text-xl mb-4 flex items-center gap-2">
-                  <MapPin size={20} className="text-[#1a5c2e]" />
+                  <MapPin size={20} className="text-[#d4a017]" />
                   முகவரி
                 </h3>
                 <address className="tamil not-italic text-gray-300 text-base leading-relaxed mb-4">
@@ -121,9 +121,9 @@ export default function ContactPage() {
             {/* Map & info */}
             <div className="space-y-5">
               {/* Map placeholder */}
-              <div className="bg-[#e8f5ec] rounded-2xl overflow-hidden min-h-[320px] flex flex-col items-center justify-center shadow-sm p-8">
-                <MapPin size={56} className="text-[#1a5c2e] mb-4" />
-                <p className="tamil font-bold text-[#1a5c2e] text-xl mb-2">Pambapadiyur</p>
+              <div className="bg-[#fdf8e8] rounded-2xl overflow-hidden min-h-[320px] flex flex-col items-center justify-center shadow-sm p-8">
+                <MapPin size={56} className="text-[#d4a017] mb-4" />
+                <p className="tamil font-bold text-[#d4a017] text-xl mb-2">Pambapadiyur</p>
                 <p className="tamil text-gray-400 text-sm text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter mb-4">
                   Kumbakonam Taluk, Thanjavur District<br />Tamil Nadu – 612703
                 </p>

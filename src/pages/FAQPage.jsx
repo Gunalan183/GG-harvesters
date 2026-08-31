@@ -23,7 +23,7 @@ function FAQItem({ faq, index }) {
           {faq.question}
         </span>
         {open ? (
-          <ChevronUp size={20} className="text-[#1a5c2e] flex-shrink-0" />
+          <ChevronUp size={20} className="text-[#d4a017] flex-shrink-0" />
         ) : (
           <ChevronDown size={20} className="text-gray-400 flex-shrink-0" />
         )}
@@ -86,7 +86,7 @@ export default function FAQPage() {
         <div className="container-site max-w-3xl mx-auto">
           <SectionHeader
             badge="கேள்விகள்"
-            title={<>பொதுவான <span className="text-[#1a5c2e]">கேள்வி-பதில்கள்</span></>}
+            title={<>பொதுவான <span className="text-[#d4a017]">கேள்வி-பதில்கள்</span></>}
             subtitle="கீழே உங்கள் கேள்வியை கிளிக் செய்யுங்கள்."
           />
 
@@ -96,8 +96,8 @@ export default function FAQPage() {
             ))}
           </div>
 
-          <div className="mt-10 bg-[#e8f5ec] rounded-2xl p-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter">
-            <p className="tamil text-[#1a5c2e] font-bold text-lg mb-2">
+          <div className="mt-10 bg-[#fdf8e8] rounded-2xl p-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter">
+            <p className="tamil text-[#d4a017] font-bold text-lg mb-2">
               உங்கள் கேள்விக்கு பதில் கிடைக்கவில்லையா?
             </p>
             <p className="tamil text-gray-400 text-sm mb-5">

@@ -25,14 +25,14 @@ export default function TrustStrip() {
               key={i}
               className="rounded-2xl flex flex-col items-start"
               style={{
-                background: '#f7fdf9',
+                background: '#fcfaf6',
                 border: '1px solid #e2f0e8',
                 padding: '1.25rem',
                 gap: '0.75rem',
                 transition: 'box-shadow 0.2s, transform 0.2s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(26,92,46,0.10)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(212,160,23,0.10)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={e => {
@@ -54,7 +54,7 @@ export default function TrustStrip() {
 
               {/* Text */}
               <div>
-                <p className="tamil font-bold text-[#1a2e1a]" style={{ fontSize: '0.9rem', marginBottom: '0.3rem' }}>
+                <p className="tamil font-bold text-[#1a1814]" style={{ fontSize: '0.9rem', marginBottom: '0.3rem' }}>
                   {title}
                 </p>
                 <p className="tamil text-[#4b5563] leading-relaxed" style={{ fontSize: '0.75rem' }}>

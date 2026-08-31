@@ -36,7 +36,7 @@ export default function HeroSection() {
           onError={(e) => {
             e.target.style.display = 'none';
             e.target.parentElement.style.background =
-              'linear-gradient(160deg, #0a2d16 0%, #1a5c2e 60%, #0f3d1e 100%)';
+              'linear-gradient(160deg, #0a2d16 0%, #d4a017 60%, #0f3d1e 100%)';
           }}
         />
         <div className="absolute inset-0" />
@@ -60,7 +60,7 @@ export default function HeroSection() {
           }}
         >
           <MapPin size={11} className="text-[#f0cc5a] flex-shrink-0" />
-          Kumbakonam · Thanjavur · Tamil Nadu
+          விவசாயத்தின் வெற்றிக்கு இயந்திரங்களின் துணை
         </div>
 
         {/* Brand name */}
@@ -99,7 +99,8 @@ export default function HeroSection() {
             className="tamil text-white font-bold leading-snug"
             style={{ fontSize: 'clamp(0.82rem, 4vw, 1.1rem)' }}
           >
-            விவசாயம் மற்றும் நிலப் பணிகளுக்கு<br />
+            விவசாயம் மற்றும் நிலப் பணிகளுக்கு<br className="md:hidden" />
+            <span className="hidden md:inline"> </span>
             <span style={{ color: '#f0cc5a' }}>நம்பகமான இயந்திர சேவைகள்</span>
           </p>
         </div>

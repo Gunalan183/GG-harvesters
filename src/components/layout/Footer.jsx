@@ -45,7 +45,7 @@ export default function Footer() {
             <div className="flex gap-3 mt-5">
               <a
                 href={callLink(BUSINESS.phones[0])}
-                className="w-10 h-10 bg-[#1a5c2e] rounded-full flex items-center justify-center hover:bg-[#25a245] transition-colors"
+                className="w-10 h-10 bg-[#d4a017] rounded-full flex items-center justify-center hover:bg-[#25a245] transition-colors"
                 aria-label={`Call ${BUSINESS.phones[0]}`}
               >
                 <Phone size={16} />

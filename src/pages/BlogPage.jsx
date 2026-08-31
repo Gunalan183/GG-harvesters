@@ -41,7 +41,7 @@ export default function BlogPage() {
         <div className="container-site">
           <SectionHeader
             badge="கட்டுரைகள்"
-            title={<>விவசாயிகளுக்கான <span className="text-[#1a5c2e]">பயனுள்ள கட்டுரைகள்</span></>}
+            title={<>விவசாயிகளுக்கான <span className="text-[#d4a017]">பயனுள்ள கட்டுரைகள்</span></>}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -57,7 +57,7 @@ export default function BlogPage() {
                     height={232}
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.parentElement.style.background = 'linear-gradient(135deg, #e8f5ec, #c3e6cc)';
+                      e.target.parentElement.style.background = 'linear-gradient(135deg, #fdf8e8, #c3e6cc)';
                       e.target.style.display = 'none';
                     }}
                   />
@@ -73,7 +73,7 @@ export default function BlogPage() {
                       {post.readTime}
                     </span>
                   </div>
-                  <h2 className="tamil font-bold text-gray-50 text-base leading-snug mb-2 group-hover:text-[#1a5c2e] transition-colors">
+                  <h2 className="tamil font-bold text-gray-50 text-base leading-snug mb-2 group-hover:text-[#d4a017] transition-colors">
                     {post.titleTamil}
                   </h2>
                   <p className="tamil text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
@@ -81,7 +81,7 @@ export default function BlogPage() {
                   </p>
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="flex items-center gap-1.5 text-[#1a5c2e] font-semibold text-sm hover:gap-2.5 transition-all tamil"
+                    className="flex items-center gap-1.5 text-[#d4a017] font-semibold text-sm hover:gap-2.5 transition-all tamil"
                   >
                     மேலும் படிக்க <ArrowRight size={14} />
                   </Link>

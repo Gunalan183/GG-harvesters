@@ -78,7 +78,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }}
-              className="px-3.5 py-2 rounded-lg text-[0.83rem] font-semibold transition-all tamil text-gray-700 hover:text-[#1a5c2e] hover:bg-[#e8f5ec]"
+              className="px-3.5 py-2 rounded-lg text-[0.83rem] font-semibold transition-all tamil text-gray-700 hover:text-[#d4a017] hover:bg-[#fdf8e8]"
             >
               {item.label}
             </a>

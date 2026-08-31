@@ -87,13 +87,13 @@ function VideoCard({ video }) {
               height={270}
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.parentElement.style.background = 'linear-gradient(135deg, #e8f5ec, #fdf8e8)';
+                e.target.parentElement.style.background = 'linear-gradient(135deg, #fdf8e8, #fdf8e8)';
                 e.target.style.display = 'none';
               }}
             />
             <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
               <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
-                <Play size={22} className="text-[#1a5c2e] ml-1" fill="#1a5c2e" />
+                <Play size={22} className="text-[#d4a017] ml-1" fill="#d4a017" />
               </div>
             </div>
             {/* Coming soon badge if no video */}
@@ -106,7 +106,7 @@ function VideoCard({ video }) {
         )}
       </div>
       <div className="p-4">
-        <h3 className="tamil font-bold text-[#1a2e1a] text-sm leading-snug">{video.titleTamil}</h3>
+        <h3 className="tamil font-bold text-[#1a1814] text-sm leading-snug">{video.titleTamil}</h3>
         <p className="text-[#4b5563] text-xs mt-1 truncate">{video.title}</p>
       </div>
     </article>
@@ -122,7 +122,7 @@ export default function VideosSection() {
           title={
             <>
               எங்கள் இயந்திரங்கள்{' '}
-              <span className="text-[#1a5c2e]">செயல்படும் வீடியோக்கள்</span>
+              <span className="text-[#d4a017]">செயல்படும் வீடியோக்கள்</span>
             </>
           }
           subtitle="GG Harvester இயந்திரங்கள் வயல்களிலும் கட்டுமான இடங்களிலும் செயல்படும் காட்சிகள்."

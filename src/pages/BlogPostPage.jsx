@@ -87,7 +87,7 @@ export default function BlogPostPage() {
               className="w-full h-full object-cover"
               width={1280}
               height={640}
-              onError={(e) => { e.target.onerror = null; e.target.parentElement.style.background = 'linear-gradient(135deg, #0f3d1e, #1a5c2e)'; e.target.style.display = 'none'; }}
+              onError={(e) => { e.target.onerror = null; e.target.parentElement.style.background = 'linear-gradient(135deg, #0f3d1e, #d4a017)'; e.target.style.display = 'none'; }}
             />
             <div className="hero-overlay absolute inset-0" />
           </div>
@@ -109,7 +109,7 @@ export default function BlogPostPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 prose-content">
                 {/* Intro */}
-                <p className="tamil text-gray-300 text-base leading-relaxed mb-8 text-lg font-medium border-l-4 border-[#1a5c2e] pl-5 bg-[#e8f5ec]/50 py-4 pr-4 rounded-r-xl">
+                <p className="tamil text-gray-300 text-base leading-relaxed mb-8 text-lg font-medium border-l-4 border-[#d4a017] pl-5 bg-[#fdf8e8]/50 py-4 pr-4 rounded-r-xl">
                   {content?.intro}
                 </p>
 
@@ -123,7 +123,7 @@ export default function BlogPostPage() {
 
                 {/* CTA box */}
                 {relatedService && (
-                  <div className="mt-10 bg-[#1a5c2e] text-white rounded-2xl p-6">
+                  <div className="mt-10 bg-[#d4a017] text-white rounded-2xl p-6">
                     <h3 className="tamil font-bold text-lg mb-2">
                       {relatedService.nameTamil} சேவை தேவையா?
                     </h3>
@@ -156,7 +156,7 @@ export default function BlogPostPage() {
                       <Link key={p.id} to={`/blog/${p.slug}`} className="flex gap-3 group hover:bg-white rounded-xl p-2 transition-colors">
                         <img src={p.image} alt={p.altText} className="w-16 h-16 object-cover rounded-lg flex-shrink-0" loading="lazy" width={64} height={64} onError={(e) => { e.target.style.display='none'; }} />
                         <div>
-                          <p className="tamil text-gray-100 text-xs font-semibold leading-snug group-hover:text-[#1a5c2e] transition-colors">{p.titleTamil}</p>
+                          <p className="tamil text-gray-100 text-xs font-semibold leading-snug group-hover:text-[#d4a017] transition-colors">{p.titleTamil}</p>
                           <p className="text-gray-400 text-xs mt-1">{p.readTime}</p>
                         </div>
                       </Link>
@@ -164,7 +164,7 @@ export default function BlogPostPage() {
                   </div>
                 </div>
 
-                <div className="bg-[#1a5c2e] text-white rounded-2xl p-6">
+                <div className="bg-[#d4a017] text-white rounded-2xl p-6">
                   <h3 className="tamil font-bold mb-3">சேவை தேவையா?</h3>
                   <a href="tel:+918608522042" className="btn-call w-full justify-center text-sm mb-3 block">📞 8608522042</a>
                   <Link to="/book-service" className="btn-outline-white w-full justify-center text-sm block">📋 சேவை பதிவு</Link>

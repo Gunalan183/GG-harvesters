@@ -65,7 +65,7 @@ export default function GalleryPreview() {
           title={
             <>
               நாங்கள் செய்த{' '}
-              <span className="text-[#1a5c2e]">பணிகளின் படங்கள்</span>
+              <span className="text-[#d4a017]">பணிகளின் படங்கள்</span>
             </>
           }
           subtitle="GG Harvester இயந்திரங்கள் உண்மையான வயல்களில் செய்த வேலைகளின் படங்கள்."
@@ -80,7 +80,7 @@ export default function GalleryPreview() {
               className="tamil text-sm font-semibold rounded-full transition-colors"
               style={{
                 padding: '0.5rem 1.25rem',
-                background: activeFilter === f.value ? '#1a5c2e' : '#f0f0f0',
+                background: activeFilter === f.value ? '#d4a017' : '#f0f0f0',
                 color: activeFilter === f.value ? '#fff' : '#4b5563',
               }}
               aria-pressed={activeFilter === f.value}
@@ -108,7 +108,7 @@ export default function GalleryPreview() {
                 height={400}
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.parentElement.style.background = 'linear-gradient(135deg, #e8f5ec, #fdf8e8)';
+                  e.target.parentElement.style.background = 'linear-gradient(135deg, #fdf8e8, #fdf8e8)';
                   e.target.style.display = 'none';
                 }}
               />

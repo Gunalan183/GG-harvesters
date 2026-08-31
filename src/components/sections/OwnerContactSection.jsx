@@ -7,7 +7,7 @@ export default function OwnerContactSection() {
     <section
       id="owner-contact"
       className="relative overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #1a5c2e 0%, #0f3d1e 100%)', borderRadius: '0 0 2rem 2rem' }}
+      style={{ background: 'linear-gradient(135deg, #d4a017 0%, #0f3d1e 100%)', borderRadius: '0 0 2rem 2rem' }}
       aria-label="Contact the owner"
     >
       <div className="container-site relative z-10">

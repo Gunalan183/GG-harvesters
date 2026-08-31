@@ -136,13 +136,13 @@ function VideoCard({ video }) {
               height={270}
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.parentElement.style.background = 'linear-gradient(135deg, #1a5c2e, #0f3d1e)';
+                e.target.parentElement.style.background = 'linear-gradient(135deg, #d4a017, #0f3d1e)';
                 e.target.style.display = 'none';
               }}
             />
             <div className="absolute inset-0 bg-black/45 flex items-center justify-center group hover:bg-black/35 transition-colors">
               <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
-                <Play size={26} className="text-[#1a5c2e] ml-1" fill="#1a5c2e" />
+                <Play size={26} className="text-[#d4a017] ml-1" fill="#d4a017" />
               </div>
             </div>
             {!video.videoSrc && !video.youtubeSrc && (
@@ -193,7 +193,7 @@ export default function VideosPage() {
         <div className="container-site">
           <SectionHeader
             badge="Videos"
-            title={<>உண்மையான <span className="text-[#1a5c2e]">பணி வீடியோக்கள்</span></>}
+            title={<>உண்மையான <span className="text-[#d4a017]">பணி வீடியோக்கள்</span></>}
             subtitle="வீடியோக்கள் விரைவில் சேர்க்கப்படும். தொடர்பில் இருங்கள்."
           />
 
@@ -203,8 +203,8 @@ export default function VideosPage() {
             ))}
           </div>
 
-          <div className="mt-8 bg-[#e8f5ec] rounded-2xl p-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter">
-            <p className="tamil text-[#1a5c2e] font-semibold text-base mb-2">
+          <div className="mt-8 bg-[#fdf8e8] rounded-2xl p-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter">
+            <p className="tamil text-[#d4a017] font-semibold text-base mb-2">
               📹 உண்மையான வீடியோக்கள் விரைவில்!
             </p>
             <p className="tamil text-gray-400 text-sm">

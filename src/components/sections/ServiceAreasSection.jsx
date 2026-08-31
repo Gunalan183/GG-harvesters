@@ -9,9 +9,9 @@ export default function ServiceAreasSection() {
       <div className="container-site">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left: Map placeholder */}
-          <div className="rounded-2xl overflow-hidden shadow-md bg-[#e8f5ec] min-h-[300px] flex flex-col items-center justify-center p-8 text-center">
-            <MapPin size={48} className="text-[#1a5c2e] mb-4" />
-            <h3 className="tamil font-bold text-[#1a5c2e] text-xl mb-2">எங்கள் இடம்</h3>
+          <div className="rounded-2xl overflow-hidden shadow-md bg-[#fdf8e8] min-h-[300px] flex flex-col items-center justify-center p-8 text-center">
+            <MapPin size={48} className="text-[#d4a017] mb-4" />
+            <h3 className="tamil font-bold text-[#d4a017] text-xl mb-2">எங்கள் இடம்</h3>
             <address className="tamil not-italic text-[#4b5563] text-sm leading-relaxed mb-4">
               {BUSINESS.address.fullTamil}
             </address>
@@ -34,14 +34,14 @@ export default function ServiceAreasSection() {
               title={
                 <>
                   நாங்கள் சேவை செய்யும்{' '}
-                  <span className="text-[#1a5c2e]">பகுதிகள்</span>
+                  <span className="text-[#d4a017]">பகுதிகள்</span>
                 </>
               }
               center={false}
             />
 
             <div className="mb-6">
-              <h3 className="tamil font-bold text-[#1a2e1a] mb-3">முதன்மை பகுதிகள்</h3>
+              <h3 className="tamil font-bold text-[#1a1814] mb-3">முதன்மை பகுதிகள்</h3>
               <div className="flex flex-wrap gap-2">
                 {SERVICE_AREAS.primary.map((area) => (
                   <span key={area} className="badge-green text-sm py-1.5 px-3">
@@ -52,7 +52,7 @@ export default function ServiceAreasSection() {
             </div>
 
             <div className="mb-6">
-              <h3 className="tamil font-bold text-[#1a2e1a] mb-3">அருகில் உள்ள பகுதிகள்</h3>
+              <h3 className="tamil font-bold text-[#1a1814] mb-3">அருகில் உள்ள பகுதிகள்</h3>
               <div className="flex flex-wrap gap-2">
                 {SERVICE_AREAS.nearby.map((area) => (
                   <span

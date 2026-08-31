@@ -81,7 +81,7 @@ export default function BookServicePage() {
       <Layout>
         <div className="min-h-[60vh] flex items-center justify-center p-4">
           <div className="max-w-md w-full text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter">
-            <CheckCircle size={64} className="text-[#1a5c2e] mx-auto mb-5" />
+            <CheckCircle size={64} className="text-[#d4a017] mx-auto mb-5" />
             <h1 className="tamil text-2xl font-extrabold text-gray-50 mb-3">
               பதிவு வெற்றிகரமாக அனுப்பப்பட்டது!
             </h1>
@@ -91,7 +91,7 @@ export default function BookServicePage() {
             </p>
             <p className="tamil text-gray-500 text-sm mb-8">
               நேரடியாக அழைக்க:{' '}
-              <a href={`tel:+91${BUSINESS.phones[0]}`} className="text-[#1a5c2e] font-bold">
+              <a href={`tel:+91${BUSINESS.phones[0]}`} className="text-[#d4a017] font-bold">
                 {BUSINESS.phones[0]}
               </a>
             </p>
@@ -298,7 +298,7 @@ export default function BookServicePage() {
 
             {/* Sidebar */}
             <div className="space-y-5">
-              <div className="bg-[#1a5c2e] text-white rounded-2xl p-6">
+              <div className="bg-[#d4a017] text-white rounded-2xl p-6">
                 <h3 className="tamil font-bold text-lg mb-4">நேரடி தொடர்பு</h3>
                 <div className="space-y-3">
                   {BUSINESS.phones.map((phone) => (

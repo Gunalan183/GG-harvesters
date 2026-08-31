@@ -80,7 +80,7 @@ export default function PrivacyPage() {
               <address className="not-italic mt-2">
                 <strong>GG Harvester and Earth Movers</strong><br />
                 {BUSINESS.address.full}<br />
-                Phone: <a href={`tel:+91${BUSINESS.phones[0]}`} className="text-[#1a5c2e]">{BUSINESS.phones[0]}</a>
+                Phone: <a href={`tel:+91${BUSINESS.phones[0]}`} className="text-[#d4a017]">{BUSINESS.phones[0]}</a>
               </address>
             </div>
           </div>

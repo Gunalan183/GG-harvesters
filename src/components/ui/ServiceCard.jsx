@@ -36,7 +36,7 @@ export default function ServiceCard({ service }) {
         <span className="text-xs text-[#4b5563] font-medium" style={{ marginBottom: '0.35rem' }}>
           {service.nameEnglish}
         </span>
-        <h3 className="tamil font-bold text-lg text-[#1a2e1a] leading-snug" style={{ marginBottom: '0.6rem' }}>
+        <h3 className="tamil font-bold text-lg text-[#1a1814] leading-snug" style={{ marginBottom: '0.6rem' }}>
           {service.nameTamil}
         </h3>
         <p className="tamil text-[#4b5563] text-sm leading-relaxed flex-1" style={{ marginBottom: '1.25rem' }}>

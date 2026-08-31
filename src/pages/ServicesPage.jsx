@@ -44,7 +44,7 @@ export default function ServicesPage() {
         <div className="container-site">
           <SectionHeader
             badge="7 சேவைகள்"
-            title={<>நாங்கள் வழங்கும் <span className="text-[#1a5c2e]">சேவைகள்</span></>}
+            title={<>நாங்கள் வழங்கும் <span className="text-[#d4a017]">சேவைகள்</span></>}
             subtitle="கும்பகோணம், தஞ்சாவூர் மற்றும் அருகில் உள்ள பகுதிகளில் சேவை கிடைக்கும்."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

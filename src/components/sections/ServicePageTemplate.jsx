@@ -24,7 +24,7 @@ export default function ServicePageTemplate({ service }) {
             height={640}
             onError={(e) => {
               e.target.onerror = null;
-              e.target.parentElement.style.background = 'linear-gradient(135deg, #0f3d1e, #1a5c2e)';
+              e.target.parentElement.style.background = 'linear-gradient(135deg, #0f3d1e, #d4a017)';
               e.target.style.display = 'none';
             }}
           />
@@ -54,7 +54,7 @@ export default function ServicePageTemplate({ service }) {
       </section>
 
       {/* CTA strip */}
-      <div className="bg-[#1a5c2e] py-4">
+      <div className="bg-[#d4a017] py-4">
         <div className="container-site flex flex-col sm:flex-row gap-3 items-center justify-between">
           <p className="tamil text-white font-bold text-base">
             {service.nameTamil} தேவையா?
@@ -101,8 +101,8 @@ export default function ServicePageTemplate({ service }) {
                 </h2>
                 <ul className="space-y-3">
                   {service.applications.map((app, i) => (
-                    <li key={i} className="flex items-center gap-3 bg-[#e8f5ec] rounded-lg px-4 py-3">
-                      <span className="w-6 h-6 rounded-full bg-[#1a5c2e] text-white flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    <li key={i} className="flex items-center gap-3 bg-[#fdf8e8] rounded-lg px-4 py-3">
+                      <span className="w-6 h-6 rounded-full bg-[#d4a017] text-white flex items-center justify-center text-xs font-bold flex-shrink-0">
                         ✓
                       </span>
                       <span className="tamil text-gray-100 font-medium">{app}</span>
@@ -128,7 +128,7 @@ export default function ServicePageTemplate({ service }) {
                         height={200}
                         onError={(e) => {
                           e.target.onerror = null;
-                          e.target.parentElement.style.background = 'linear-gradient(135deg, #e8f5ec, #c3e6cc)';
+                          e.target.parentElement.style.background = 'linear-gradient(135deg, #fdf8e8, #c3e6cc)';
                           e.target.style.display = 'none';
                         }}
                       />
@@ -147,7 +147,7 @@ export default function ServicePageTemplate({ service }) {
                   கிராமங்களில் {service.nameTamil} சேவை கிடைக்கும்.
                   சரியான விவரத்திற்கு தொடர்பு கொள்ளவும்.
                 </p>
-                <Link to="/service-areas" className="inline-flex items-center gap-1 text-[#1a5c2e] font-semibold text-sm mt-3 hover:underline tamil">
+                <Link to="/service-areas" className="inline-flex items-center gap-1 text-[#d4a017] font-semibold text-sm mt-3 hover:underline tamil">
                   சேவை பகுதிகள் முழு விவரம் <ChevronRight size={14} />
                 </Link>
               </div>
@@ -156,7 +156,7 @@ export default function ServicePageTemplate({ service }) {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* Quick contact */}
-              <div className="bg-[#1a5c2e] rounded-2xl p-6 text-white">
+              <div className="bg-[#d4a017] rounded-2xl p-6 text-white">
                 <h3 className="tamil font-bold text-lg mb-4">{service.nameTamil} தேவையா?</h3>
                 <div className="space-y-3">
                   <a
@@ -208,10 +208,10 @@ export default function ServicePageTemplate({ service }) {
                     <Link
                       key={s.id}
                       to={`/services/${s.slug}`}
-                      className="flex items-center gap-3 hover:bg-[#e8f5ec] rounded-lg p-2 transition-colors"
+                      className="flex items-center gap-3 hover:bg-[#fdf8e8] rounded-lg p-2 transition-colors"
                     >
                       <span className="text-xl" aria-hidden="true">{s.icon}</span>
-                      <span className="tamil text-gray-300 text-sm font-medium hover:text-[#1a5c2e]">
+                      <span className="tamil text-gray-300 text-sm font-medium hover:text-[#d4a017]">
                         {s.nameTamil}
                       </span>
                       <ChevronRight size={14} className="ml-auto text-gray-400" />

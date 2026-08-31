@@ -50,7 +50,7 @@ export default function AboutPage() {
               <span className="badge-green mb-3">நமது கதை</span>
               <h2 className="section-title mb-5">
                 விவசாயிகளுக்காக{' '}
-                <span className="text-[#1a5c2e]">இயந்திர சேவை</span>
+                <span className="text-[#d4a017]">இயந்திர சேவை</span>
               </h2>
               <div className="space-y-4 tamil text-gray-300 text-base leading-relaxed">
                 <p>
@@ -99,7 +99,7 @@ export default function AboutPage() {
                   loading="lazy"
                   width={300}
                   height={300}
-                  onError={(e) => { e.target.onerror = null; e.target.parentElement.style.background = 'linear-gradient(135deg, #e8f5ec, #c3e6cc)'; e.target.style.display = 'none'; }}
+                  onError={(e) => { e.target.onerror = null; e.target.parentElement.style.background = 'linear-gradient(135deg, #fdf8e8, #c3e6cc)'; e.target.style.display = 'none'; }}
                 />
               </div>
               <div className="rounded-2xl overflow-hidden aspect-square mt-6">
@@ -121,7 +121,7 @@ export default function AboutPage() {
                   loading="lazy"
                   width={300}
                   height={300}
-                  onError={(e) => { e.target.onerror = null; e.target.parentElement.style.background = 'linear-gradient(135deg, #e8f5ec, #c3e6cc)'; e.target.style.display = 'none'; }}
+                  onError={(e) => { e.target.onerror = null; e.target.parentElement.style.background = 'linear-gradient(135deg, #fdf8e8, #c3e6cc)'; e.target.style.display = 'none'; }}
                 />
               </div>
               <div className="rounded-2xl overflow-hidden aspect-square mt-6">
@@ -145,7 +145,7 @@ export default function AboutPage() {
         <div className="container-site">
           <SectionHeader
             badge="எங்கள் மதிப்புகள்"
-            title={<>நாங்கள் ஏன் <span className="text-[#1a5c2e]">நம்பகமானவர்கள்?</span></>}
+            title={<>நாங்கள் ஏன் <span className="text-[#d4a017]">நம்பகமானவர்கள்?</span></>}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {TRUST_POINTS.map((p, i) => (
@@ -162,7 +162,7 @@ export default function AboutPage() {
       {/* Location */}
       <section className="section-py animate-fade-in-up">
         <div className="container-site max-w-3xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100enter">
-          <MapPin size={40} className="text-[#1a5c2e] mx-auto mb-4" />
+          <MapPin size={40} className="text-[#d4a017] mx-auto mb-4" />
           <h2 className="tamil section-title mb-3">எங்கள் இடம்</h2>
           <address className="tamil not-italic text-gray-300 text-lg leading-relaxed mb-6">
             {BUSINESS.address.fullTamil}

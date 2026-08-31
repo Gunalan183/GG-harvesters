@@ -21,7 +21,7 @@ export default function NotFoundPage() {
           <h1 className="tamil text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200xl font-extrabold text-gray-50 mb-4">
             பக்கம் கிடைக்கவில்லை
           </h1>
-          <p className="text-gray-500 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100xl font-black mb-4 text-[#1a5c2e]/20">
+          <p className="text-gray-500 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100xl font-black mb-4 text-[#d4a017]/20">
             404
           </p>
           <p className="tamil text-gray-400 text-base mb-8 leading-relaxed">
@@ -47,7 +47,7 @@ export default function NotFoundPage() {
                 <Link
                   key={s.id}
                   to={`/services/${s.slug}`}
-                  className="flex items-center gap-1.5 bg-white border border-gray-200 hover:border-[#1a5c2e] hover:text-[#1a5c2e] text-gray-300 px-3 py-2 rounded-full text-sm transition-colors tamil"
+                  className="flex items-center gap-1.5 bg-white border border-gray-200 hover:border-[#d4a017] hover:text-[#d4a017] text-gray-300 px-3 py-2 rounded-full text-sm transition-colors tamil"
                 >
                   {s.icon} {s.nameTamil}
                 </Link>
