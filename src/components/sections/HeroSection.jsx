@@ -8,6 +8,7 @@ export default function HeroSection() {
   return (
     <section
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      style={{ borderRadius: '0 0 2rem 2rem' }}
       aria-label="Hero"
     >
       {/* Background */}
@@ -27,7 +28,7 @@ export default function HeroSection() {
         />
         {/* Desktop BG — shown only at md and above */}
         <img
-          src="/images/services/gg-paddy-harvester-service-kumbakonam.jpg"
+          src="/og-image.jpg"
           alt="GG Harvester paddy harvesting machine working in a rice field near Kumbakonam"
           className="hidden md:block w-full h-full object-cover object-center"
           fetchpriority="high"
@@ -66,20 +67,33 @@ export default function HeroSection() {
         {/* Brand name */}
         <div style={{ marginBottom: '1.5rem' }}>
           <h1
-            className="font-extrabold text-white tracking-tight leading-none drop-shadow-lg"
-            style={{ fontSize: 'clamp(2.8rem, 13vw, 5.5rem)', letterSpacing: '-0.02em' }}
+            className="font-extrabold tracking-tight leading-none"
+            style={{
+              fontSize: 'clamp(2.8rem, 13vw, 5.5rem)',
+              letterSpacing: '-0.02em',
+              color: '#ffffff',
+              textShadow: '0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8)',
+            }}
           >
             GG{' '}
             <span
-              className="text-transparent bg-clip-text"
-              style={{ backgroundImage: 'linear-gradient(90deg, #f0cc5a, #d4a017)' }}
+              style={{
+                color: '#f0cc5a',
+                textShadow: '0 2px 12px rgba(0,0,0,0.5)',
+              }}
             >
               HARVESTER
             </span>
           </h1>
           <p
-            className="text-white/65 font-semibold tracking-[0.3em] uppercase"
-            style={{ fontSize: 'clamp(0.65rem, 3vw, 0.85rem)', marginTop: '0.6rem' }}
+            className="font-semibold tracking-[0.3em] uppercase"
+            style={{
+              fontSize: 'clamp(0.65rem, 3vw, 0.85rem)',
+              marginTop: '0.6rem',
+              color: '#ffffff',
+              textShadow: '0 1px 6px rgba(0,0,0,0.7)',
+              letterSpacing: '0.3em',
+            }}
           >
             &amp; Earth Movers
           </p>
