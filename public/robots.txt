@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /*.json$
+
+Sitemap: https://www.ggharvesters.com/sitemap.xml

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home -->
+  <url>
+    <loc>https://www.ggharvesters.com/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.ggharvesters.com/images/services/gg-paddy-harvester-service-kumbakonam.jpg</image:loc>
+      <image:title>GG Paddy Harvester Service Kumbakonam</image:title>
+      <image:caption>GG Harvester paddy harvesting machine working near Kumbakonam</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://www.ggharvesters.com/about</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Services overview -->
+  <url>
+    <loc>https://www.ggharvesters.com/services</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Service: Paddy Harvester -->
+  <url>
+    <loc>https://www.ggharvesters.com/services/paddy-harvester</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.ggharvesters.com/images/services/gg-paddy-harvester-service-kumbakonam.jpg</image:loc>
+      <image:title>Paddy Harvester Service Kumbakonam GG Harvester</image:title>
+      <image:caption>GG paddy harvester service for rice fields near Kumbakonam Thanjavur</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Service: Tractor -->
+  <url>
+    <loc>https://www.ggharvesters.com/services/tractor</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.ggharvesters.com/images/services/gg-tractor-service-kumbakonam.jpg</image:loc>
+      <image:title>Tractor Service Kumbakonam GG Harvester</image:title>
+    </image:image>
+  </url>
+
+  <!-- Service: Tractor Rotavator -->
+  <url>
+    <loc>https://www.ggharvesters.com/services/tractor-rotavator</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.ggharvesters.com/images/services/gg-tractor-rotavator-service-kumbakonam.jpg</image:loc>
+      <image:title>Tractor Rotavator Service Kumbakonam</image:title>
+    </image:image>
+  </url>
+
+  <!-- Service: JCB -->
+  <url>
+    <loc>https://www.ggharvesters.com/services/jcb</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.ggharvesters.com/images/services/gg-jcb-service-kumbakonam.jpg</image:loc>
+      <image:title>JCB Service Kumbakonam GG Harvester</image:title>
+    </image:image>
+  </url>
+
+  <!-- Service: JCB 3CX -->
+  <url>
+    <loc>https://www.ggharvesters.com/services/jcb-3cx</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.ggharvesters.com/images/services/gg-jcb-3cx-service-kumbakonam.jpg</image:loc>
+      <image:title>JCB 3CX Backhoe Loader Service Kumbakonam</image:title>
+    </image:image>
+  </url>
+
+  <!-- Service: JCB Mini Excavator -->
+  <url>
+    <loc>https://www.ggharvesters.com/services/jcb-mini-excavator</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.ggharvesters.com/images/services/gg-jcb-mini-excavator-service-thanjavur.jpg</image:loc>
+      <image:title>JCB Mini Excavator Service Thanjavur</image:title>
+    </image:image>
+  </url>
+
+  <!-- Service: Round Baler -->
+  <url>
+    <loc>https://www.ggharvesters.com/services/tractor-round-baler</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.ggharvesters.com/images/services/gg-tractor-round-baler-service-thanjavur.jpg</image:loc>
+      <image:title>Tractor Round Baler Service Tamil Nadu</image:title>
+    </image:image>
+  </url>
+
+  <!-- Machinery -->
+  <url>
+    <loc>https://www.ggharvesters.com/machinery</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Gallery -->
+  <url>
+    <loc>https://www.ggharvesters.com/gallery</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.ggharvesters.com/images/gallery/gg-paddy-harvester-working-kumbakonam.jpg</image:loc>
+      <image:title>GG Paddy Harvester Working Kumbakonam Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.ggharvesters.com/images/gallery/gg-jcb-mini-excavator-canal-thanjavur.jpg</image:loc>
+      <image:title>GG JCB Mini Excavator Canal Thanjavur</image:title>
+    </image:image>
+  </url>
+
+  <!-- Videos -->
+  <url>
+    <loc>https://www.ggharvesters.com/videos</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Service Areas -->
+  <url>
+    <loc>https://www.ggharvesters.com/service-areas</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://www.ggharvesters.com/contact</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Book Service -->
+  <url>
+    <loc>https://www.ggharvesters.com/book-service</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://www.ggharvesters.com/faq</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://www.ggharvesters.com/blog</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog posts -->
+  <url>
+    <loc>https://www.ggharvesters.com/blog/when-to-book-paddy-harvester</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ggharvesters.com/blog/rotavator-benefits-land-preparation</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ggharvesters.com/blog/jcb-mini-excavator-uses</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ggharvesters.com/blog/round-baler-explained</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://www.ggharvesters.com/privacy-policy</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ggharvesters.com/terms</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

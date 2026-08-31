@@ -1,0 +1,431 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-primary: #1a5c2e;
+  --color-primary-light: #e8f5ec;
+  --color-accent: #d4a017;
+  --color-accent-light: #fdf8e8;
+  --color-green-900: #1a5c2e;
+  --color-green-700: #2d8a4e;
+  --color-green-100: #e8f5ec;
+  --color-gold: #d4a017;
+  --color-gold-light: #f0cc5a;
+
+  /* Keep existing amber/yellow for utility */
+  --color-amber-500: #d4a017;
+  --color-amber-400: #e5b22b;
+  --color-yellow-300: #f0cc5a;
+
+  --font-sans: 'Inter', 'Noto Sans Tamil', system-ui, sans-serif;
+
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 3s infinite;
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(26, 92, 46, 0.4); }
+    50% { box-shadow: 0 0 20px 10px rgba(26, 92, 46, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(26, 92, 46, 0); }
+  }
+}
+
+/* ============================================================
+   Base Reset
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #f7fdf9;
+  color: #1a2e1a;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #d4a017;
+  color: #fff;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   Tamil Text Formatting
+   ============================================================ */
+
+.tamil {
+  font-family: "Noto Sans Tamil", sans-serif;
+  line-height: 1.85;
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+
+.container-site {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container-site { padding-left: 3rem; padding-right: 3rem; }
+}
+
+.section-py {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1a5c2e;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+.btn-primary:hover { background-color: #145224; }
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #d4a017;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+.btn-gold:hover { background-color: #b8870f; }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid #1a5c2e;
+  color: #1a5c2e;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  background-color: transparent;
+}
+.btn-outline:hover { background-color: #e8f5ec; }
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid rgba(255,255,255,0.8);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  background-color: transparent;
+}
+.btn-outline-white:hover { background-color: rgba(255,255,255,0.1); }
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #25d366;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+.btn-whatsapp:hover { background-color: #1ebe5d; }
+
+.btn-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #1a5c2e;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+.btn-call:hover { background-color: #145224; }
+
+/* ============================================================
+   Cards
+   ============================================================ */
+
+.card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(26,92,46,0.12);
+  border-color: #c8e6d0;
+}
+
+/* ============================================================
+   Badges
+   ============================================================ */
+
+.badge-green {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: #e8f5ec;
+  color: #1a5c2e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   Typography
+   ============================================================ */
+
+.section-title {
+  font-family: "Noto Sans Tamil", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: #1a2e1a;
+  line-height: 1.25;
+}
+
+.section-subtitle {
+  font-family: "Noto Sans Tamil", sans-serif;
+  font-size: 1rem;
+  color: #4b5563;
+  max-width: 42rem;
+  line-height: 1.75;
+}
+
+/* ============================================================
+   Dividers
+   ============================================================ */
+
+.gold-divider-left {
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #d4a017, #f0cc5a);
+  border-radius: 4px;
+  margin-top: 1.5rem;
+}
+
+.gold-divider-center {
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #d4a017, #f0cc5a);
+  border-radius: 4px;
+  margin: 1.5rem auto 0;
+}
+
+/* ============================================================
+   Navigation
+   ============================================================ */
+
+.sticky-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: #ffffff;
+  border-top: 1px solid #f0f0f0;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 4rem;
+}
+
+.sticky-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  flex: 1;
+  height: 100%;
+  color: #9ca3af;
+  font-size: 0.6rem;
+  font-weight: 600;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.sticky-nav-item:hover { color: #1a5c2e; }
+.sticky-nav-item.active { color: #1a5c2e; }
+
+/* ============================================================
+   Floating CTA
+   ============================================================ */
+
+.floating-cta {
+  position: fixed;
+  bottom: 5rem;
+  right: 1rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .floating-cta { bottom: 1.5rem; }
+}
+
+.floating-btn {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+}
+
+/* ============================================================
+   Gallery & Lightbox
+   ============================================================ */
+
+.gallery-item {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+
+.hero-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.3) 50%,
+    rgba(0,0,0,0.15) 100%
+  );
+}
+
+/* ============================================================
+   Brand gradient (green sections)
+   ============================================================ */
+
+.gradient-brand {
+  background: linear-gradient(135deg, #1a5c2e 0%, #0f3d1e 100%);
+}
+
+/* ============================================================
+   Trust strip
+   ============================================================ */
+
+.trust-strip {
+  background-color: #1a5c2e;
+}
+
+/* ============================================================
+   How it works step circles
+   ============================================================ */
+
+.step-circle {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background-color: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.35);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+
+.mobile-pb {
+  padding-bottom: 4rem;
+}
+
+.img-placeholder {
+  background: linear-gradient(135deg, #e8f5ec, #fdf8e8);
+}
+
+/* ============================================================
+   Print
+   ============================================================ */
+
+@media print {
+  .floating-cta, .sticky-bottom-nav, header { display: none !important; }
+}
