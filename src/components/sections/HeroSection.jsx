@@ -86,18 +86,18 @@ export default function HeroSection() {
 
         {/* Tamil tagline — single line with frosted bg */}
         <div
-          className="rounded-2xl"
+          className="rounded-2xl w-full max-w-sm"
           style={{
-            background: 'rgba(0,0,0,0.38)',
+            background: 'rgba(0,0,0,0.55)',
             border: '1px solid rgba(255,255,255,0.12)',
             backdropFilter: 'blur(10px)',
-            padding: '0.75rem 1.25rem',
-            marginBottom: '3rem',
+            padding: '0.65rem 0.5rem',
+            marginBottom: '2.5rem',
           }}
         >
           <p
             className="tamil text-white font-bold leading-snug"
-            style={{ fontSize: 'clamp(0.82rem, 4vw, 1.1rem)' }}
+            style={{ fontSize: 'clamp(0.7rem, 3.2vw, 1rem)' }}
           >
             விவசாயம் மற்றும் நிலப் பணிகளுக்கு<br className="md:hidden" />
             <span className="hidden md:inline"> </span>
