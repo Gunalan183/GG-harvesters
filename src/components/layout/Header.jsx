@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, MessageCircle, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { BUSINESS, NAV_LINKS, SERVICES } from '../../data/siteData';
-import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
+import { callLink } from '../../utils/whatsapp';
 import clsx from 'clsx';
 
 export default function Header() {
@@ -70,7 +70,7 @@ export default function Header() {
             width={110}
             height={44}
           />
-          <div className="hidden sm:block leading-tight">
+          <div className="hidden md:block leading-tight">
             <p className="font-extrabold text-sm tracking-tight text-[#1a5c2e]">
               GG HARVESTER
             </p>
@@ -81,7 +81,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav links */}
-        <div className="hidden lg:flex items-center gap-0.5">
+        <div className="hidden lg:flex items-center gap-0.5 flex-1 justify-center">
           {NAV_LINKS.map((link) => {
             if (link.path === '/services') {
               return (
@@ -144,50 +144,8 @@ export default function Header() {
           })}
         </div>
 
-        {/* Desktop CTAs */}
-        <div className="hidden lg:flex items-center gap-2.5">
-          <a
-            href={callLink(BUSINESS.phones[0])}
-            className="btn-call text-[0.82rem] py-2.5 px-4"
-          >
-            <Phone size={14} />
-            {BUSINESS.phones[0]}
-          </a>
-          <a
-            href={whatsappLink(WHATSAPP_MESSAGES.general)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-whatsapp text-[0.82rem] py-2.5 px-4"
-          >
-            <MessageCircle size={14} />
-            WhatsApp
-          </a>
-          <Link
-            to="/book-service"
-            className="inline-flex items-center gap-2 bg-[#d4a017] text-white font-bold rounded-xl text-[0.82rem] py-2.5 px-4 hover:bg-[#b8870f] transition-colors"
-          >
-            சேவை பதிவு
-          </Link>
-        </div>
-
-        {/* Mobile right buttons */}
-        <div className="flex lg:hidden items-center gap-2">
-          <a
-            href={callLink(BUSINESS.phones[0])}
-            className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1a5c2e] text-white"
-            aria-label="Call"
-          >
-            <Phone size={16} />
-          </a>
-          <a
-            href={whatsappLink(WHATSAPP_MESSAGES.general)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 flex items-center justify-center rounded-full bg-[#25d366] text-white"
-            aria-label="WhatsApp"
-          >
-            <MessageCircle size={16} />
-          </a>
+        {/* Mobile right buttons — only hamburger */}
+        <div className="flex lg:hidden items-center">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="w-9 h-9 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 transition-colors"
