@@ -92,7 +92,7 @@ export default function HeroSection() {
             border: '1px solid rgba(255,255,255,0.12)',
             backdropFilter: 'blur(10px)',
             padding: '0.65rem 0.5rem',
-            marginBottom: '2.5rem',
+            marginBottom: '4rem',
           }}
         >
           <p
