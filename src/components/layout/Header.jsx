@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { BUSINESS, NAV_LINKS, SERVICES } from '../../data/siteData';
@@ -30,23 +31,24 @@ export default function Header() {
       )}
       role="banner"
     >
-      {/* Top info bar */}
-      <div className="hidden md:block bg-[#1a5c2e]">
-        <div className="container-site flex items-center justify-between py-1.5">
-          <p className="tamil text-white/90 text-xs tracking-wide">
-            229 Main Road, Pambapadiyur, Kumbakonam Taluk, Thanjavur – 612703
-          </p>
-          <div className="flex items-center gap-5">
-            {BUSINESS.phones.map((p) => (
-              <a
-                key={p}
-                href={callLink(p)}
-                className="flex items-center gap-1.5 text-white/90 hover:text-[#f0cc5a] text-xs font-medium transition-colors"
-              >
-                <Phone size={11} />
-                {p}
-              </a>
-            ))}
+      {/* Brand + location bar — below navbar, light green */}
+      <div className="bg-[#f0faf4] border-b border-[#c8e6d0]">
+        <div className="flex flex-col items-center justify-center py-3" style={{ gap: '0.2rem' }}>
+          {/* Location */}
+          <div className="flex items-center gap-1.5">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1a5c2e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p className="text-[#1a5c2e] text-[0.65rem] font-semibold tracking-widest uppercase">
+              Kumbakonam &nbsp;·&nbsp; Thanjavur &nbsp;·&nbsp; Tamil Nadu
+            </p>
+          </div>
+          {/* Brand name */}
+          <div className="flex items-baseline gap-1.5">
+            <span className="font-extrabold text-[#1a5c2e] tracking-tight" style={{ fontSize: '1.1rem', letterSpacing: '-0.02em' }}>
+              GG HARVESTER
+            </span>
+            <span className="text-gray-400 font-medium tracking-widest uppercase" style={{ fontSize: '0.6rem' }}>
+              &amp; Earth Movers
+            </span>
           </div>
         </div>
       </div>

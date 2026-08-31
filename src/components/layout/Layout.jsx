@@ -15,7 +15,7 @@ export default function Layout({ children, serviceSlug }) {
       <Header />
       <main
         id="main-content"
-        className="flex-1 pt-[68px] mobile-pb"
+        className="flex-1 pt-[120px] mobile-pb"
         tabIndex={-1}
       >
         {children}
