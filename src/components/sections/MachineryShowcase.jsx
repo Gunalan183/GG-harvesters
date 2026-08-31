@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
 import { getServiceWhatsApp } from '../../utils/whatsapp';
 
@@ -29,14 +28,6 @@ const MACHINES = [
     service: 'tractor-rotavator',
   },
   {
-    name: 'JCB 3CX Backhoe Loader',
-    nameTamil: 'JCB 3CX Backhoe Loader',
-    desc: 'கட்டுமான மற்றும் மண் பணிகளுக்கு பல்நோக்கு இயந்திரம்.',
-    image: '/images/machinery/gg-jcb-3cx-backhoe-loader-kumbakonam.jpg',
-    alt: 'GG JCB 3CX backhoe loader for construction and earthwork',
-    service: 'jcb-3cx',
-  },
-  {
     name: 'JCB Mini Excavator',
     nameTamil: 'JCB Mini Excavator',
     desc: 'சிறிய இடங்களில் தோண்டுதல் மற்றும் கால்வாய் பணிகள்.',
@@ -56,7 +47,7 @@ const MACHINES = [
 
 export default function MachineryShowcase() {
   return (
-    <section className="section-py bg-[#f0faf4]" aria-labelledby="machinery-heading">
+    <section id="machinery" className="section-py bg-[#f0faf4]" aria-labelledby="machinery-heading">
       <div className="container-site">
         <SectionHeader
           badge="இயந்திரங்கள்"
@@ -99,34 +90,18 @@ export default function MachineryShowcase() {
               <div className="p-4">
                 <h3 className="tamil font-bold text-[#1a2e1a] mb-2">{machine.nameTamil}</h3>
                 <p className="tamil text-[#4b5563] text-sm mb-5 leading-relaxed">{machine.desc}</p>
-                <div className="flex gap-2">
-                  <Link
-                    to={`/services/${machine.service}`}
-                    className="flex-1 btn-outline text-sm py-2 justify-center"
-                  >
-                    விவரங்கள்
-                    <ArrowRight size={13} />
-                  </Link>
-                  <a
-                    href={getServiceWhatsApp(machine.service)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 btn-whatsapp text-sm py-2 justify-center"
-                  >
-                    <MessageCircle size={13} />
-                    சேவை பதிவு
-                  </a>
-                </div>
+                <a
+                  href={getServiceWhatsApp(machine.service)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full btn-whatsapp text-sm py-2 justify-center"
+                >
+                  <MessageCircle size={13} />
+                  சேவை பதிவு
+                </a>
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="flex justify-center mt-10">
-          <Link to="/machinery" className="btn-outline text-base">
-            அனைத்து இயந்திரங்களும் காண்க
-            <ArrowRight size={18} />
-          </Link>
         </div>
       </div>
     </section>

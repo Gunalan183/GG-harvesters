@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { Phone, MessageCircle, ArrowRight, MapPin, ChevronDown } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, ChevronDown } from 'lucide-react';
 import { BUSINESS } from '../../data/siteData';
 import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
 import mobileBg from '../../assets/images/Hero-section_BG.png';
@@ -46,7 +45,7 @@ export default function HeroSection() {
       {/* Content */}
       <div
         className="relative z-10 flex flex-col items-center text-center w-full px-6"
-        style={{ paddingTop: '7rem', paddingBottom: '5rem' }}
+        style={{ paddingTop: '2rem', paddingBottom: '5rem' }}
       >
 
         {/* Location badge */}
@@ -57,7 +56,7 @@ export default function HeroSection() {
             border: '1px solid rgba(212,160,23,0.5)',
             backdropFilter: 'blur(10px)',
             padding: '0.5rem 1rem',
-            marginBottom: '2rem',
+            marginBottom: '1rem',
           }}
         >
           <MapPin size={11} className="text-[#f0cc5a] flex-shrink-0" />
@@ -66,37 +65,11 @@ export default function HeroSection() {
 
         {/* Brand name */}
         <div style={{ marginBottom: '1.5rem' }}>
-          <h1
-            className="font-extrabold tracking-tight leading-none"
-            style={{
-              fontSize: 'clamp(2.8rem, 13vw, 5.5rem)',
-              letterSpacing: '-0.02em',
-              color: '#ffffff',
-              textShadow: '0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.8)',
-            }}
-          >
-            GG{' '}
-            <span
-              style={{
-                color: '#f0cc5a',
-                textShadow: '0 2px 12px rgba(0,0,0,0.5)',
-              }}
-            >
-              HARVESTER
-            </span>
+          <h1 className="brand-title">
+            <span className="brand-gg">GG </span>
+            <span className="brand-harvester">HARVESTER</span>
           </h1>
-          <p
-            className="font-semibold tracking-[0.3em] uppercase"
-            style={{
-              fontSize: 'clamp(0.65rem, 3vw, 0.85rem)',
-              marginTop: '0.6rem',
-              color: '#ffffff',
-              textShadow: '0 1px 6px rgba(0,0,0,0.7)',
-              letterSpacing: '0.3em',
-            }}
-          >
-            &amp; Earth Movers
-          </p>
+          <p className="brand-earth">&amp; Earth Movers</p>
         </div>
 
         {/* Gold divider */}
@@ -131,77 +104,72 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* 2×2 CTA grid */}
+        {/* Contact bar */}
         <div
-          className="grid grid-cols-2 w-full"
-          style={{ gap: '0.75rem', maxWidth: '320px', marginBottom: '2.5rem' }}
+          className="flex flex-col items-center w-full"
+          style={{ gap: '0.6rem', maxWidth: '300px', marginBottom: '2.5rem' }}
         >
-          {/* Book service */}
-          <Link
-            to="/book-service"
-            className="inline-flex flex-col items-center justify-center gap-2 font-bold rounded-2xl text-center active:scale-95 transition-transform"
-            style={{
-              background: 'linear-gradient(135deg, #d4a017, #f0cc5a)',
-              color: '#1a2e1a',
-              boxShadow: '0 4px 20px rgba(212,160,23,0.45)',
-              fontSize: 'clamp(0.78rem, 3.8vw, 0.9rem)',
-              padding: '1rem 0.75rem',
-            }}
-          >
-            <ArrowRight size={22} />
-            சேவை பதிவு செய்யுங்கள்
-          </Link>
-
-          {/* WhatsApp */}
+          {/* WhatsApp button */}
           <a
             href={whatsappLink(WHATSAPP_MESSAGES.general)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex flex-col items-center justify-center gap-2 font-bold rounded-2xl text-center text-white active:scale-95 transition-transform"
+            className="inline-flex items-center justify-center gap-2 font-bold w-full active:scale-95 transition-transform"
             style={{
               background: '#25d366',
-              boxShadow: '0 4px 20px rgba(37,211,102,0.35)',
-              fontSize: 'clamp(0.78rem, 3.8vw, 0.9rem)',
-              padding: '1rem 0.75rem',
+              color: '#fff',
+              borderRadius: '999px',
+              boxShadow: '0 4px 18px rgba(37,211,102,0.45)',
+              fontSize: '0.85rem',
+              padding: '0.7rem 1.5rem',
             }}
           >
-            <MessageCircle size={22} />
+            <MessageCircle size={18} />
             WhatsApp தொடர்பு
           </a>
 
-          {/* Phone 1 */}
-          <a
-            href={callLink(BUSINESS.phones[0])}
-            className="inline-flex flex-col items-center justify-center gap-2 font-bold rounded-2xl text-center text-white active:scale-95 transition-transform"
+          {/* Phone numbers row */}
+          <div
+            className="flex w-full"
             style={{
-              background: 'rgba(255,255,255,0.13)',
-              border: '1px solid rgba(255,255,255,0.25)',
-              backdropFilter: 'blur(8px)',
-              fontSize: 'clamp(0.78rem, 3.8vw, 0.9rem)',
-              padding: '1rem 0.75rem',
+              gap: '0.5rem',
             }}
-            aria-label={`Call ${BUSINESS.phones[0]}`}
           >
-            <Phone size={22} />
-            {BUSINESS.phones[0]}
-          </a>
-
-          {/* Phone 2 */}
-          <a
-            href={callLink(BUSINESS.phones[1])}
-            className="inline-flex flex-col items-center justify-center gap-2 font-bold rounded-2xl text-center text-white active:scale-95 transition-transform"
-            style={{
-              background: 'rgba(255,255,255,0.13)',
-              border: '1px solid rgba(255,255,255,0.25)',
-              backdropFilter: 'blur(8px)',
-              fontSize: 'clamp(0.78rem, 3.8vw, 0.9rem)',
-              padding: '1rem 0.75rem',
-            }}
-            aria-label={`Call ${BUSINESS.phones[1]}`}
-          >
-            <Phone size={22} />
-            {BUSINESS.phones[1]}
-          </a>
+            <a
+              href={callLink(BUSINESS.phones[0])}
+              className="inline-flex flex-1 items-center justify-center gap-2 font-bold active:scale-95 transition-transform"
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.3)',
+                backdropFilter: 'blur(10px)',
+                color: '#fff',
+                borderRadius: '999px',
+                fontSize: '0.8rem',
+                padding: '0.65rem 0.75rem',
+              }}
+              aria-label={`Call ${BUSINESS.phones[0]}`}
+            >
+              <Phone size={15} />
+              {BUSINESS.phones[0]}
+            </a>
+            <a
+              href={callLink(BUSINESS.phones[1])}
+              className="inline-flex flex-1 items-center justify-center gap-2 font-bold active:scale-95 transition-transform"
+              style={{
+                background: 'rgba(255,255,255,0.15)',
+                border: '1px solid rgba(255,255,255,0.3)',
+                backdropFilter: 'blur(10px)',
+                color: '#fff',
+                borderRadius: '999px',
+                fontSize: '0.8rem',
+                padding: '0.65rem 0.75rem',
+              }}
+              aria-label={`Call ${BUSINESS.phones[1]}`}
+            >
+              <Phone size={15} />
+              {BUSINESS.phones[1]}
+            </a>
+          </div>
         </div>
 
         {/* Scroll hint */}

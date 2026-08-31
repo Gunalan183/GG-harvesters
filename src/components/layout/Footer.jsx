@@ -1,20 +1,29 @@
-import { Link } from 'react-router-dom';
 import { Phone, MessageCircle, MapPin } from 'lucide-react';
 import { BUSINESS, SERVICES } from '../../data/siteData';
 import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
+
+const scrollTo = (href) => {
+  if (href === '#top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+  const el = document.querySelector(href);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0f3d1e] text-white" role="contentinfo">
+    <footer id="contact" className="bg-[#0f3d1e] text-white" role="contentinfo">
       {/* Main footer grid */}
       <div className="container-site py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link to="/" aria-label="GG Harvester Home">
+            <a
+              href="#top"
+              aria-label="GG Harvester Home"
+              onClick={(e) => { e.preventDefault(); scrollTo('#top'); }}
+            >
               <img
                 src="/GG_harvester_and_Earth_Movers_Logo_BG.png"
                 alt="GG Harvester and Earth Movers Logo"
@@ -23,7 +32,7 @@ export default function Footer() {
                 height={64}
                 loading="lazy"
               />
-            </Link>
+            </a>
             <p className="tamil text-gray-300 text-sm leading-relaxed mb-4">
               {BUSINESS.taglineTamil}
             </p>
@@ -32,7 +41,7 @@ export default function Footer() {
               services for farmers, landowners and other customers around Kumbakonam and Thanjavur.
             </p>
 
-            {/* Social / Contact icons */}
+            {/* Contact icons */}
             <div className="flex gap-3 mt-5">
               <a
                 href={callLink(BUSINESS.phones[0])}
@@ -53,47 +62,46 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services — 3×3 grid */}
+          {/* Services grid */}
           <div>
             <h3 className="tamil font-bold text-base text-[#f0cc5a]" style={{ marginBottom: '1rem' }}>சேவைகள்</h3>
             <div className="grid grid-cols-3 gap-2">
               {SERVICES.map((s) => (
-                <Link
+                <a
                   key={s.id}
-                  to={`/services/${s.slug}`}
+                  href="#services"
+                  onClick={(e) => { e.preventDefault(); scrollTo('#services'); }}
                   className="flex flex-col items-center text-center gap-1 rounded-xl p-2 hover:bg-white/10 transition-colors"
                 >
                   <span className="text-xl leading-none">{s.icon}</span>
                   <span className="tamil text-gray-300 text-[0.65rem] leading-tight hover:text-white transition-colors">
                     {s.nameTamil}
                   </span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
 
-          {/* Quick links — 3×3 grid */}
+          {/* Quick links */}
           <div>
             <h3 className="tamil font-bold text-base text-[#f0cc5a]" style={{ marginBottom: '1rem' }}>விரைவு இணைப்புகள்</h3>
             <div className="grid grid-cols-3 gap-2">
               {[
-                { label: 'முகப்பு',        path: '/' },
-                { label: 'எங்களைப் பற்றி', path: '/about' },
-                { label: 'இயந்திரங்கள்',   path: '/machinery' },
-                { label: 'எங்கள் பணிகள்',  path: '/gallery' },
-                { label: 'வீடியோக்கள்',   path: '/videos' },
-                { label: 'சேவை பகுதிகள்', path: '/service-areas' },
-                { label: 'கேள்வி-பதில்',   path: '/faq' },
-                { label: 'வலைப்பதிவு',    path: '/blog' },
-                { label: 'சேவை பதிவு',    path: '/book-service' },
+                { label: 'முகப்பு',        href: '#top' },
+                { label: 'சேவைகள்',       href: '#services' },
+                { label: 'இயந்திரங்கள்',  href: '#machinery' },
+                { label: 'எங்கள் பணிகள்', href: '#gallery' },
+                { label: 'வீடியோக்கள்',  href: '#videos' },
+                { label: 'தொடர்புக்கு',  href: '#contact' },
               ].map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
                   className="tamil text-gray-300 text-[0.65rem] leading-tight text-center rounded-xl p-2 hover:bg-white/10 hover:text-white transition-colors"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -139,12 +147,14 @@ export default function Footer() {
                 </span>
               </a>
 
-              <Link
-                to="/book-service"
+              <a
+                href={whatsappLink(WHATSAPP_MESSAGES.booking)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center w-full bg-[#d4a017] text-white font-bold rounded-xl text-sm py-3 hover:bg-[#b8870f] transition-colors tamil mt-4"
               >
                 சேவை பதிவு செய்யுங்கள்
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -157,15 +167,13 @@ export default function Footer() {
             © {year} GG Harvester and Earth Movers. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link to="/privacy-policy" className="text-gray-400 text-xs hover:text-white transition-colors tamil">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-gray-400 text-xs hover:text-white transition-colors tamil">
-              Terms &amp; Conditions
-            </Link>
-            <Link to="/contact" className="text-gray-400 text-xs hover:text-white transition-colors tamil">
-              Contact
-            </Link>
+            <a
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); scrollTo('#contact'); }}
+              className="text-gray-400 text-xs hover:text-white transition-colors tamil"
+            >
+              தொடர்புக்கு
+            </a>
           </div>
         </div>
       </div>

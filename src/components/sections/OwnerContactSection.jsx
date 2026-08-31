@@ -5,6 +5,7 @@ import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp'
 export default function OwnerContactSection() {
   return (
     <section
+      id="owner-contact"
       className="relative overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #1a5c2e 0%, #0f3d1e 100%)', borderRadius: '0 0 2rem 2rem' }}
       aria-label="Contact the owner"

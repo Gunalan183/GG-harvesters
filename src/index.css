@@ -427,6 +427,67 @@ img, video {
 }
 
 /* ============================================================
+   Premium Dark Brand — GG HARVESTER
+   ============================================================ */
+
+.brand-title {
+  font-family: 'Cinzel', 'Noto Sans Tamil', serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-size: clamp(2.6rem, 12vw, 5rem);
+}
+
+.brand-gg {
+  color: #1a2e1a;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+
+.brand-harvester {
+  color: #1a2e1a;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.25));
+}
+
+.brand-earth {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.6rem, 2.8vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: #1b5e20;
+  margin-top: 0.65rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.brand-header-name {
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #0f2918 0%, #1a5c2e 55%, #0a1f12 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-header-harvester {
+  background: linear-gradient(135deg, #c9920f 0%, #d4a017 50%, #a67c00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-header-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+/* ============================================================
    Print
    ============================================================ */
 

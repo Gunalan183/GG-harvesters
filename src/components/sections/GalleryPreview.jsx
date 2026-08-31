@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, X, ZoomIn } from 'lucide-react';
+import { X, ZoomIn } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
 
 const GALLERY_IMAGES = [
@@ -59,7 +58,7 @@ export default function GalleryPreview() {
     : GALLERY_IMAGES.filter((img) => img.category === activeFilter);
 
   return (
-    <section className="section-py bg-white" aria-labelledby="gallery-heading">
+    <section id="gallery" className="section-py bg-white" aria-labelledby="gallery-heading">
       <div className="container-site">
         <SectionHeader
           badge="எங்கள் பணிகள்"
@@ -123,12 +122,7 @@ export default function GalleryPreview() {
           ))}
         </div>
 
-        <div className="flex justify-center" style={{ marginTop: '3rem' }}>
-          <Link to="/gallery" className="btn-outline text-base">
-            அனைத்து படங்களையும் காண்க
-            <ArrowRight size={18} />
-          </Link>
-        </div>
+
       </div>
 
       {/* Lightbox */}

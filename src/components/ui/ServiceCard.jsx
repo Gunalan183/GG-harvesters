@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { getServiceWhatsApp } from '../../utils/whatsapp';
 
 export default function ServiceCard({ service }) {
@@ -45,20 +44,11 @@ export default function ServiceCard({ service }) {
         </p>
 
         <div className="flex gap-2 mt-auto">
-          <Link
-            to={`/services/${service.slug}`}
-            className="flex-1 btn-outline text-sm justify-center"
-            style={{ padding: '0.6rem 0.75rem' }}
-            aria-label={`${service.nameTamil} பற்றி மேலும் அறிய`}
-          >
-            மேலும் அறிய
-            <ArrowRight size={14} />
-          </Link>
           <a
             href={getServiceWhatsApp(service.slug)}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 btn-whatsapp text-sm justify-center"
+            className="w-full btn-whatsapp text-sm justify-center"
             style={{ padding: '0.6rem 0.75rem' }}
             aria-label={`WhatsApp for ${service.nameTamil}`}
           >

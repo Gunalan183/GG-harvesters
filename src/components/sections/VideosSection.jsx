@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Play, ArrowRight } from 'lucide-react';
+import { Play } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
 
 const VIDEOS = [
@@ -116,7 +115,7 @@ function VideoCard({ video }) {
 
 export default function VideosSection() {
   return (
-    <section className="section-py bg-[#f0faf4]" aria-labelledby="videos-heading">
+    <section id="videos" className="section-py bg-[#f0faf4]" aria-labelledby="videos-heading">
       <div className="container-site">
         <SectionHeader
           badge="வீடியோக்கள்"
@@ -133,13 +132,6 @@ export default function VideosSection() {
           {VIDEOS.map((video) => (
             <VideoCard key={video.id} video={video} />
           ))}
-        </div>
-
-        <div className="flex justify-center mt-10">
-          <Link to="/videos" className="btn-outline text-base">
-            அனைத்து வீடியோக்களும் காண்க
-            <ArrowRight size={18} />
-          </Link>
         </div>
       </div>
     </section>

@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import ServiceCard from '../ui/ServiceCard';
 import SectionHeader from '../ui/SectionHeader';
 import { SERVICES } from '../../data/siteData';
 
 export default function ServicesSection() {
   return (
-    <section className="section-py bg-[#f0faf4]" aria-labelledby="services-heading">
+    <section id="services" className="section-py bg-[#f0faf4]" aria-labelledby="services-heading">
       <div className="container-site">
         <SectionHeader
           badge="எங்கள் சேவைகள்"
@@ -23,13 +21,6 @@ export default function ServicesSection() {
           {SERVICES.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
-        </div>
-
-        <div className="flex justify-center" style={{ marginTop: '3rem' }}>
-          <Link to="/services" className="btn-outline text-base">
-            அனைத்து சேவைகளையும் காண்க
-            <ArrowRight size={18} />
-          </Link>
         </div>
       </div>
     </section>
