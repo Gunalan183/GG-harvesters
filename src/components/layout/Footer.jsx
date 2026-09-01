@@ -73,7 +73,6 @@ export default function Footer() {
                   onClick={(e) => { e.preventDefault(); scrollTo('#services'); }}
                   className="flex flex-col items-center text-center gap-1 rounded-xl p-2 hover:bg-white/10 transition-colors"
                 >
-                  <span className="text-xl leading-none">{s.icon}</span>
                   <span className="tamil text-gray-300 text-[0.65rem] leading-tight hover:text-white transition-colors">
                     {s.nameTamil}
                   </span>

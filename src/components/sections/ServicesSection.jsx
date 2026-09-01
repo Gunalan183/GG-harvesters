@@ -142,9 +142,6 @@ function ServiceCard({ service, onDetail }) {
             style={{ fontSize: 'clamp(0.95rem, 3vw, 1.05rem)', marginBottom: '0.4rem' }}>
             {service.nameTamil}
           </h3>
-          <p className="tamil text-white/70 text-xs leading-relaxed line-clamp-2">
-            {service.shortDesc}
-          </p>
         </div>
       </div>
 

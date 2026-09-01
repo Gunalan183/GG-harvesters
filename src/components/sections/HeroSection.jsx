@@ -27,8 +27,8 @@ export default function HeroSection() {
         />
         {/* Desktop BG — shown only at md and above */}
         <img
-          src="/og-image.jpg"
-          alt="GG Harvester paddy harvesting machine working in a rice field near Kumbakonam"
+          src="/images/gallery/gg-paddy-harvester-transport-lorry.jpg"
+          alt="GG paddy harvester transport lorry Kumbakonam"
           className="hidden md:block w-full h-full object-cover object-center"
           fetchpriority="high"
           width={1600}
