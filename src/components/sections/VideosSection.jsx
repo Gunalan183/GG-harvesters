@@ -34,7 +34,7 @@ const VIDEOS = [
     id: 'tractor-rotavator',
     title: 'GG Tractor Rotavator | டிராக்டர் ரோட்டவேட்டர் சேவை',
     titleTamil: 'டிராக்டர் + ரோட்டவேட்டர்',
-    thumbnail: '/images/gallery/gg-tractor-rotavator-service-kumbakonam.jpg',
+    thumbnail: '/images/gallery/gg-tractor-agricultural-work-kumbakonam.jpg',
     thumbnailAlt: 'GG tractor rotavator service',
     videoSrc: null,
     youtubeSrc: null,

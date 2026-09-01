@@ -586,3 +586,31 @@ body:not([style*="overflow: hidden"]) .sticky-bottom-nav { }
 body[style*="overflow: hidden"] .sticky-bottom-nav {
   display: none !important;
 }
+
+/* ── Machinery Infinite Scroll ── */
+.machinery-track {
+  display: flex;
+  width: max-content;
+  animation: machineryScroll 30s linear infinite;
+}
+
+.machinery-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes machineryScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Why Choose Section Card Animations ── */
+.why-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, translate 0.3s ease;
+}
+
+.why-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
