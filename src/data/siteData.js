@@ -3,7 +3,7 @@
 // ============================================
 
 export const BUSINESS = {
-  name: 'GG Harvester and Earth Movers',
+  name: 'GG Harvesters and Earth Movers',
   nameTamil: 'GG ஹார்வெஸ்டர் மற்றும் எர்த் மூவர்ஸ்',
   taglineTamil: 'விவசாயம் மற்றும் நிலப் பணிகளுக்கான இயந்திர சேவைகள்',
   taglineEnglish: 'Agricultural & Earth Moving Machinery Services',

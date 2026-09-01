@@ -26,7 +26,7 @@ export default function Footer() {
             >
               <img
                 src="/GG_harvester_and_Earth_Movers_Logo_BG.png"
-                alt="GG Harvester and Earth Movers Logo"
+                alt="GG Harvesters and Earth Movers Logo"
                 className="h-16 w-auto object-contain mb-4"
                 width={160}
                 height={64}
@@ -164,7 +164,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-site py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-400 text-xs text-center sm:text-left">
-            © {year} GG Harvester and Earth Movers. All rights reserved.
+            © {year} GG Harvesters and Earth Movers. All rights reserved.
           </p>
           <div className="flex gap-4">
             <a

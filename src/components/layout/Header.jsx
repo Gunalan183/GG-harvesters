@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { BUSINESS } from '../../data/siteData';
+import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
 import clsx from 'clsx';
 
 const NAV_ITEMS = [
@@ -62,10 +63,10 @@ export default function Header() {
             width={110}
             height={44}
           />
-          <div className="hidden md:block leading-tight">
+          <div className="leading-tight">
             <p className="brand-header-name">
               <span>GG </span>
-              <span className="brand-header-harvester">HARVESTER</span>
+              <span className="brand-header-harvester">HARVESTERS</span>
             </p>
             <p className="brand-header-sub">&amp; Earth Movers</p>
           </div>
@@ -85,8 +86,24 @@ export default function Header() {
           ))}
         </div>
 
-        {/* Mobile hamburger */}
-        <div className="flex lg:hidden items-center">
+        {/* Mobile: call + whatsapp + hamburger */}
+        <div className="flex lg:hidden items-center gap-2">
+          <a
+            href={callLink(BUSINESS.phones[0])}
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-[#e8f5ec] text-[#1a5c2e] hover:bg-[#1a5c2e] hover:text-white transition-colors"
+            aria-label={`Call ${BUSINESS.phones[0]}`}
+          >
+            <Phone size={17} />
+          </a>
+          <a
+            href={whatsappLink(WHATSAPP_MESSAGES.general)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-[#e8f5ec] text-[#25d366] hover:bg-[#25d366] hover:text-white transition-colors"
+            aria-label="WhatsApp"
+          >
+            <MessageCircle size={17} />
+          </a>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="w-9 h-9 flex items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 transition-colors"

@@ -67,7 +67,7 @@ export default function HeroSection() {
         <div style={{ marginBottom: '1.5rem' }}>
           <h1 className="brand-title">
             <span className="brand-gg">GG </span>
-            <span className="brand-harvester">HARVESTER</span>
+            <span className="brand-harvester">HARVESTERS</span>
           </h1>
           <p className="brand-earth">&amp; Earth Movers</p>
         </div>
@@ -96,8 +96,8 @@ export default function HeroSection() {
           }}
         >
           <p
-            className="tamil text-white font-bold leading-snug"
-            style={{ fontSize: 'clamp(0.7rem, 3.2vw, 1rem)' }}
+            className="tamil font-bold leading-snug"
+            style={{ fontSize: 'clamp(0.7rem, 3.2vw, 1rem)', color: '#fefefe' }}
           >
             விவசாயம் மற்றும் நிலப் பணிகளுக்கு<br className="md:hidden" />
             <span className="hidden md:inline"> </span>
