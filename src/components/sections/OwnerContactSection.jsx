@@ -5,65 +5,103 @@ import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp'
 export default function OwnerContactSection() {
   return (
     <section
-      id="owner-contact"
+      id="contact"
       className="relative overflow-hidden"
-      style={{ background: '#0f3d1e', borderRadius: '0 0 2rem 2rem' }}
+      style={{ background: 'linear-gradient(135deg, #0a2d16 0%, #0f3d1e 60%, #1a5c2e 100%)', borderRadius: '0 0 2rem 2rem' }}
       aria-label="Contact the owner"
     >
-      <div className="container-site relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 items-center" style={{ minHeight: '200px' }}>
+      {/* Decorative circles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div style={{
+          position: 'absolute', top: '-4rem', right: '-4rem',
+          width: '18rem', height: '18rem', borderRadius: '50%',
+          background: 'rgba(212,160,23,0.07)',
+        }} />
+        <div style={{
+          position: 'absolute', bottom: '-3rem', left: '-3rem',
+          width: '14rem', height: '14rem', borderRadius: '50%',
+          background: 'rgba(255,255,255,0.04)',
+        }} />
+      </div>
 
-          {/* ── Left: Headline + phones + WhatsApp ── */}
-          <div className="md:col-span-5 py-10 pr-0 md:pr-6">
-            <h2
-              className="tamil text-white font-extrabold leading-tight"
-              style={{ fontSize: 'clamp(1.3rem, 4vw, 1.75rem)', marginBottom: '0.75rem' }}
-            >
-              இயந்திர சேவை தேவையா?
-            </h2>
-            <p
-              className="tamil text-white/80 leading-relaxed"
-              style={{ fontSize: 'clamp(0.8rem, 2.5vw, 0.95rem)', marginBottom: '1.5rem' }}
-            >
-              உங்கள் விவசாயம் மற்றும் நிலப் பணிகளுக்கு தேவையான
-              இயந்திர சேவைகளுக்கு இப்போதே எங்களை தொடர்பு கொள்ளுங்கள்.
-            </p>
+      <div className="container-site relative z-10" style={{ padding: '3.5rem 1rem 0 1rem' }}>
 
-            {/* Phone numbers */}
-            <div className="flex flex-col" style={{ gap: '0.6rem', marginBottom: '1.25rem' }}>
-              {BUSINESS.phones.map((phone) => (
-                <a
-                  key={phone}
-                  href={callLink(phone)}
-                  className="inline-flex items-center gap-3 text-white font-bold transition-colors hover:text-[#f0cc5a]"
-                  style={{ fontSize: 'clamp(1rem, 3.5vw, 1.2rem)' }}
-                  aria-label={`Call ${phone}`}
+        {/* Header */}
+        <div className="text-center" style={{ marginBottom: '2.5rem' }}>
+          <span
+            className="inline-block tamil text-xs font-bold tracking-widest uppercase rounded-full"
+            style={{
+              background: 'rgba(212,160,23,0.18)',
+              border: '1px solid rgba(212,160,23,0.45)',
+              color: '#f0cc5a',
+              padding: '0.3rem 1rem',
+              marginBottom: '0.85rem',
+            }}
+          >
+            தொடர்புக்கு
+          </span>
+          <h2
+            className="tamil text-white font-extrabold"
+            style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', lineHeight: 1.2, marginBottom: '0.65rem' }}
+          >
+            இயந்திர சேவை <span style={{ color: '#f0cc5a' }}>தேவையா?</span>
+          </h2>
+          <p
+            className="tamil text-white/65 mx-auto leading-relaxed"
+            style={{ fontSize: 'clamp(0.8rem, 2.5vw, 0.95rem)', maxWidth: '480px' }}
+          >
+            உங்கள் விவசாயம் மற்றும் நிலப் பணிகளுக்கு தேவையான இயந்திர சேவைகளுக்கு இப்போதே எங்களை தொடர்பு கொள்ளுங்கள்.
+          </p>
+        </div>
+
+        {/* Main grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+
+          {/* ── Phone cards ── */}
+          <div className="flex flex-col gap-3">
+            {BUSINESS.phones.map((phone, i) => (
+              <a
+                key={phone}
+                href={callLink(phone)}
+                className="flex items-center gap-3 rounded-2xl transition-all active:scale-95 hover:brightness-110"
+                style={{
+                  background: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.14)',
+                  backdropFilter: 'blur(10px)',
+                  padding: '1rem 1.25rem',
+                }}
+                aria-label={`Call ${phone}`}
+              >
+                <span
+                  className="flex items-center justify-center rounded-full flex-shrink-0"
+                  style={{
+                    width: '2.5rem', height: '2.5rem',
+                    background: 'linear-gradient(135deg, #d4a017, #f0cc5a)',
+                  }}
                 >
-                  <span
-                    className="flex items-center justify-center rounded-full flex-shrink-0"
-                    style={{
-                      width: '2rem',
-                      height: '2rem',
-                      background: 'rgba(255,255,255,0.15)',
-                    }}
-                  >
-                    <Phone size={14} />
-                  </span>
-                  {phone}
-                </a>
-              ))}
-            </div>
+                  <Phone size={15} className="text-[#1a2e1a]" />
+                </span>
+                <div>
+                  <p className="text-white/50 text-[0.65rem] font-semibold uppercase tracking-wider">
+                    {i === 0 ? 'முதன்மை தொலைபேசி' : 'மாற்று தொலைபேசி'}
+                  </p>
+                  <p className="text-white font-bold text-base">{phone}</p>
+                </div>
+              </a>
+            ))}
 
-            {/* WhatsApp button */}
+            {/* WhatsApp */}
             <a
               href={whatsappLink(WHATSAPP_MESSAGES.general)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-bold rounded-xl text-white transition-colors"
+              className="flex items-center justify-center gap-2 font-bold rounded-2xl tamil transition-all active:scale-95"
               style={{
                 background: '#25d366',
-                padding: '0.75rem 1.5rem',
-                fontSize: 'clamp(0.85rem, 3vw, 1rem)',
+                color: '#fff',
+                padding: '0.9rem 1.25rem',
+                fontSize: '0.9rem',
+                boxShadow: '0 4px 18px rgba(37,211,102,0.4)',
               }}
             >
               <MessageCircle size={18} />
@@ -71,79 +109,67 @@ export default function OwnerContactSection() {
             </a>
           </div>
 
-          {/* ── Middle: Address card ── */}
-          <div className="md:col-span-4 py-10 md:py-0">
-            <div
-              className="rounded-2xl"
-              style={{
-                background: 'rgba(255,255,255,0.10)',
-                border: '1px solid rgba(255,255,255,0.18)',
-                backdropFilter: 'blur(10px)',
-                padding: '1.5rem',
-              }}
-            >
-              {/* Address */}
-              <div className="flex items-start gap-3" style={{ marginBottom: '1.25rem' }}>
-                <span
-                  className="flex items-center justify-center rounded-full flex-shrink-0 mt-0.5"
-                  style={{
-                    width: '2.25rem',
-                    height: '2.25rem',
-                    background: 'rgba(255,255,255,0.15)',
-                  }}
-                >
-                  <MapPin size={15} className="text-[#f0cc5a]" />
-                </span>
-                <div>
-                  <p className="tamil text-white/60 text-xs font-semibold uppercase tracking-wider" style={{ marginBottom: '0.35rem' }}>
-                    எங்கள் முகவரி
-                  </p>
-                  <address className="tamil not-italic text-white font-medium leading-relaxed" style={{ fontSize: '0.9rem' }}>
-                    229 Main Road, Pambapadiyur,<br />
-                    Kumbakonam Taluk,<br />
-                    Thanjavur – 612703
-                  </address>
-                </div>
+          {/* ── Address + Hours ── */}
+          <div
+            className="rounded-2xl"
+            style={{
+              background: 'rgba(255,255,255,0.07)',
+              border: '1px solid rgba(255,255,255,0.13)',
+              backdropFilter: 'blur(10px)',
+              padding: '1.5rem',
+            }}
+          >
+            {/* Address */}
+            <div className="flex items-start gap-3" style={{ marginBottom: '1.5rem' }}>
+              <span
+                className="flex items-center justify-center rounded-full flex-shrink-0 mt-0.5"
+                style={{ width: '2.25rem', height: '2.25rem', background: 'rgba(212,160,23,0.2)' }}
+              >
+                <MapPin size={15} className="text-[#f0cc5a]" />
+              </span>
+              <div>
+                <p className="tamil text-white/50 text-[0.65rem] font-semibold uppercase tracking-wider"
+                  style={{ marginBottom: '0.4rem' }}>எங்கள் முகவரி</p>
+                <address className="tamil not-italic text-white font-medium leading-relaxed text-sm">
+                  229 Main Road, Pambapadiyur,<br />
+                  Kumbakonam Taluk,<br />
+                  Thanjavur – 612703
+                </address>
               </div>
+            </div>
 
-              {/* Working hours */}
-              <div className="flex items-start gap-3">
-                <span
-                  className="flex items-center justify-center rounded-full flex-shrink-0 mt-0.5"
-                  style={{
-                    width: '2.25rem',
-                    height: '2.25rem',
-                    background: 'rgba(255,255,255,0.15)',
-                  }}
-                >
-                  <Clock size={15} className="text-[#f0cc5a]" />
-                </span>
-                <div>
-                  <p className="tamil text-white/60 text-xs font-semibold uppercase tracking-wider" style={{ marginBottom: '0.35rem' }}>
-                    பணி நேரம்
-                  </p>
-                  <p className="tamil text-white font-medium" style={{ fontSize: '0.9rem' }}>
-                    திங்கள் – ஞாயிறு<br />
-                    காலை 6.00 – மாலை 7.00
-                  </p>
-                </div>
+            {/* Divider */}
+            <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', marginBottom: '1.25rem' }} />
+
+            {/* Hours */}
+            <div className="flex items-start gap-3">
+              <span
+                className="flex items-center justify-center rounded-full flex-shrink-0 mt-0.5"
+                style={{ width: '2.25rem', height: '2.25rem', background: 'rgba(212,160,23,0.2)' }}
+              >
+                <Clock size={15} className="text-[#f0cc5a]" />
+              </span>
+              <div>
+                <p className="tamil text-white/50 text-[0.65rem] font-semibold uppercase tracking-wider"
+                  style={{ marginBottom: '0.4rem' }}>பணி நேரம்</p>
+                <p className="tamil text-white font-medium text-sm">
+                  திங்கள் – ஞாயிறு<br />
+                  <span style={{ color: '#f0cc5a' }}>காலை 6.00 – மாலை 7.00</span>
+                </p>
               </div>
             </div>
           </div>
 
-          {/* ── Right: Owner image — visible on all screens ── */}
-          <div
-            className="flex md:col-span-3 items-end justify-center self-stretch"
-            style={{ paddingTop: '1rem' }}
-          >
+          {/* ── Owner image ── */}
+          <div className="flex items-end justify-center" style={{ minHeight: '220px', marginBottom: '0' }}>
             <img
               src="/Owner_image.png"
-              alt="GG Harvester Owner"
-              className="object-contain object-bottom w-auto"
-              style={{ maxHeight: '240px' }}
+              alt="GG Harvesters Owner"
+              className="object-contain object-bottom w-auto drop-shadow-xl"
+              style={{ maxHeight: '280px', display: 'block' }}
               loading="lazy"
-              width={280}
-              height={240}
+              width={260}
+              height={280}
             />
           </div>
 
