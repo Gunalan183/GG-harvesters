@@ -44,7 +44,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div
-        className="relative z-10 flex flex-col items-center text-center w-full px-6 pt-16 md:pt-20"
+        className="relative z-10 flex flex-col items-center text-center w-full px-6 pt-12 md:pt-20"
         style={{ paddingBottom: '5rem' }}
       >
 
@@ -92,7 +92,7 @@ export default function HeroSection() {
             border: 'none',
             backdropFilter: 'blur(10px)',
             padding: '0.65rem 0.5rem',
-            marginBottom: '12rem',
+            marginBottom: '16rem',
           }}
         >
           <p
