@@ -6,7 +6,7 @@ import mobileBg from '../../assets/images/Hero-section_BG.png';
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden"
       style={{ borderRadius: '0 0 2rem 2rem' }}
       aria-label="Hero"
     >
@@ -44,13 +44,13 @@ export default function HeroSection() {
 
       {/* Content */}
       <div
-        className="relative z-10 flex flex-col items-center text-center w-full px-6"
-        style={{ paddingTop: '2rem', paddingBottom: '5rem' }}
+        className="relative z-10 flex flex-col items-center text-center w-full px-6 pt-16 md:pt-20"
+        style={{ paddingBottom: '5rem' }}
       >
 
         {/* Tagline badge */}
         <div
-          className="inline-flex items-center gap-2 rounded-full text-[0.7rem] font-semibold tracking-widest uppercase"
+          className="inline-flex items-center gap-2 rounded-full text-[0.7rem] font-semibold tracking-widest uppercase whitespace-nowrap"
           style={{
             background: 'rgba(212,160,23,0.18)',
             border: '1px solid rgba(212,160,23,0.5)',
@@ -92,7 +92,7 @@ export default function HeroSection() {
             border: 'none',
             backdropFilter: 'blur(10px)',
             padding: '0.65rem 0.5rem',
-            marginBottom: '10rem',
+            marginBottom: '12rem',
           }}
         >
           <p
@@ -176,7 +176,7 @@ export default function HeroSection() {
         {/* Scroll hint */}
         <a
           href="#services"
-          className="flex flex-col items-center gap-1 text-white/40 hover:text-white/70 transition-colors"
+          className="flex flex-col items-center gap-1 text-white/70 hover:text-white transition-colors"
           aria-label="Scroll down"
         >
           <span className="tracking-widest uppercase" style={{ fontSize: '0.55rem' }}>Scroll</span>
