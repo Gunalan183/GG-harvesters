@@ -72,6 +72,22 @@ export default function HeroSection() {
           <p className="brand-earth">&amp; Earth Movers</p>
         </div>
 
+        {/* Service availability badge */}
+        <div
+          className="inline-flex items-center gap-2 rounded-full text-[0.68rem] font-semibold tracking-wide"
+          style={{
+            background: 'rgba(0,0,0,0.55)',
+            border: '1px solid rgba(0,0,0,0.3)',
+            backdropFilter: 'blur(10px)',
+            padding: '0.4rem 1rem',
+            marginBottom: '1.5rem',
+            color: '#fff',
+          }}
+        >
+          <span style={{ color: '#4caf50', fontSize: '0.55rem' }}>●</span>
+          Services Available In Tamil Nadu &amp; Karnataka
+        </div>
+
         {/* Gold divider */}
         <div
           className="rounded-full"
@@ -84,14 +100,14 @@ export default function HeroSection() {
           aria-hidden="true"
         />
 
-        {/* Tamil tagline — single line with frosted bg */}
+        {/* Tamil tagline */}
         <div
           className="rounded-2xl w-full max-w-sm"
           style={{
-            background: 'transparent',
-            border: 'none',
+            background: 'rgba(0,0,0,0.45)',
+            border: '1px solid rgba(255,255,255,0.15)',
             backdropFilter: 'blur(10px)',
-            padding: '0.65rem 0.5rem',
+            padding: '0.65rem 1.25rem',
             marginBottom: '16rem',
           }}
         >
@@ -99,8 +115,7 @@ export default function HeroSection() {
             className="tamil font-bold leading-snug"
             style={{ fontSize: 'clamp(0.7rem, 3.2vw, 1rem)', color: '#fefefe' }}
           >
-            விவசாயம் மற்றும் நிலப் பணிகளுக்கு<br className="md:hidden" />
-            <span className="hidden md:inline"> </span>
+            விவசாயம் மற்றும் நிலப் பணிகளுக்கு<br />
             <span style={{ color: '#f0cc5a' }}>நம்பகமான இயந்திர சேவைகள்</span>
           </p>
         </div>
