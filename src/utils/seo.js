@@ -1,33 +1,45 @@
 /**
  * Update document title and meta tags for each page
- * (Used in useEffect inside page components)
  */
-export function setPageMeta({ title, description, canonical, ogImage }) {
+export function setPageMeta({ title, description, canonical, ogImage, twitterImage }) {
   // Title
   document.title = title;
 
-  // Meta description
-  let descEl = document.querySelector('meta[name="description"]');
-  if (descEl) descEl.setAttribute('content', description);
+  const setMeta = (selector, attr, value) => {
+    const el = document.querySelector(selector);
+    if (el && value) el.setAttribute(attr, value);
+  };
 
-  // Canonical
-  let canonEl = document.querySelector('link[rel="canonical"]');
-  if (canonEl) canonEl.setAttribute('href', canonical || window.location.href);
+  // Primary
+  setMeta('meta[name="description"]', 'content', description);
+  setMeta('link[rel="canonical"]', 'href', canonical || window.location.href);
 
-  // OG tags
-  const ogTitle = document.querySelector('meta[property="og:title"]');
-  if (ogTitle) ogTitle.setAttribute('content', title);
+  // Open Graph
+  setMeta('meta[property="og:title"]', 'content', title);
+  setMeta('meta[property="og:description"]', 'content', description);
+  setMeta('meta[property="og:url"]', 'content', canonical || window.location.href);
+  if (ogImage) setMeta('meta[property="og:image"]', 'content', ogImage);
 
-  const ogDesc = document.querySelector('meta[property="og:description"]');
-  if (ogDesc) ogDesc.setAttribute('content', description);
-
-  const ogUrl = document.querySelector('meta[property="og:url"]');
-  if (ogUrl) ogUrl.setAttribute('content', canonical || window.location.href);
-
-  if (ogImage) {
-    const ogImg = document.querySelector('meta[property="og:image"]');
-    if (ogImg) ogImg.setAttribute('content', ogImage);
+  // Twitter
+  setMeta('meta[name="twitter:title"]', 'content', title);
+  setMeta('meta[name="twitter:description"]', 'content', description);
+  if (twitterImage || ogImage) {
+    setMeta('meta[name="twitter:image"]', 'content', twitterImage || ogImage);
   }
+}
+
+/**
+ * Inject JSON-LD schema into <head>
+ */
+export function injectSchema(schema, id = 'page') {
+  const existing = document.querySelector(`script[data-schema="${id}"]`);
+  if (existing) existing.remove();
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.setAttribute('data-schema', id);
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
 }
 
 /**
@@ -59,7 +71,8 @@ export function serviceSchema({ name, description, url, image, areaServed }) {
     image,
     provider: {
       '@type': 'LocalBusiness',
-      name: 'GG Harvester and Earth Movers',
+      '@id': 'https://www.ggharvesters.com/#business',
+      name: 'GG Harvesters and Earth Movers',
       telephone: '+918608522042',
       address: {
         '@type': 'PostalAddress',
@@ -75,15 +88,69 @@ export function serviceSchema({ name, description, url, image, areaServed }) {
 }
 
 /**
- * Inject JSON-LD into head
+ * Generate FAQ schema
  */
-export function injectSchema(schema) {
-  const existing = document.querySelector('script[data-schema="page"]');
-  if (existing) existing.remove();
+export function faqSchema(faqs) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
 
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.setAttribute('data-schema', 'page');
-  script.textContent = JSON.stringify(schema);
-  document.head.appendChild(script);
+/**
+ * Generate LocalBusiness schema (homepage)
+ */
+export function localBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': 'https://www.ggharvesters.com/#business',
+    name: 'GG Harvesters and Earth Movers',
+    alternateName: 'GG Harvester',
+    description: 'Agricultural machinery and earth-moving services including paddy harvester, tractor, rotavator, JCB, mini excavator and round baler services in Kumbakonam, Thanjavur, Tamil Nadu.',
+    url: 'https://www.ggharvesters.com/',
+    telephone: ['+918608522042', '+918248287672'],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '229 Main Road, Pambapadiyur',
+      addressLocality: 'Kumbakonam',
+      addressRegion: 'Tamil Nadu',
+      postalCode: '612703',
+      addressCountry: 'IN',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '10.9601',
+      longitude: '79.4197',
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '06:00',
+      closes: '19:00',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Kumbakonam' },
+      { '@type': 'City', name: 'Thanjavur' },
+      { '@type': 'Place', name: 'Pambapadiyur' },
+      { '@type': 'AdministrativeArea', name: 'Tamil Nadu' },
+    ],
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.ggharvesters.com/GG_harvester_and_Earth_Movers_Logo_BG.png',
+    },
+    image: 'https://www.ggharvesters.com/images/og/gg-harvester-og-image.jpg',
+    priceRange: '₹₹',
+    currenciesAccepted: 'INR',
+    paymentAccepted: 'Cash, UPI',
+    knowsLanguage: ['Tamil', 'English'],
+  };
 }
