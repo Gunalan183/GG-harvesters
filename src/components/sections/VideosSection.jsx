@@ -31,12 +31,12 @@ const VIDEOS = [
     youtubeSrc: null,
   },
   {
-    id: 'tractor-rotavator',
-    title: 'GG Tractor Rotavator | டிராக்டர் ரோட்டவேட்டர் சேவை',
-    titleTamil: 'டிராக்டர் + ரோட்டவேட்டர்',
-    thumbnail: '/images/gallery/gg-tractor-agricultural-work-kumbakonam.jpg',
-    thumbnailAlt: 'GG tractor rotavator service',
-    videoSrc: null,
+    id: 'tractor-tailor',
+    title: 'GG Tractor with Tailor | டிராக்டர் + டெய்லர் சேவை',
+    titleTamil: 'டிராக்டர் + டெய்லர்',
+    thumbnail: '/images/services/tractor with tailer.jpg',
+    thumbnailAlt: 'GG tractor with tailor service',
+    videoSrc: '/videos/vidio03.mp4',
     youtubeSrc: null,
   },
 ];
