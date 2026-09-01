@@ -1,6 +1,4 @@
-import { MessageCircle } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
-import { getServiceWhatsApp } from '../../utils/whatsapp';
 
 const MACHINES = [
   {
@@ -31,7 +29,7 @@ const MACHINES = [
     name: 'JCB Mini Excavator',
     nameTamil: 'JCB Mini Excavator',
     desc: 'சிறிய இடங்களில் தோண்டுதல் மற்றும் கால்வாய் பணிகள்.',
-    image: '/images/machinery/gg-jcb-mini-excavator-thanjavur.jpg',
+    image: '/images/machinery/Jcb_mini.jpg',
     alt: 'GG JCB mini excavator for canal digging and narrow space earthwork',
     service: 'jcb-mini-excavator',
   },
@@ -39,7 +37,7 @@ const MACHINES = [
     name: 'Round Baler',
     nameTamil: 'டிராக்டர் + Round Baler',
     desc: 'அறுவடைக்கு பின் வைக்கோலை சுருட்டி பேக் செய்ய.',
-    image: '/images/machinery/gg-tractor-round-baler-thanjavur.jpg',
+    image: '/images/machinery/gg-tractor-round-baler-service-thanjavur.png',
     alt: 'GG tractor round baler baling straw after paddy harvest',
     service: 'tractor-round-baler',
   },
@@ -89,16 +87,7 @@ export default function MachineryShowcase() {
               </div>
               <div className="p-4">
                 <h3 className="tamil font-bold text-[#1a1814] mb-2">{machine.nameTamil}</h3>
-                <p className="tamil text-[#4b5563] text-sm mb-5 leading-relaxed">{machine.desc}</p>
-                <a
-                  href={getServiceWhatsApp(machine.service)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full btn-whatsapp text-sm py-2 justify-center"
-                >
-                  <MessageCircle size={13} />
-                  சேவை பதிவு
-                </a>
+                <p className="tamil text-[#4b5563] text-sm leading-relaxed">{machine.desc}</p>
               </div>
             </article>
           ))}

@@ -51,7 +51,7 @@ export default function SplashScreen() {
           textAlign: 'center',
           animation: 'splashFadeUp 0.7s 0.3s ease forwards',
           opacity: 0,
-          marginBottom: '2rem',
+          marginBottom: '0.75rem',
         }}
       >
         <p style={{
@@ -70,11 +70,37 @@ export default function SplashScreen() {
           fontWeight: 600,
           letterSpacing: '0.35em',
           textTransform: 'uppercase',
-          color: '#1b5e20',
+          color: 'rgba(255,255,255,0.75)',
           marginTop: '0.3rem',
         }}>
           &amp; Earth Movers
         </p>
+      </div>
+
+      {/* Location */}
+      <div
+        style={{
+          animation: 'splashFadeUp 0.7s 0.45s ease forwards',
+          opacity: 0,
+          marginBottom: '2rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.35rem',
+        }}
+      >
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#d4a017" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        <span style={{
+          fontSize: '0.7rem',
+          fontWeight: 600,
+          letterSpacing: '0.15em',
+          textTransform: 'uppercase',
+          color: 'rgba(255,255,255,0.6)',
+        }}>
+          Pambapadiyur
+        </span>
       </div>
 
       {/* Loading dots */}

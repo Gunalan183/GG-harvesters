@@ -478,7 +478,7 @@ video {
    ============================================================ */
 
 .mobile-pb {
-  padding-bottom: 4rem;
+  padding-bottom: 7rem;
 }
 
 .img-placeholder {
@@ -579,4 +579,10 @@ video {
 @keyframes splashDot {
   0%, 100% { transform: translateY(0);    opacity: 0.4; }
   50%       { transform: translateY(-6px); opacity: 1;   }
+}
+
+/* Hide bottom nav and footer when modal is open */
+body:not([style*="overflow: hidden"]) .sticky-bottom-nav { }
+body[style*="overflow: hidden"] .sticky-bottom-nav {
+  display: none !important;
 }
