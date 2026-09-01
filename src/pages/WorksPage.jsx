@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import Header from '../components/layout/Header';
 import MobileBottomNav from '../components/layout/MobileBottomNav';
@@ -77,6 +77,10 @@ const TAG_COLORS = {
 
 export default function WorksPage() {
   const [lightbox, setLightbox] = useState(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
 
   const open = (i) => { setLightbox(i); document.body.style.overflow = 'hidden'; };
   const close = () => { setLightbox(null); document.body.style.overflow = ''; };
