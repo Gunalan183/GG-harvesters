@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, MapPin, ChevronDown } from 'lucide-react';
+import { Phone, MessageCircle, ChevronDown } from 'lucide-react';
 import { BUSINESS } from '../../data/siteData';
 import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
 import mobileBg from '../../assets/images/Hero-section_BG.png';
@@ -48,18 +48,18 @@ export default function HeroSection() {
         style={{ paddingTop: '2rem', paddingBottom: '5rem' }}
       >
 
-        {/* Location badge */}
+        {/* Tagline badge */}
         <div
-          className="inline-flex items-center gap-2 rounded-full text-white text-[0.7rem] font-semibold tracking-widest uppercase"
+          className="inline-flex items-center gap-2 rounded-full text-[0.7rem] font-semibold tracking-widest uppercase"
           style={{
             background: 'rgba(212,160,23,0.18)',
             border: '1px solid rgba(212,160,23,0.5)',
             backdropFilter: 'blur(10px)',
             padding: '0.5rem 1rem',
             marginBottom: '1rem',
+            color: '#1a237e',
           }}
         >
-          <MapPin size={11} className="text-[#f0cc5a] flex-shrink-0" />
           விவசாயத்தின் வெற்றிக்கு இயந்திரங்களின் துணை
         </div>
 
@@ -88,11 +88,11 @@ export default function HeroSection() {
         <div
           className="rounded-2xl w-full max-w-sm"
           style={{
-            background: 'rgba(0,0,0,0.55)',
-            border: '1px solid rgba(255,255,255,0.12)',
+            background: 'transparent',
+            border: 'none',
             backdropFilter: 'blur(10px)',
             padding: '0.65rem 0.5rem',
-            marginBottom: '4rem',
+            marginBottom: '10rem',
           }}
         >
           <p
