@@ -35,11 +35,6 @@
     }
   }
 
-  .hero-anim-up {
-    opacity: 0;
-    animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
   @keyframes float {
     0% {
       transform: translateY(0px);
@@ -67,6 +62,12 @@
       box-shadow: 0 0 0 0 rgba(212, 160, 23, 0);
     }
   }
+}
+
+/* Hero animation class — must be outside @theme */
+.hero-anim-up {
+  opacity: 0;
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* ============================================================
