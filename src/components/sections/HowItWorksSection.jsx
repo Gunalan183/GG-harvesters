@@ -49,8 +49,8 @@ export default function HowItWorksSection() {
           </span>
           <h2
             id="how-it-works-heading"
-            className="tamil font-extrabold text-white"
-            style={{ fontSize: 'clamp(1.5rem, 5vw, 2.2rem)', lineHeight: 1.2, marginBottom: '0.75rem' }}
+            className="tamil font-extrabold text-white whitespace-nowrap"
+            style={{ fontSize: 'clamp(1.1rem, 4vw, 2.2rem)', lineHeight: 1.2, marginBottom: '0.75rem' }}
           >
             சேவை பெறுவது{' '}
             <span style={{ color: '#f0cc5a' }}>மிகவும் எளிது!</span>
