@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Phone, MessageCircle, Wrench, MapPin, CheckCircle } from 'lucide-react';
 import { HOW_IT_WORKS } from '../../data/siteData';
 import { whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
@@ -5,6 +6,25 @@ import { whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
 const ICONS = [Phone, MessageCircle, Wrench, MapPin, CheckCircle];
 
 export default function HowItWorksSection() {
+  const cardsRef = useRef([]);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('how-card-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    if (headerRef.current) observer.observe(headerRef.current);
+    cardsRef.current.forEach((el) => { if (el) observer.observe(el); });
+    return () => observer.disconnect();
+  }, []);
   return (
     <section
       className="section-py"
@@ -14,7 +34,7 @@ export default function HowItWorksSection() {
       <div className="container-site">
 
         {/* Header */}
-        <div className="text-center" style={{ marginBottom: '3rem' }}>
+        <div ref={headerRef} className="how-card text-center" style={{ marginBottom: '3rem' }}>
           <span
             className="inline-block tamil text-xs font-bold tracking-widest uppercase rounded-full"
             style={{
@@ -46,8 +66,12 @@ export default function HowItWorksSection() {
             const Icon = ICONS[i];
             const isLast = i === HOW_IT_WORKS.length - 1;
             return (
-              <div key={i} className="flex md:flex-col flex-row items-start md:items-center flex-1">
-
+              <div
+                key={i}
+                ref={(el) => (cardsRef.current[i] = el)}
+                className="how-card flex md:flex-col flex-row items-start md:items-center flex-1"
+                style={{ transitionDelay: `${i * 120}ms` }}
+              >
                 {/* Mobile: vertical connector + card row */}
                 <div className="flex flex-col items-center md:hidden" style={{ marginRight: '1rem', minWidth: '2.5rem' }}>
                   {/* Circle */}

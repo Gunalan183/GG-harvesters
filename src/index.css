@@ -35,6 +35,11 @@
     }
   }
 
+  .hero-anim-up {
+    opacity: 0;
+    animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
   @keyframes float {
     0% {
       transform: translateY(0px);
@@ -629,4 +634,16 @@ body[style*="overflow: hidden"] .sticky-bottom-nav {
 @keyframes machineryScrollReverse {
   0%   { transform: translateX(-50%); }
   100% { transform: translateX(0); }
+}
+
+/* ── HowItWorks Card Animations ── */
+.how-card {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.how-card-visible {
+  opacity: 1;
+  transform: translateY(0);
 }

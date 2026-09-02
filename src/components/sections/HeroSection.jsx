@@ -1,22 +1,10 @@
 import { Phone, MessageCircle, ChevronDown } from 'lucide-react';
-import { useEffect, useState } from 'react';
 import { BUSINESS } from '../../data/siteData';
 import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
 import mobileBg from '../../assets/images/Hero-section_BG.png';
 
 export default function HeroSection() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    // Small delay to ensure the browser paints the initial opacity-0 state
-    // before transitioning to opacity-100
-    const timeout = setTimeout(() => setIsLoaded(true), 100);
-    return () => clearTimeout(timeout);
-  }, []);
-
-  // Reusable animation classes
-  const animateClasses = `transition-all duration-[1000ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${isLoaded ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'
-    }`;
+  const animateClass = 'hero-anim-up';
 
   return (
     <section
@@ -24,8 +12,8 @@ export default function HeroSection() {
       style={{ borderRadius: '0 0 2rem 2rem' }}
       aria-label="Hero"
     >
-      {/* Background with slight scale-down animation on load */}
-      <div className={`absolute inset-0 z-0 transition-transform duration-[2000ms] ease-out ${isLoaded ? 'scale-100' : 'scale-105'}`}>
+      {/* Background */}
+      <div className="absolute inset-0 z-0 hero-anim-up" style={{ animationDuration: '2s', animationFillMode: 'forwards' }}>
         {/* Mobile BG — shown only below md (768px) */}
         <img
           src={mobileBg}
@@ -64,7 +52,7 @@ export default function HeroSection() {
 
         {/* Tagline badge */}
         <div
-          className={`inline-flex items-center gap-2 rounded-full text-[0.7rem] font-semibold tracking-widest uppercase whitespace-nowrap ${animateClasses}`}
+          className={`inline-flex items-center gap-2 rounded-full text-[0.7rem] font-semibold tracking-widest uppercase whitespace-nowrap ${animateClass}`}
           style={{
             background: 'rgba(212,160,23,0.18)',
             border: '1px solid rgba(212,160,23,0.5)',
@@ -72,14 +60,15 @@ export default function HeroSection() {
             padding: '0.5rem 1rem',
             marginBottom: '1rem',
             color: '#1a237e',
-            transitionDelay: '100ms'
+            animationDelay: '100ms',
+            animationFillMode: 'forwards'
           }}
         >
           விவசாயத்தின் வெற்றிக்கு இயந்திரங்களின் துணை
         </div>
 
         {/* Brand name */}
-        <div className={animateClasses} style={{ marginBottom: '1.5rem', transitionDelay: '300ms' }}>
+        <div className={animateClass} style={{ marginBottom: '1.5rem', animationDelay: '300ms', animationFillMode: 'forwards' }}>
           <h1 className="brand-title">
             <span className="brand-gg">GG </span>
             <span className="brand-harvester">HARVESTERS</span>
@@ -89,7 +78,7 @@ export default function HeroSection() {
 
         {/* Service availability badge */}
         <div
-          className={`inline-flex items-center gap-2 rounded-full text-[0.68rem] font-semibold tracking-wide ${animateClasses}`}
+          className={`inline-flex items-center gap-2 rounded-full text-[0.68rem] font-semibold tracking-wide ${animateClass}`}
           style={{
             background: 'rgba(0,0,0,0.55)',
             border: '1px solid rgba(0,0,0,0.3)',
@@ -97,7 +86,8 @@ export default function HeroSection() {
             padding: '0.4rem 1rem',
             marginBottom: '1.5rem',
             color: '#fff',
-            transitionDelay: '500ms'
+            animationDelay: '500ms',
+            animationFillMode: 'forwards'
           }}
         >
           <span style={{ color: '#4caf50', fontSize: '0.55rem' }}>●</span>
@@ -106,27 +96,29 @@ export default function HeroSection() {
 
         {/* Gold divider */}
         <div
-          className={`rounded-full ${animateClasses}`}
+          className={`rounded-full ${animateClass}`}
           style={{
             width: '64px',
             height: '3px',
             background: 'linear-gradient(90deg, #d4a017, #f0cc5a)',
             marginBottom: '2rem',
-            transitionDelay: '700ms'
+            animationDelay: '600ms',
+            animationFillMode: 'forwards'
           }}
           aria-hidden="true"
         />
 
         {/* Tamil tagline */}
         <div
-          className={`rounded-2xl w-full max-w-sm ${animateClasses}`}
+          className={`rounded-2xl w-full max-w-sm ${animateClass}`}
           style={{
             background: 'rgba(0,0,0,0.45)',
             border: '1px solid rgba(255,255,255,0.15)',
             backdropFilter: 'blur(10px)',
             padding: '0.65rem 1.25rem',
             marginBottom: '16rem',
-            transitionDelay: '900ms'
+            animationDelay: '800ms',
+            animationFillMode: 'forwards'
           }}
         >
           <p
@@ -140,8 +132,8 @@ export default function HeroSection() {
 
         {/* Contact bar */}
         <div
-          className={`flex flex-col items-center w-full ${animateClasses}`}
-          style={{ gap: '0.6rem', maxWidth: '300px', marginBottom: '2.5rem', transitionDelay: '1100ms' }}
+          className={`flex flex-col items-center w-full ${animateClass}`}
+          style={{ gap: '0.6rem', maxWidth: '300px', marginBottom: '2.5rem', animationDelay: '1000ms', animationFillMode: 'forwards' }}
         >
           {/* WhatsApp button */}
           <a
@@ -209,8 +201,8 @@ export default function HeroSection() {
         {/* Scroll hint */}
         <a
           href="#services"
-          className={`flex flex-col items-center gap-1 text-white/70 hover:text-white transition-colors ${animateClasses}`}
-          style={{ transitionDelay: '1400ms' }}
+          className={`flex flex-col items-center gap-1 text-white/70 hover:text-white transition-colors ${animateClass}`}
+          style={{ animationDelay: '1200ms', animationFillMode: 'forwards' }}
           aria-label="Scroll down"
         >
           <span className="tracking-widest uppercase" style={{ fontSize: '0.55rem' }}>Scroll</span>
