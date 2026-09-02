@@ -5,7 +5,6 @@ import ServiceHighlights from '../components/sections/ServiceHighlights';
 import ServicesSection from '../components/sections/ServicesSection';
 import MachineryShowcase from '../components/sections/MachineryShowcase';
 import WhyChooseSection from '../components/sections/WhyChooseSection';
-import VideosSection from '../components/sections/VideosSection';
 import HowItWorksSection from '../components/sections/HowItWorksSection';
 import OwnerContactSection from '../components/sections/OwnerContactSection';
 import { setPageMeta, injectSchema, localBusinessSchema, faqSchema } from '../utils/seo';
@@ -33,11 +32,11 @@ export default function HomePage() {
   return (
     <Layout>
       <HeroSection />
+      <MachineryShowcase />
       <ServiceHighlights />
       <ServicesSection />
       <MachineryShowcase />
       <WhyChooseSection />
-      <VideosSection />
       <HowItWorksSection />
       <OwnerContactSection />
     </Layout>
