@@ -61,21 +61,29 @@ const POINTS = [
 ];
 
 export default function WhyChooseSection() {
-  const cardsRef = useRef([]);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('why-card-visible');
-            observer.unobserve(entry.target);
-          }
-        });
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          // When the container enters the viewport, animate all its child cards
+          const cards = containerRef.current.querySelectorAll('.animate-stagger-card');
+          cards.forEach((card) => {
+            card.classList.remove('opacity-0', 'translate-y-12', 'scale-95');
+            card.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+          });
+          observer.unobserve(entry.target);
+        }
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
-    cardsRef.current.forEach((el) => { if (el) observer.observe(el); });
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
     return () => observer.disconnect();
   }, []);
 
@@ -91,8 +99,7 @@ export default function WhyChooseSection() {
       <div className="absolute pointer-events-none" aria-hidden="true"
         style={{ bottom: '-4rem', left: '-4rem', width: '18rem', height: '18rem', borderRadius: '50%', background: 'rgba(26,92,46,0.05)' }} />
 
-      <div className="container-site relative z-10">
-
+      <div className="container-site relative z-10" ref={containerRef}>
         {/* Header */}
         <div className="text-center" style={{ marginBottom: '3.5rem' }}>
           <span
@@ -121,14 +128,13 @@ export default function WhyChooseSection() {
             return (
               <div
                 key={i}
-                ref={(el) => (cardsRef.current[i] = el)}
-                className="why-card group relative overflow-hidden rounded-2xl transition-all hover:-translate-y-1 hover:shadow-xl"
+                className="animate-stagger-card group relative overflow-hidden rounded-2xl transition-all duration-[800ms] cubic-bezier(0.2,0.8,0.2,1) opacity-0 translate-y-12 scale-95 hover:!translate-y-[-0.5rem] hover:shadow-2xl"
                 style={{
                   background: '#fff',
                   border: `1px solid ${point.border}`,
                   padding: '1.5rem',
-                  boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                  transitionDelay: `${i * 80}ms`,
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
+                  transitionDelay: `${i * 120}ms`,
                 }}
               >
                 {/* Subtle bg gradient on hover */}
