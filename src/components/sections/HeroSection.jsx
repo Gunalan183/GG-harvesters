@@ -1,17 +1,31 @@
 import { Phone, MessageCircle, ChevronDown } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { BUSINESS } from '../../data/siteData';
 import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
 import mobileBg from '../../assets/images/Hero-section_BG.png';
 
 export default function HeroSection() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Small delay to ensure the browser paints the initial opacity-0 state
+    // before transitioning to opacity-100
+    const timeout = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  // Reusable animation classes
+  const animateClasses = `transition-all duration-[1000ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] ${isLoaded ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'
+    }`;
+
   return (
     <section
       className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden"
       style={{ borderRadius: '0 0 2rem 2rem' }}
       aria-label="Hero"
     >
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
+      {/* Background with slight scale-down animation on load */}
+      <div className={`absolute inset-0 z-0 transition-transform duration-[2000ms] ease-out ${isLoaded ? 'scale-100' : 'scale-105'}`}>
         {/* Mobile BG — shown only below md (768px) */}
         <img
           src={mobileBg}
@@ -39,7 +53,7 @@ export default function HeroSection() {
               'linear-gradient(160deg, #0a2d16 0%, #d4a017 60%, #0f3d1e 100%)';
           }}
         />
-        <div className="absolute inset-0" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       {/* Content */}
@@ -50,7 +64,7 @@ export default function HeroSection() {
 
         {/* Tagline badge */}
         <div
-          className="inline-flex items-center gap-2 rounded-full text-[0.7rem] font-semibold tracking-widest uppercase whitespace-nowrap"
+          className={`inline-flex items-center gap-2 rounded-full text-[0.7rem] font-semibold tracking-widest uppercase whitespace-nowrap ${animateClasses}`}
           style={{
             background: 'rgba(212,160,23,0.18)',
             border: '1px solid rgba(212,160,23,0.5)',
@@ -58,13 +72,14 @@ export default function HeroSection() {
             padding: '0.5rem 1rem',
             marginBottom: '1rem',
             color: '#1a237e',
+            transitionDelay: '100ms'
           }}
         >
           விவசாயத்தின் வெற்றிக்கு இயந்திரங்களின் துணை
         </div>
 
         {/* Brand name */}
-        <div style={{ marginBottom: '1.5rem' }}>
+        <div className={animateClasses} style={{ marginBottom: '1.5rem', transitionDelay: '300ms' }}>
           <h1 className="brand-title">
             <span className="brand-gg">GG </span>
             <span className="brand-harvester">HARVESTERS</span>
@@ -74,7 +89,7 @@ export default function HeroSection() {
 
         {/* Service availability badge */}
         <div
-          className="inline-flex items-center gap-2 rounded-full text-[0.68rem] font-semibold tracking-wide"
+          className={`inline-flex items-center gap-2 rounded-full text-[0.68rem] font-semibold tracking-wide ${animateClasses}`}
           style={{
             background: 'rgba(0,0,0,0.55)',
             border: '1px solid rgba(0,0,0,0.3)',
@@ -82,6 +97,7 @@ export default function HeroSection() {
             padding: '0.4rem 1rem',
             marginBottom: '1.5rem',
             color: '#fff',
+            transitionDelay: '500ms'
           }}
         >
           <span style={{ color: '#4caf50', fontSize: '0.55rem' }}>●</span>
@@ -90,25 +106,27 @@ export default function HeroSection() {
 
         {/* Gold divider */}
         <div
-          className="rounded-full"
+          className={`rounded-full ${animateClasses}`}
           style={{
             width: '64px',
             height: '3px',
             background: 'linear-gradient(90deg, #d4a017, #f0cc5a)',
             marginBottom: '2rem',
+            transitionDelay: '700ms'
           }}
           aria-hidden="true"
         />
 
         {/* Tamil tagline */}
         <div
-          className="rounded-2xl w-full max-w-sm"
+          className={`rounded-2xl w-full max-w-sm ${animateClasses}`}
           style={{
             background: 'rgba(0,0,0,0.45)',
             border: '1px solid rgba(255,255,255,0.15)',
             backdropFilter: 'blur(10px)',
             padding: '0.65rem 1.25rem',
             marginBottom: '16rem',
+            transitionDelay: '900ms'
           }}
         >
           <p
@@ -122,8 +140,8 @@ export default function HeroSection() {
 
         {/* Contact bar */}
         <div
-          className="flex flex-col items-center w-full"
-          style={{ gap: '0.6rem', maxWidth: '300px', marginBottom: '2.5rem' }}
+          className={`flex flex-col items-center w-full ${animateClasses}`}
+          style={{ gap: '0.6rem', maxWidth: '300px', marginBottom: '2.5rem', transitionDelay: '1100ms' }}
         >
           {/* WhatsApp button */}
           <a
@@ -191,7 +209,8 @@ export default function HeroSection() {
         {/* Scroll hint */}
         <a
           href="#services"
-          className="flex flex-col items-center gap-1 text-white/70 hover:text-white transition-colors"
+          className={`flex flex-col items-center gap-1 text-white/70 hover:text-white transition-colors ${animateClasses}`}
+          style={{ transitionDelay: '1400ms' }}
           aria-label="Scroll down"
         >
           <span className="tracking-widest uppercase" style={{ fontSize: '0.55rem' }}>Scroll</span>

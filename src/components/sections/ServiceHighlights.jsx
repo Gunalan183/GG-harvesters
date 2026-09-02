@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
 
@@ -65,8 +66,33 @@ const HIGHLIGHTS = [
 ];
 
 export default function ServiceHighlights() {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          const cards = containerRef.current.querySelectorAll('.animate-stagger-service-card');
+          cards.forEach((card) => {
+            card.classList.remove('opacity-0', 'translate-y-12', 'scale-95');
+            card.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+          });
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section 
+    <section
       className="py-12 md:py-16 px-4 relative overflow-hidden bg-white"
       aria-label="Service highlights"
     >
@@ -74,8 +100,8 @@ export default function ServiceHighlights() {
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-amber-50 blur-3xl opacity-60 pointer-events-none" />
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-emerald-50 blur-3xl opacity-60 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        
+      <div className="max-w-7xl mx-auto relative z-10" ref={containerRef}>
+
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-100/50 text-amber-800 text-[0.65rem] md:text-sm font-bold uppercase tracking-widest mb-3 border border-amber-200/50">
@@ -95,7 +121,8 @@ export default function ServiceHighlights() {
           {HIGHLIGHTS.map((item, i) => (
             <div
               key={i}
-              className={`group relative flex flex-col bg-white border ${item.borderColor} rounded-2xl md:rounded-3xl p-4 md:p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden text-center`}
+              className={`animate-stagger-service-card group relative flex flex-col bg-white border ${item.borderColor} rounded-2xl md:rounded-3xl p-4 md:p-5 shadow-sm hover:!translate-y-[-0.25rem] hover:shadow-xl transition-all duration-[800ms] cubic-bezier(0.2,0.8,0.2,1) opacity-0 translate-y-12 scale-95 overflow-hidden text-center`}
+              style={{ transitionDelay: `${i * 120}ms` }}
             >
               {/* Premium Background Hover Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-b ${item.gradient} opacity-50 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
@@ -135,7 +162,7 @@ export default function ServiceHighlights() {
           >
             {/* Button Shine Effect */}
             <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            
+
             <ArrowRight size={18} className="md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
             <span className="tamil text-[0.8rem] md:text-base whitespace-nowrap">
               Book Now — முன்பதிவு செய்க
