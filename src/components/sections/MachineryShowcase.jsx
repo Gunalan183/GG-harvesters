@@ -19,14 +19,14 @@ const MACHINES = [
     name: 'Tractor + Rotavator',
     nameTamil: 'டிராக்டர் + ரோட்டவேட்டர்',
     desc: 'மண்ணை ஆழமாக உழுது நிலம் தயார் செய்ய.',
-    image: '/images/machinery/gg-tractor-rotavator-kumbakonam.jpg',
+    image: '/images/machinery/gg-tractor-rotavator-kumbakonam.png',
     alt: 'GG tractor with rotavator attachment for deep soil tilling',
   },
   {
     name: 'JCB',
     nameTamil: 'JCB இயந்திரம்',
     desc: 'கட்டுமான மற்றும் மண் பணிகளுக்கு சக்திவாய்ந்த JCB.',
-    image: '/images/machinery/JCB_Big.jpg',
+    image: '/images/machinery/gg-jcb-3cx-backhoe-loader-kumbakonam.jpg',
     alt: 'GG JCB backhoe loader for construction and earthwork',
   },
   {
@@ -52,8 +52,40 @@ const MACHINES = [
   },
 ];
 
-// Duplicate for seamless infinite loop
-const TRACK = [...MACHINES, ...MACHINES];
+// First half → left to right, Second half → right to left
+const ROW1 = [...MACHINES.slice(0, 4), ...MACHINES.slice(0, 4)];
+const ROW2 = [...MACHINES.slice(3), ...MACHINES.slice(3)];
+
+function MachineCard({ machine }) {
+  return (
+    <div className="flex-shrink-0" style={{ width: '220px', margin: '0 0.5rem' }}>
+      <div className="overflow-hidden" style={{ borderRadius: '1.25rem', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
+        <div className="relative" style={{ paddingBottom: '68%' }}>
+          <img
+            src={machine.image}
+            alt={machine.alt}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            width={220}
+            height={150}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.parentElement.style.background = 'linear-gradient(135deg, #e8f5ec, #fdf8e8)';
+              e.target.style.display = 'none';
+            }}
+          />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,25,10,0.7) 0%, transparent 60%)' }} />
+          <div className="absolute bottom-3 left-3 right-3">
+            <p className="text-white font-bold text-xs leading-tight">{machine.name}</p>
+          </div>
+        </div>
+        <div style={{ background: '#fff', padding: '0.65rem 0.85rem' }}>
+          <h3 className="tamil font-bold text-[#1a1814] text-xs leading-snug">{machine.nameTamil}</h3>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function MachineryShowcase() {
   return (
@@ -71,21 +103,24 @@ export default function MachineryShowcase() {
         />
       </div>
 
-      {/* Infinite scroll strip */}
-      <div className="relative overflow-hidden" style={{ marginTop: '2rem' }}>
+      {/* Mobile: two rows with opposite scroll directions */}
+      <div className="md:hidden" style={{ marginTop: '2rem', overflow: 'hidden' }}>
+        {/* Row 1 — Left to Right */}
+        <div className="machinery-track" style={{ marginBottom: '0.75rem' }}>
+          {ROW1.map((machine, i) => <MachineCard key={i} machine={machine} />)}
+        </div>
+        {/* Row 2 — Right to Left (reverse) */}
+        <div className="machinery-track-reverse">
+          {ROW2.map((machine, i) => <MachineCard key={i} machine={machine} />)}
+        </div>
+      </div>
 
+      {/* Desktop: single row */}
+      <div className="hidden md:block relative overflow-hidden" style={{ marginTop: '2rem' }}>
         <div className="machinery-track">
-          {TRACK.map((machine, i) => (
-            <div
-              key={i}
-              className="machinery-card flex-shrink-0"
-              style={{ width: '260px', margin: '0 0.75rem' }}
-            >
-              <div
-                className="overflow-hidden"
-                style={{ borderRadius: '1.25rem', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}
-              >
-                {/* Image */}
+          {[...MACHINES, ...MACHINES].map((machine, i) => (
+            <div key={i} className="flex-shrink-0" style={{ width: '260px', margin: '0 0.75rem' }}>
+              <div className="overflow-hidden" style={{ borderRadius: '1.25rem', boxShadow: '0 4px 20px rgba(0,0,0,0.10)' }}>
                 <div className="relative" style={{ paddingBottom: '68%' }}>
                   <img
                     src={machine.image}
@@ -100,20 +135,13 @@ export default function MachineryShowcase() {
                       e.target.style.display = 'none';
                     }}
                   />
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: 'linear-gradient(to top, rgba(10,25,10,0.7) 0%, transparent 60%)' }}
-                  />
+                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(10,25,10,0.7) 0%, transparent 60%)' }} />
                   <div className="absolute bottom-3 left-3 right-3">
                     <p className="text-white font-bold text-sm leading-tight">{machine.name}</p>
                   </div>
                 </div>
-
-                {/* Text */}
                 <div style={{ background: '#fff', padding: '0.85rem 1rem' }}>
-                  <h3 className="tamil font-bold text-[#1a1814] text-sm leading-snug" style={{ marginBottom: '0.25rem' }}>
-                    {machine.nameTamil}
-                  </h3>
+                  <h3 className="tamil font-bold text-[#1a1814] text-sm leading-snug" style={{ marginBottom: '0.25rem' }}>{machine.nameTamil}</h3>
                   <p className="tamil text-[#6b7280] text-xs leading-relaxed">{machine.desc}</p>
                 </div>
               </div>

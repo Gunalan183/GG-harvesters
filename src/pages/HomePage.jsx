@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Layout from '../components/layout/Layout';
 import HeroSection from '../components/sections/HeroSection';
-import TrustStrip from '../components/sections/TrustStrip';
+import ServiceHighlights from '../components/sections/ServiceHighlights';
 import ServicesSection from '../components/sections/ServicesSection';
 import MachineryShowcase from '../components/sections/MachineryShowcase';
 import WhyChooseSection from '../components/sections/WhyChooseSection';
@@ -33,10 +33,9 @@ export default function HomePage() {
   return (
     <Layout>
       <HeroSection />
-      <TrustStrip />
+      <ServiceHighlights />
       <ServicesSection />
       <MachineryShowcase />
-      <WhyChooseSection />
       <VideosSection />
       <HowItWorksSection />
       <OwnerContactSection />

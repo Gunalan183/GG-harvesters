@@ -115,8 +115,8 @@ export default function HeroSection() {
             className="tamil font-bold leading-snug"
             style={{ fontSize: 'clamp(0.7rem, 3.2vw, 1rem)', color: '#fefefe' }}
           >
-            விவசாயம் மற்றும் நிலப் பணிகளுக்கு<br />
-            <span style={{ color: '#f0cc5a' }}>நம்பகமான இயந்திர சேவைகள்</span>
+            உங்கள் உழைப்புக்கு துணையாக,<br />
+            <span style={{ color: '#f0cc5a' }}>உங்கள் பணிக்கு GG இயந்திர சேவை.</span>
           </p>
         </div>
 

@@ -8,7 +8,7 @@ import { whatsappLink, WHATSAPP_MESSAGES } from '../utils/whatsapp';
 const WORKS = [
   {
     id: 1,
-    image: '/images/works/Work02.jpg',
+    image: '/images/works/work02.png',
     alt: 'GG Harvesters field work — நெல் அறுவடை பணி',
     titleTamil: 'நெல் அறுவடை பணி',
     titleEnglish: 'Paddy Harvesting Work',
