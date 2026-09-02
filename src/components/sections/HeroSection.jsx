@@ -1,10 +1,14 @@
 import { Phone, MessageCircle, ChevronDown } from 'lucide-react';
 import { BUSINESS } from '../../data/siteData';
 import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
+import { useLanguage } from '../../context/LanguageContext';
+import { getTranslations } from '../../i18n/translations';
 import mobileBg from '../../assets/images/Hero-section_BG.png';
 
 export default function HeroSection() {
   const animateClass = 'hero-anim-up';
+  const { lang } = useLanguage();
+  const t = getTranslations(lang).hero;
 
   return (
     <section
@@ -14,7 +18,6 @@ export default function HeroSection() {
     >
       {/* Background */}
       <div className="absolute inset-0 z-0 hero-anim-up" style={{ animationDuration: '2s', animationFillMode: 'forwards' }}>
-        {/* Mobile BG — shown only below md (768px) */}
         <img
           src={mobileBg}
           alt=""
@@ -23,11 +26,8 @@ export default function HeroSection() {
           fetchpriority="high"
           width={800}
           height={1200}
-          onError={(e) => {
-            e.target.style.display = 'none';
-          }}
+          onError={(e) => { e.target.style.display = 'none'; }}
         />
-        {/* Desktop BG — shown only at md and above */}
         <img
           src="/images/gallery/gg-paddy-harvester-transport-lorry.jpg"
           alt="GG paddy harvester transport lorry Kumbakonam"
@@ -49,7 +49,6 @@ export default function HeroSection() {
         className="relative z-10 flex flex-col items-center text-center w-full px-6 pt-12 md:pt-20"
         style={{ paddingBottom: '5rem' }}
       >
-
         {/* Tagline badge */}
         <div
           className={`inline-flex items-center gap-2 rounded-full text-[0.7rem] font-semibold tracking-widest uppercase whitespace-nowrap ${animateClass}`}
@@ -61,10 +60,10 @@ export default function HeroSection() {
             marginBottom: '1rem',
             color: '#1a237e',
             animationDelay: '100ms',
-            animationFillMode: 'forwards'
+            animationFillMode: 'forwards',
           }}
         >
-          விவசாயத்தின் வெற்றிக்கு இயந்திரங்களின் துணை
+          {t.taglineBadge}
         </div>
 
         {/* Brand name */}
@@ -87,11 +86,11 @@ export default function HeroSection() {
             marginBottom: '1.5rem',
             color: '#fff',
             animationDelay: '500ms',
-            animationFillMode: 'forwards'
+            animationFillMode: 'forwards',
           }}
         >
           <span style={{ color: '#4caf50', fontSize: '0.55rem' }}>●</span>
-          Services Available In Tamil Nadu &amp; Karnataka
+          {t.availabilityBadge}
         </div>
 
         {/* Gold divider */}
@@ -103,12 +102,12 @@ export default function HeroSection() {
             background: 'linear-gradient(90deg, #d4a017, #f0cc5a)',
             marginBottom: '2rem',
             animationDelay: '600ms',
-            animationFillMode: 'forwards'
+            animationFillMode: 'forwards',
           }}
           aria-hidden="true"
         />
 
-        {/* Tamil tagline */}
+        {/* Tagline box */}
         <div
           className={`rounded-2xl w-full max-w-sm ${animateClass}`}
           style={{
@@ -118,23 +117,24 @@ export default function HeroSection() {
             padding: '0.65rem 1.25rem',
             marginBottom: '4rem',
             animationDelay: '800ms',
-            animationFillMode: 'forwards'
+            animationFillMode: 'forwards',
           }}
         >
+          {/* Tamil lines — always shown */}
           <p
             className="tamil font-bold leading-snug"
             style={{ fontSize: 'clamp(0.7rem, 3.2vw, 1rem)', color: '#fefefe' }}
           >
-            உங்கள் உழைப்புக்கு துணையாக,<br />
-            <span style={{ color: '#f0cc5a' }}>உங்கள் பணிக்கு GG இயந்திர சேவை.</span>
+            {t.tamilLine1}<br />
+            <span style={{ color: '#f0cc5a' }}>{t.tamilLine2}</span>
           </p>
+          {/* Translated lines */}
           <p
             className="font-medium leading-snug mt-2"
             style={{ fontSize: 'clamp(1rem, 4.5vw, 1.4rem)', color: 'rgba(255,255,255,0.7)' }}
           >
-            “By your side in every harvest,<br />
-            <span style={{ color: '#f0cc5a' }}>
-Your trusted machine service.”</span>
+            {t.englishLine1}<br />
+            <span style={{ color: '#f0cc5a' }}>{t.englishLine2}</span>
           </p>
         </div>
 
@@ -143,14 +143,10 @@ Your trusted machine service.”</span>
           className={`flex flex-col items-center w-full ${animateClass}`}
           style={{ gap: '0.6rem', maxWidth: '300px', marginBottom: '2.5rem', animationDelay: '1000ms', animationFillMode: 'forwards' }}
         >
-          {/* Owner Image Avatar */}
+          {/* Owner image */}
           <div className="flex flex-col items-center mb-1">
             <div className="relative mb-3" style={{ width: '240px', height: '240px' }}>
-              {/* Plain image, no border animation */}
-              <div
-                className="absolute overflow-hidden"
-                style={{ inset: '0', borderRadius: '1.25rem' }}
-              >
+              <div className="absolute overflow-hidden" style={{ inset: '0', borderRadius: '1.25rem' }}>
                 <img
                   src="/Owner_image.png"
                   alt="GG Harvesters Owner Jeeva"
@@ -159,8 +155,6 @@ Your trusted machine service.”</span>
                 />
               </div>
             </div>
-
-            {/* Name badge */}
             <div
               className="inline-flex items-center gap-1.5 rounded-full px-4 py-1"
               style={{
@@ -168,9 +162,7 @@ Your trusted machine service.”</span>
                 boxShadow: '0 2px 12px rgba(212,160,23,0.55)',
               }}
             >
-              <span className="text-[#1a1814] text-xs font-black tracking-widest uppercase">
-                JEEVA
-              </span>
+              <span className="text-[#1a1814] text-xs font-black tracking-widest uppercase">JEEVA</span>
             </div>
           </div>
 
@@ -190,50 +182,31 @@ Your trusted machine service.”</span>
             }}
           >
             <MessageCircle size={18} />
-            WhatsApp தொடர்பு
+            {t.whatsapp}
           </a>
 
           {/* Phone numbers row */}
-          <div
-            className="flex w-full"
-            style={{
-              gap: '0.5rem',
-            }}
-          >
-            <a
-              href={callLink(BUSINESS.phones[0])}
-              className="inline-flex flex-1 items-center justify-center gap-2 font-bold active:scale-95 transition-transform"
-              style={{
-                background: 'rgba(255,255,255,0.15)',
-                border: '1px solid rgba(255,255,255,0.3)',
-                backdropFilter: 'blur(10px)',
-                color: '#fff',
-                borderRadius: '999px',
-                fontSize: '0.8rem',
-                padding: '0.65rem 0.75rem',
-              }}
-              aria-label={`Call ${BUSINESS.phones[0]}`}
-            >
-              <Phone size={15} />
-              {BUSINESS.phones[0]}
-            </a>
-            <a
-              href={callLink(BUSINESS.phones[1])}
-              className="inline-flex flex-1 items-center justify-center gap-2 font-bold active:scale-95 transition-transform"
-              style={{
-                background: 'rgba(255,255,255,0.15)',
-                border: '1px solid rgba(255,255,255,0.3)',
-                backdropFilter: 'blur(10px)',
-                color: '#fff',
-                borderRadius: '999px',
-                fontSize: '0.8rem',
-                padding: '0.65rem 0.75rem',
-              }}
-              aria-label={`Call ${BUSINESS.phones[1]}`}
-            >
-              <Phone size={15} />
-              {BUSINESS.phones[1]}
-            </a>
+          <div className="flex w-full" style={{ gap: '0.5rem' }}>
+            {BUSINESS.phones.map((phone) => (
+              <a
+                key={phone}
+                href={callLink(phone)}
+                className="inline-flex flex-1 items-center justify-center gap-2 font-bold active:scale-95 transition-transform"
+                style={{
+                  background: 'rgba(255,255,255,0.15)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  backdropFilter: 'blur(10px)',
+                  color: '#fff',
+                  borderRadius: '999px',
+                  fontSize: '0.8rem',
+                  padding: '0.65rem 0.75rem',
+                }}
+                aria-label={`Call ${phone}`}
+              >
+                <Phone size={15} />
+                {phone}
+              </a>
+            ))}
           </div>
         </div>
 
@@ -244,7 +217,7 @@ Your trusted machine service.”</span>
           style={{ animationDelay: '1200ms', animationFillMode: 'forwards' }}
           aria-label="Scroll down"
         >
-          <span className="tracking-widest uppercase" style={{ fontSize: '0.55rem' }}>Scroll</span>
+          <span className="tracking-widest uppercase" style={{ fontSize: '0.55rem' }}>{t.scroll}</span>
           <ChevronDown size={18} className="animate-bounce" />
         </a>
       </div>

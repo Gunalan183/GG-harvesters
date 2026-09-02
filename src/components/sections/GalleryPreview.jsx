@@ -1,57 +1,56 @@
 import { useState } from 'react';
 import { X, ZoomIn } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
+import { useLanguage } from '../../context/LanguageContext';
+import { getTranslations } from '../../i18n/translations';
 
 const GALLERY_IMAGES = [
   {
     src: '/images/gallery/gg-paddy-harvester-working-kumbakonam.jpg',
     alt: 'GG paddy harvester working in a rice field in Kumbakonam',
-    captionTamil: 'நெல் அறுவடை பணியில் GG Harvester',
     category: 'paddy-harvester',
+    captionIndex: 0,
   },
   {
     src: '/images/gallery/gg-paddy-harvester-thanjavur-rice-field.jpg',
     alt: 'GG paddy harvester machine in Thanjavur rice field during harvest season',
-    captionTamil: 'தஞ்சாவூர் நெல் வயலில் GG Harvester',
     category: 'paddy-harvester',
+    captionIndex: 1,
   },
   {
     src: '/images/gallery/gg-tractor-rotavator-service-kumbakonam.jpg',
     alt: 'GG tractor with rotavator tilling agricultural land in Kumbakonam',
-    captionTamil: 'ரோட்டவேட்டர் மூலம் நிலம் தயார்',
     category: 'tractor',
+    captionIndex: 2,
   },
   {
     src: '/images/gallery/gg-jcb-mini-excavator-canal-thanjavur.jpg',
     alt: 'GG JCB mini excavator digging a canal near Thanjavur',
-    captionTamil: 'JCB Mini Excavator கால்வாய் பணி',
     category: 'jcb',
+    captionIndex: 3,
   },
   {
     src: '/images/gallery/gg-jcb-3cx-earthwork-kumbakonam.jpg',
     alt: 'GG JCB 3CX backhoe loader earthwork in Kumbakonam',
-    captionTamil: 'JCB 3CX Backhoe Loader பணி',
     category: 'jcb',
+    captionIndex: 4,
   },
   {
-    src: '/images/gallery/gg-round-baler-paddy-straw-thanjavur.jpg',
+    src: '/images/gallery/gg-round-baler-bale-field.jpg',
     alt: 'GG round baler baling paddy straw after harvest in Thanjavur',
-    captionTamil: 'Round Baler வைக்கோல் சுருட்டல்',
     category: 'round-baler',
+    captionIndex: 5,
   },
 ];
 
-const FILTERS = [
-  { label: 'அனைத்தும்', value: 'all' },
-  { label: 'நெல் அறுவடை', value: 'paddy-harvester' },
-  { label: 'டிராக்டர்', value: 'tractor' },
-  { label: 'JCB', value: 'jcb' },
-  { label: 'Round Baler', value: 'round-baler' },
-];
+const FILTER_KEYS = ['all', 'paddy-harvester', 'tractor', 'jcb', 'round-baler'];
+const FILTER_TRANSLATION_KEYS = ['all', 'paddyHarvester', 'tractor', 'jcb', 'roundBaler'];
 
 export default function GalleryPreview() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [lightbox, setLightbox] = useState(null);
+  const { lang } = useLanguage();
+  const t = getTranslations(lang).gallery;
 
   const filtered = activeFilter === 'all'
     ? GALLERY_IMAGES
@@ -61,68 +60,69 @@ export default function GalleryPreview() {
     <section id="gallery" className="section-py bg-white" aria-labelledby="gallery-heading">
       <div className="container-site">
         <SectionHeader
-          badge="எங்கள் பணிகள்"
+          badge={t.badge}
           title={
             <>
-              நாங்கள் செய்த{' '}
-              <span className="text-[#d4a017]">பணிகளின் படங்கள்</span>
+              {t.title}{' '}
+              <span className="text-[#d4a017]">{t.titleHighlight}</span>
             </>
           }
-          subtitle="GG Harvester இயந்திரங்கள் உண்மையான வயல்களில் செய்த வேலைகளின் படங்கள்."
+          subtitle={t.subtitle}
         />
 
         {/* Filters */}
         <div className="flex flex-wrap gap-3 justify-center" style={{ marginBottom: '2rem' }} role="group" aria-label="Gallery filters">
-          {FILTERS.map((f) => (
+          {FILTER_KEYS.map((key, i) => (
             <button
-              key={f.value}
-              onClick={() => setActiveFilter(f.value)}
-              className="tamil text-sm font-semibold rounded-full transition-colors"
+              key={key}
+              onClick={() => setActiveFilter(key)}
+              className="text-sm font-semibold rounded-full transition-colors"
               style={{
                 padding: '0.5rem 1.25rem',
-                background: activeFilter === f.value ? '#d4a017' : '#f0f0f0',
-                color: activeFilter === f.value ? '#fff' : '#4b5563',
+                background: activeFilter === key ? '#d4a017' : '#f0f0f0',
+                color: activeFilter === key ? '#fff' : '#4b5563',
               }}
-              aria-pressed={activeFilter === f.value}
+              aria-pressed={activeFilter === key}
             >
-              {f.label}
+              {t.filters[FILTER_TRANSLATION_KEYS[i]]}
             </button>
           ))}
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {filtered.map((img, i) => (
-            <button
-              key={i}
-              className="gallery-item aspect-square relative group focus-visible:outline-2 focus-visible:outline-[#d4a017]"
-              onClick={() => setLightbox(img)}
-              aria-label={`View: ${img.captionTamil}`}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={400}
-                height={400}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.parentElement.style.background = 'linear-gradient(135deg, #fdf8e8, #fdf8e8)';
-                  e.target.style.display = 'none';
-                }}
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <ZoomIn className="text-white" size={28} />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <p className="tamil text-white text-xs font-semibold">{img.captionTamil}</p>
-              </div>
-            </button>
-          ))}
+          {filtered.map((img, i) => {
+            const caption = t.captions[img.captionIndex];
+            return (
+              <button
+                key={i}
+                className="gallery-item aspect-square relative group focus-visible:outline-2 focus-visible:outline-[#d4a017]"
+                onClick={() => setLightbox({ ...img, caption })}
+                aria-label={`View: ${caption}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  width={400}
+                  height={400}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.parentElement.style.background = 'linear-gradient(135deg, #fdf8e8, #fdf8e8)';
+                    e.target.style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <ZoomIn className="text-white" size={28} />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <p className="text-white text-xs font-semibold">{caption}</p>
+                </div>
+              </button>
+            );
+          })}
         </div>
-
-
       </div>
 
       {/* Lightbox */}
@@ -132,7 +132,7 @@ export default function GalleryPreview() {
           onClick={() => setLightbox(null)}
           role="dialog"
           aria-modal="true"
-          aria-label={lightbox.captionTamil}
+          aria-label={lightbox.caption}
         >
           <div className="relative max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
             <button
@@ -147,8 +147,8 @@ export default function GalleryPreview() {
               alt={lightbox.alt}
               className="w-full max-h-[80vh] object-contain rounded-xl"
             />
-            <p className="tamil text-white text-center text-sm" style={{ marginTop: '0.75rem' }}>
-              {lightbox.captionTamil}
+            <p className="text-white text-center text-sm" style={{ marginTop: '0.75rem' }}>
+              {lightbox.caption}
             </p>
           </div>
         </div>

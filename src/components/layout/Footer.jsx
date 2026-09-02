@@ -1,6 +1,8 @@
 import { Phone, MessageCircle, MapPin, Clock } from 'lucide-react';
 import { BUSINESS, SERVICES } from '../../data/siteData';
 import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
+import { useLanguage } from '../../context/LanguageContext';
+import { getTranslations } from '../../i18n/translations';
 
 const scrollTo = (href) => {
   if (href === '#top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
@@ -10,18 +12,29 @@ const scrollTo = (href) => {
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const { lang } = useLanguage();
+  const t = getTranslations(lang).footer;
+
+  // Pick the right service name based on language
+  const getServiceName = (s) => {
+    const sd = getTranslations(lang).serviceData[s.slug];
+    return sd ? sd.name : s.nameEnglish;
+  };
+
+  // Pick the right address based on language
+  const address = lang === 'ta'
+    ? BUSINESS.address.fullTamil
+    : BUSINESS.address.full;
 
   return (
     <footer id="contact" className="text-white pb-20 md:pb-0" style={{ background: 'linear-gradient(180deg, #0a2d16 0%, #0f3d1e 100%)' }} role="contentinfo">
 
-      {/* Decorative top border */}
       <div style={{ height: '3px', background: 'linear-gradient(90deg, transparent, #d4a017, #f0cc5a, #d4a017, transparent)' }} />
 
-      {/* Main grid */}
       <div className="container-site" style={{ padding: '3rem 1rem 2rem' }}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-          {/* ── Brand column ── */}
+          {/* Brand */}
           <div className="md:col-span-1">
             <a
               href="#top"
@@ -39,15 +52,13 @@ export default function Footer() {
               />
             </a>
 
-            <p className="tamil text-white/70 text-sm leading-relaxed" style={{ marginBottom: '0.75rem' }}>
-              {BUSINESS.taglineTamil}
+            <p className="text-white/70 text-sm leading-relaxed" style={{ marginBottom: '0.75rem' }}>
+              {t.tagline}
             </p>
             <p className="text-white/45 text-xs leading-relaxed" style={{ marginBottom: '1.5rem' }}>
-              GG Harvesters and Earth Movers provides agricultural machinery and earth-moving
-              services for farmers, landowners and other customers around Kumbakonam and Thanjavur.
+              {t.description}
             </p>
 
-            {/* Social icons */}
             <div className="flex gap-3">
               <a
                 href={callLink(BUSINESS.phones[0])}
@@ -70,13 +81,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* ── Services ── */}
+          {/* Services */}
           <div>
             <h3
-              className="tamil font-extrabold text-sm uppercase tracking-widest"
+              className="font-extrabold text-sm uppercase tracking-widest"
               style={{ color: '#f0cc5a', marginBottom: '1.25rem', paddingBottom: '0.5rem', borderBottom: '1px solid rgba(240,204,90,0.2)' }}
             >
-              சேவைகள்
+              {t.servicesHeading}
             </h3>
             <ul className="space-y-2">
               {SERVICES.map((s) => (
@@ -90,47 +101,41 @@ export default function Footer() {
                       className="w-1.5 h-1.5 rounded-full flex-shrink-0 group-hover:bg-[#f0cc5a] transition-colors"
                       style={{ background: 'rgba(240,204,90,0.4)' }}
                     />
-                    <span className="tamil">{s.nameTamil}</span>
+                    {getServiceName(s)}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* ── Contact ── */}
+          {/* Contact */}
           <div>
             <h3
-              className="tamil font-extrabold text-sm uppercase tracking-widest"
+              className="font-extrabold text-sm uppercase tracking-widest"
               style={{ color: '#f0cc5a', marginBottom: '1.25rem', paddingBottom: '0.5rem', borderBottom: '1px solid rgba(240,204,90,0.2)' }}
             >
-              தொடர்புக்கு
+              {t.contactHeading}
             </h3>
 
             <div className="space-y-4">
               {/* Address */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                  style={{ background: 'rgba(212,160,23,0.15)' }}>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(212,160,23,0.15)' }}>
                   <MapPin size={14} className="text-[#f0cc5a]" />
                 </div>
-                <address className="tamil not-italic text-white/65 text-sm leading-relaxed">
-                  {BUSINESS.address.fullTamil}
+                <address className="not-italic text-white/65 text-sm leading-relaxed">
+                  {address}
                 </address>
               </div>
 
               {/* Phones */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(212,160,23,0.15)' }}>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(212,160,23,0.15)' }}>
                   <Phone size={14} className="text-[#f0cc5a]" />
                 </div>
                 <div className="flex flex-col gap-1">
                   {BUSINESS.phones.map((phone) => (
-                    <a
-                      key={phone}
-                      href={callLink(phone)}
-                      className="text-white/65 text-sm hover:text-white transition-colors font-medium"
-                    >
+                    <a key={phone} href={callLink(phone)} className="text-white/65 text-sm hover:text-white transition-colors font-medium">
                       {phone}
                     </a>
                   ))}
@@ -139,17 +144,16 @@ export default function Footer() {
 
               {/* Hours */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(212,160,23,0.15)' }}>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(212,160,23,0.15)' }}>
                   <Clock size={14} className="text-[#f0cc5a]" />
                 </div>
-                <p className="tamil text-white/65 text-sm leading-relaxed">
-                  திங்கள் – ஞாயிறு<br />
-                  <span style={{ color: '#f0cc5a' }}>காலை 6.00 – மாலை 7.00</span>
+                <p className="text-white/65 text-sm leading-relaxed">
+                  {t.hours}<br />
+                  <span style={{ color: '#f0cc5a' }}>{t.hoursTime}</span>
                 </p>
               </div>
 
-              {/* WhatsApp */}
+              {/* WhatsApp link */}
               <a
                 href={whatsappLink(WHATSAPP_MESSAGES.general)}
                 target="_blank"
@@ -165,7 +169,7 @@ export default function Footer() {
                 href={whatsappLink(WHATSAPP_MESSAGES.booking)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full font-bold rounded-xl text-sm tamil transition-all active:scale-95 hover:brightness-110"
+                className="flex items-center justify-center gap-2 w-full font-bold rounded-xl text-sm transition-all active:scale-95 hover:brightness-110"
                 style={{
                   background: 'linear-gradient(135deg, #d4a017, #f0cc5a)',
                   color: '#1a1814',
@@ -175,7 +179,7 @@ export default function Footer() {
                 }}
               >
                 <MessageCircle size={16} />
-                சேவை பதிவு செய்யுங்கள்
+                {t.cta}
               </a>
             </div>
           </div>
@@ -187,7 +191,7 @@ export default function Footer() {
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
         <div className="container-site py-4 flex flex-col items-center gap-1">
           <p className="text-white/35 text-xs text-center">
-            © {year} GG Harvesters and Earth Movers. All rights reserved.
+            © {year} GG Harvesters and Earth Movers. {t.copyright}
           </p>
           <p className="text-white/30 text-xs text-center">
             Designed &amp; Developed by{' '}

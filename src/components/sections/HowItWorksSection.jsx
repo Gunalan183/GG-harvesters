@@ -1,13 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { Phone, MessageCircle, Wrench, MapPin, CheckCircle } from 'lucide-react';
-import { HOW_IT_WORKS } from '../../data/siteData';
 import { whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
+import { useLanguage } from '../../context/LanguageContext';
+import { getTranslations } from '../../i18n/translations';
 
 const ICONS = [Phone, MessageCircle, Wrench, MapPin, CheckCircle];
 
 export default function HowItWorksSection() {
   const cardsRef = useRef([]);
   const headerRef = useRef(null);
+  const { lang } = useLanguage();
+  const t = getTranslations(lang).howItWorks;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,6 +28,7 @@ export default function HowItWorksSection() {
     cardsRef.current.forEach((el) => { if (el) observer.observe(el); });
     return () => observer.disconnect();
   }, []);
+
   return (
     <section
       className="section-py"
@@ -36,7 +40,7 @@ export default function HowItWorksSection() {
         {/* Header */}
         <div ref={headerRef} className="how-card text-center" style={{ marginBottom: '3rem' }}>
           <span
-            className="inline-block tamil text-xs font-bold tracking-widest uppercase rounded-full"
+            className="inline-block text-xs font-bold tracking-widest uppercase rounded-full"
             style={{
               background: 'rgba(240,204,90,0.15)',
               border: '1px solid rgba(240,204,90,0.4)',
@@ -45,26 +49,24 @@ export default function HowItWorksSection() {
               marginBottom: '1rem',
             }}
           >
-            எப்படி பெறுவது?
+            {t.badge}
           </span>
           <h2
             id="how-it-works-heading"
-            className="tamil font-extrabold text-white whitespace-nowrap"
+            className="font-extrabold text-white whitespace-nowrap"
             style={{ fontSize: 'clamp(1.1rem, 4vw, 2.2rem)', lineHeight: 1.2, marginBottom: '0.75rem' }}
           >
-            சேவை பெறுவது{' '}
-            <span style={{ color: '#f0cc5a' }}>மிகவும் எளிது!</span>
+            {t.heading}{' '}
+            <span style={{ color: '#f0cc5a' }}>{t.headingHighlight}</span>
           </h2>
-          <p className="tamil text-white/60 text-sm">
-            5 எளிய படிகளில் உங்கள் இடத்திற்கு இயந்திரம் வரும்.
-          </p>
+          <p className="text-white/60 text-sm">{t.subtitle}</p>
         </div>
 
         {/* Steps */}
         <div className="flex flex-col md:flex-row md:items-start gap-0 md:gap-4">
-          {HOW_IT_WORKS.map((step, i) => {
+          {t.steps.map((step, i) => {
             const Icon = ICONS[i];
-            const isLast = i === HOW_IT_WORKS.length - 1;
+            const isLast = i === t.steps.length - 1;
             return (
               <div
                 key={i}
@@ -72,31 +74,24 @@ export default function HowItWorksSection() {
                 className="how-card flex md:flex-col flex-row items-start md:items-center flex-1"
                 style={{ transitionDelay: `${i * 120}ms` }}
               >
-                {/* Mobile: vertical connector + card row */}
+                {/* Mobile connector */}
                 <div className="flex flex-col items-center md:hidden" style={{ marginRight: '1rem', minWidth: '2.5rem' }}>
-                  {/* Circle */}
                   <div
                     className="flex items-center justify-center rounded-full flex-shrink-0"
                     style={{
-                      width: '2.5rem',
-                      height: '2.5rem',
+                      width: '2.5rem', height: '2.5rem',
                       background: 'linear-gradient(135deg, #d4a017, #f0cc5a)',
                       boxShadow: '0 4px 14px rgba(212,160,23,0.4)',
                     }}
                   >
                     <Icon size={14} className="text-[#1a2e1a]" strokeWidth={2.5} />
                   </div>
-                  {/* Vertical line */}
                   {!isLast && (
-                    <div
-                      style={{
-                        width: '2px',
-                        flex: 1,
-                        minHeight: '3rem',
-                        background: 'linear-gradient(to bottom, rgba(240,204,90,0.5), rgba(240,204,90,0.1))',
-                        margin: '0.25rem 0',
-                      }}
-                    />
+                    <div style={{
+                      width: '2px', flex: 1, minHeight: '3rem',
+                      background: 'linear-gradient(to bottom, rgba(240,204,90,0.5), rgba(240,204,90,0.1))',
+                      margin: '0.25rem 0',
+                    }} />
                   )}
                 </div>
 
@@ -111,13 +106,12 @@ export default function HowItWorksSection() {
                     marginBottom: isLast ? 0 : '0.75rem',
                   }}
                 >
-                  {/* Desktop step number + icon */}
+                  {/* Desktop icon */}
                   <div className="hidden md:flex items-center justify-center" style={{ marginBottom: '0.75rem' }}>
                     <div
                       className="flex items-center justify-center rounded-full"
                       style={{
-                        width: '3rem',
-                        height: '3rem',
+                        width: '3rem', height: '3rem',
                         background: 'linear-gradient(135deg, #d4a017, #f0cc5a)',
                         boxShadow: '0 4px 14px rgba(212,160,23,0.4)',
                       }}
@@ -126,22 +120,19 @@ export default function HowItWorksSection() {
                     </div>
                   </div>
 
-                  {/* Step number badge */}
                   <span
                     className="text-[0.65rem] font-black tracking-widest"
                     style={{ color: '#f0cc5a', display: 'block', marginBottom: '0.25rem' }}
                   >
-                    {step.step}
+                    {String(i + 1).padStart(2, '0')}
                   </span>
-                  <h3 className="tamil text-white font-bold text-sm leading-snug" style={{ marginBottom: '0.35rem' }}>
-                    {step.titleTamil}
+                  <h3 className="text-white font-bold text-sm leading-snug" style={{ marginBottom: '0.35rem' }}>
+                    {step.title}
                   </h3>
-                  <p className="tamil text-white/60 text-xs leading-relaxed">
-                    {step.descTamil}
-                  </p>
+                  <p className="text-white/60 text-xs leading-relaxed">{step.desc}</p>
                 </div>
 
-                {/* Desktop: horizontal connector arrow */}
+                {/* Desktop arrow */}
                 {!isLast && (
                   <div
                     className="hidden md:flex items-center justify-center flex-shrink-0"
@@ -164,7 +155,7 @@ export default function HowItWorksSection() {
             href={whatsappLink(WHATSAPP_MESSAGES.booking)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 tamil font-bold rounded-full transition-all active:scale-95"
+            className="inline-flex items-center gap-2 font-bold rounded-full transition-all active:scale-95"
             style={{
               background: 'linear-gradient(135deg, #d4a017, #f0cc5a)',
               color: '#1a2e1a',
@@ -174,7 +165,7 @@ export default function HowItWorksSection() {
             }}
           >
             <MessageCircle size={18} />
-            இப்பொழுதே சேவை பதிவு செய்யுங்கள்
+            {t.cta}
           </a>
         </div>
 
