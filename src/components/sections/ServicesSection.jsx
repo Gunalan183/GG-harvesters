@@ -120,14 +120,6 @@ function ServiceCard({ service, onDetail }) {
           }}
         />
 
-        {/* Icon badge */}
-        <div
-          className="absolute top-3 left-3 w-10 h-10 rounded-2xl flex items-center justify-center text-xl shadow-lg"
-          style={{ background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(6px)' }}
-        >
-          {service.icon}
-        </div>
-
         {/* English tag */}
         <div
           className="absolute top-3 right-3 text-[0.6rem] font-bold tracking-widest uppercase rounded-full px-2 py-0.5"
@@ -139,7 +131,7 @@ function ServiceCard({ service, onDetail }) {
         {/* Bottom text */}
         <div className="absolute bottom-0 left-0 right-0 p-4">
           <h3 className="tamil text-white font-extrabold leading-snug"
-            style={{ fontSize: 'clamp(0.95rem, 3vw, 1.05rem)', marginBottom: '0.4rem' }}>
+            style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.85rem)', marginBottom: '0.4rem' }}>
             {service.nameTamil}
           </h3>
         </div>
@@ -147,42 +139,42 @@ function ServiceCard({ service, onDetail }) {
 
       {/* Buttons */}
       <div
-        className="flex gap-2"
+        className="grid grid-cols-2 gap-1.5"
         style={{
-          padding: '0.75rem',
+          padding: '0.6rem',
           background: '#fff',
           borderTop: '1px solid #f0f0f0',
         }}
       >
         <button
           onClick={() => onDetail(service)}
-          className="flex-1 inline-flex items-center justify-center gap-1.5 font-bold rounded-xl tamil transition-all active:scale-95"
+          className="inline-flex items-center justify-center gap-1 font-bold rounded-xl tamil transition-all active:scale-95 w-full"
           style={{
             background: 'linear-gradient(135deg, #1a5c2e, #2d8a4e)',
             color: '#fff',
-            padding: '0.6rem 0.5rem',
-            fontSize: '0.78rem',
+            padding: '0.55rem 0.25rem',
+            fontSize: '0.72rem',
             boxShadow: '0 2px 10px rgba(26,92,46,0.25)',
           }}
         >
-          <Info size={13} />
+          <Info size={12} />
           விவரங்கள்
         </button>
         <a
           href={getServiceWhatsApp(service.slug)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 inline-flex items-center justify-center gap-1.5 font-bold rounded-xl tamil transition-all active:scale-95"
+          className="inline-flex items-center justify-center gap-1 font-bold rounded-xl tamil transition-all active:scale-95 w-full"
           style={{
             background: '#25d366',
             color: '#fff',
-            padding: '0.6rem 0.5rem',
-            fontSize: '0.78rem',
+            padding: '0.55rem 0.25rem',
+            fontSize: '0.72rem',
             boxShadow: '0 2px 10px rgba(37,211,102,0.3)',
           }}
           aria-label={`WhatsApp for ${service.nameTamil}`}
         >
-          <MessageCircle size={13} />
+          <MessageCircle size={12} />
           WhatsApp
         </a>
       </div>
