@@ -37,7 +37,7 @@ export default function HomePage() {
       <ServicesSection />
       
       <WhyChooseSection />
-      <HowItWorksSection />
+      
       <OwnerContactSection />
     </Layout>
   );
