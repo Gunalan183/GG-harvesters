@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { BUSINESS } from '../../data/siteData';
 import { callLink, whatsappLink, WHATSAPP_MESSAGES } from '../../utils/whatsapp';
 import clsx from 'clsx';
@@ -8,7 +9,7 @@ const NAV_ITEMS = [
   { label: 'முகப்பு', href: '#top' },
   { label: 'சேவைகள்', href: '#services' },
   { label: 'இயந்திரங்கள்', href: '#machinery' },
-  { label: 'எங்கள் பணிகள்', href: '#gallery' },
+  { label: 'எங்கள் பணிகள்', href: '/works' },
   { label: 'வீடியோக்கள்', href: '#videos' },
   { label: 'தொடர்புக்கு', href: '#contact' },
 ];
@@ -16,6 +17,8 @@ const NAV_ITEMS = [
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -25,6 +28,20 @@ export default function Header() {
 
   const handleNavClick = (href) => {
     setMenuOpen(false);
+
+    // If it's a direct page link (like /works)
+    if (href.startsWith('/')) {
+      navigate(href);
+      return;
+    }
+
+    // If we are not on the homepage, route back to homepage with hash
+    if (location.pathname !== '/') {
+      navigate(href === '#top' ? '/' : '/' + href);
+      return;
+    }
+
+    // On homepage: smooth scroll
     if (href === '#top') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -51,7 +68,7 @@ export default function Header() {
       >
         {/* Logo */}
         <a
-          href="#top"
+          href="/"
           className="flex items-center gap-3 flex-shrink-0"
           aria-label="GG Harvester Home"
           onClick={(e) => { e.preventDefault(); handleNavClick('#top'); }}

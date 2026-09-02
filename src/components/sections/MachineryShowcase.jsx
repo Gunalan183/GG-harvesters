@@ -94,10 +94,10 @@ export default function MachineryShowcase() {
         <SectionHeader
           badge="இயந்திரங்கள்"
           title={
-            <>
+            <span className="whitespace-nowrap sm:whitespace-normal block text-[1.45rem] sm:text-[clamp(1.8rem,5vw,2.4rem)]">
               எங்கள்{' '}
               <span className="text-[#1a5c2e]">இயந்திர சேகரிப்பு</span>
-            </>
+            </span>
           }
           subtitle="நன்கு பராமரிக்கப்பட்ட இயந்திரங்கள், அனுபவமிக்க ஆபரேட்டர்களுடன்."
         />
