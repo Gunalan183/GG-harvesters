@@ -648,3 +648,9 @@ body[style*="overflow: hidden"] .sticky-bottom-nav {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── Spin for owner image ring ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

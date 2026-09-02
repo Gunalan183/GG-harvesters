@@ -116,7 +116,7 @@ export default function HeroSection() {
             border: '1px solid rgba(255,255,255,0.15)',
             backdropFilter: 'blur(10px)',
             padding: '0.65rem 1.25rem',
-            marginBottom: '16rem',
+            marginBottom: '4rem',
             animationDelay: '800ms',
             animationFillMode: 'forwards'
           }}
@@ -135,6 +135,37 @@ export default function HeroSection() {
           className={`flex flex-col items-center w-full ${animateClass}`}
           style={{ gap: '0.6rem', maxWidth: '300px', marginBottom: '2.5rem', animationDelay: '1000ms', animationFillMode: 'forwards' }}
         >
+          {/* Owner Image Avatar */}
+          <div className="flex flex-col items-center mb-1">
+            <div className="relative mb-3" style={{ width: '240px', height: '240px' }}>
+              {/* Plain image, no border animation */}
+              <div
+                className="absolute overflow-hidden"
+                style={{ inset: '0', borderRadius: '1.25rem' }}
+              >
+                <img
+                  src="/Owner_image.png"
+                  alt="GG Harvesters Owner Jeeva"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Name badge */}
+            <div
+              className="inline-flex items-center gap-1.5 rounded-full px-4 py-1"
+              style={{
+                background: 'linear-gradient(135deg, #d4a017, #f0cc5a)',
+                boxShadow: '0 2px 12px rgba(212,160,23,0.55)',
+              }}
+            >
+              <span className="text-[#1a1814] text-xs font-black tracking-widest uppercase">
+                JEEVA
+              </span>
+            </div>
+          </div>
+
           {/* WhatsApp button */}
           <a
             href={whatsappLink(WHATSAPP_MESSAGES.general)}
