@@ -128,6 +128,14 @@ export default function HeroSection() {
             உங்கள் உழைப்புக்கு துணையாக,<br />
             <span style={{ color: '#f0cc5a' }}>உங்கள் பணிக்கு GG இயந்திர சேவை.</span>
           </p>
+          <p
+            className="font-medium leading-snug mt-2"
+            style={{ fontSize: 'clamp(1rem, 4.5vw, 1.4rem)', color: 'rgba(255,255,255,0.7)' }}
+          >
+            “By your side in every harvest,<br />
+            <span style={{ color: '#f0cc5a' }}>
+Your trusted machine service.”</span>
+          </p>
         </div>
 
         {/* Contact bar */}

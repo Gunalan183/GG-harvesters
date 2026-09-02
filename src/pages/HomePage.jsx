@@ -35,9 +35,7 @@ export default function HomePage() {
       <MachineryShowcase />
       <ServiceHighlights />
       <ServicesSection />
-      
-      <WhyChooseSection />
-      
+      <WhyChooseSection />      
       <OwnerContactSection />
     </Layout>
   );
