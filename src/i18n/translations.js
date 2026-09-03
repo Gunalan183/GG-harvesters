@@ -197,9 +197,29 @@ const translations = {
         'GG Harvesters and Earth Movers provides agricultural machinery and earth-moving services for farmers, landowners and other customers around Kumbakonam and Thanjavur.',
     },
 
-    // ── Layout ────────────────────────────────────────────────
-    layout: {
-      skipLink: 'Skip to main content',
+    // ── Works Page ────────────────────────────────────────────
+    worksPage: {
+      badge: 'Our Works',
+      heading: 'Work We',
+      headingHighlight: 'Have Done',
+      subtitle: 'A showcase of GG Harvesters machinery working in real fields and construction sites.',
+      stats: [
+        { num: '500+', label: 'Field Works' },
+        { num: '6+',   label: 'Years Experience' },
+        { num: '13',   label: 'Districts' },
+      ],
+      ctaBadge: 'Your Work?',
+      ctaHeading: 'Want to Get Similar Work Done?',
+      ctaSubtitle: 'Contact us now and book the service.',
+      ctaButton: 'Book via WhatsApp',
+      works: [
+        { title: 'Paddy Harvesting Work',     desc: 'Paddy harvesting carried out by GG Harvesters machinery in rice fields around Kumbakonam and Thanjavur.',             tag: 'Paddy Harvester' },
+        { title: 'Earthwork & Construction',  desc: 'Canal digging, land levelling and construction work using JCB and Mini Excavator.',                                   tag: 'JCB Work' },
+        { title: 'JCB Machinery Work',        desc: 'Soil excavation, earth removal and construction foundation work using JCB machinery.',                               tag: 'JCB Work' },
+        { title: 'Tractor with Tailer',       desc: 'Transport of produce and materials from one location to another using tractor with tailer.',                        tag: 'Tailer Work' },
+        { title: 'Tractor Rotavator',         desc: 'Deep soil tilling using tractor rotavator to prepare land for sowing.',                                             tag: 'Rotavator Work' },
+        { title: 'Lorry Transport',           desc: 'Safe transport of machinery and agricultural produce using lorry service.',                                          tag: 'Lorry Work' },
+      ],
     },
 
     // ── Service card / modal ──────────────────────────────────
@@ -494,9 +514,29 @@ const translations = {
         'GG Harvesters and Earth Movers ಕುಂಭಕೋಣಂ ಮತ್ತು ತಂಜಾವೂರು ಸುತ್ತ ರೈತರು, ಭೂ ಮಾಲೀಕರು ಮತ್ತು ಇತರ ಗ್ರಾಹಕರಿಗೆ ಕೃಷಿ ಯಂತ್ರ ಮತ್ತು ಭೂಕೆಲಸ ಸೇವೆಗಳನ್ನು ನೀಡುತ್ತದೆ.',
     },
 
-    // ── Layout ────────────────────────────────────────────────
-    layout: {
-      skipLink: 'ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ',
+    // ── Works Page ────────────────────────────────────────────
+    worksPage: {
+      badge: 'ಕನ್ನಡ ಕೆಲಸಗಳು',
+      heading: 'ನಾವು ಮಾಡಿದ',
+      headingHighlight: 'ಕೆಲಸಗಳು',
+      subtitle: 'ನಿಜವಾದ ಹೊಲಗಳು ಮತ್ತು ನಿರ್ಮಾಣ ಸ್ಥಳಗಳಲ್ಲಿ GG Harvesters ಯಂತ್ರಗಳು ಮಾಡಿದ ಕೆಲಸಗಳ ಪ್ರದರ್ಶನ.',
+      stats: [
+        { num: '500+', label: 'ಹೊಲ ಕೆಲಸಗಳು' },
+        { num: '6+',   label: 'ವರ್ಷಗಳ ಅನುಭವ' },
+        { num: '13',   label: 'ಜಿಲ್ಲೆಗಳು' },
+      ],
+      ctaBadge: 'ನಿಮ್ಮ ಕೆಲಸ?',
+      ctaHeading: 'ಇದೇ ರೀತಿ ನಿಮ್ಮ ಕೆಲಸ ಮುಗಿಸಬೇಕೇ?',
+      ctaSubtitle: 'ಈಗಲೇ ಸಂಪರ್ಕಿಸಿ ಸೇವೆ ಬುಕ್ ಮಾಡಿ.',
+      ctaButton: 'WhatsApp ಮೂಲಕ ಬುಕ್ ಮಾಡಿ',
+      works: [
+        { title: 'ಭತ್ತ ಕೊಯ್ಲು ಕೆಲಸ',         desc: 'ಕುಂಭಕೋಣಂ ಮತ್ತು ತಂಜಾವೂರು ಸುತ್ತ ಭತ್ತದ ಗದ್ದೆಗಳಲ್ಲಿ GG Harvesters ಯಂತ್ರಗಳಿಂದ ನಡೆಸಿದ ಕೊಯ್ಲು ಕೆಲಸ.', tag: 'ಭತ್ತ ಕೊಯ್ಲು' },
+        { title: 'ಭೂಕೆಲಸ & ನಿರ್ಮಾಣ',          desc: 'JCB ಮತ್ತು Mini Excavator ಬಳಸಿ ಕಾಲುವೆ ಅಗೆಯುವಿಕೆ, ಭೂ ಸಮತಟ್ಟು ಮತ್ತು ನಿರ್ಮಾಣ ಕೆಲಸ.',                 tag: 'JCB ಕೆಲಸ' },
+        { title: 'JCB ಯಂತ್ರ ಕೆಲಸ',            desc: 'JCB ಯಂತ್ರ ಬಳಸಿ ಮಣ್ಣು ಅಗೆಯುವಿಕೆ, ಮಣ್ಣು ತೆರವು ಮತ್ತು ನಿರ್ಮಾಣ ಅಡಿಪಾಯ ಕೆಲಸ.',                        tag: 'JCB ಕೆಲಸ' },
+        { title: 'ಟ್ರ್ಯಾಕ್ಟರ್ + ಟ್ರೇಲರ್',    desc: 'ಟ್ರ್ಯಾಕ್ಟರ್ ಟ್ರೇಲರ್ ಬಳಸಿ ಕೃಷಿ ಉತ್ಪನ್ನಗಳು ಮತ್ತು ಸಾಮಗ್ರಿಗಳ ಒಂದೆಡೆಯಿಂದ ಇನ್ನೊಂದೆಡೆಗೆ ಸಾಗಣೆ.',        tag: 'ಟ್ರೇಲರ್ ಕೆಲಸ' },
+        { title: 'ಟ್ರ್ಯಾಕ್ಟರ್ ರೋಟವೇಟರ್',     desc: 'ಟ್ರ್ಯಾಕ್ಟರ್ ರೋಟವೇಟರ್ ಬಳಸಿ ಭೂಮಿಯನ್ನು ಆಳವಾಗಿ ಉಳುಮೆ ಮಾಡಿ ಬಿತ್ತನೆಗೆ ತಯಾರಿ.',                         tag: 'ರೋಟವೇಟರ್ ಕೆಲಸ' },
+        { title: 'ಲಾರಿ ಸಾರಿಗೆ',                desc: 'ಯಂತ್ರಗಳು ಮತ್ತು ಕೃಷಿ ಉತ್ಪನ್ನಗಳನ್ನು ಲಾರಿ ಮೂಲಕ ಸುರಕ್ಷಿತವಾಗಿ ಸಾಗಿಸುವ ಸೇವೆ.',                        tag: 'ಲಾರಿ ಕೆಲಸ' },
+      ],
     },
 
     // ── Service card / modal ──────────────────────────────────
@@ -755,9 +795,29 @@ const translations = {
         'GG Harvesters and Earth Movers கும்பகோணம் மற்றும் தஞ்சாவூர் சுற்றுவட்டாரத்தில் விவசாயிகள், நில உரிமையாளர்கள் மற்றும் பிற வாடிக்கையாளர்களுக்கு விவசாய இயந்திர மற்றும் நிலப் பணி சேவைகளை வழங்குகிறது.',
     },
 
-    // ── Layout ────────────────────────────────────────────────
-    layout: {
-      skipLink: 'முக்கிய உள்ளடக்கத்திற்கு செல்லுங்கள்',
+    // ── Works Page ────────────────────────────────────────────
+    worksPage: {
+      badge: 'எங்கள் பணிகள்',
+      heading: 'நாங்கள் செய்த',
+      headingHighlight: 'வேலைகள்',
+      subtitle: 'உண்மையான வயல்கள் மற்றும் கட்டுமான இடங்களில் GG Harvesters இயந்திரங்கள் செய்த பணிகளின் காட்சிகள்.',
+      stats: [
+        { num: '500+', label: 'வயல் பணிகள்' },
+        { num: '6+',   label: 'ஆண்டுகள் அனுபவம்' },
+        { num: '13',   label: 'மாவட்டங்கள்' },
+      ],
+      ctaBadge: 'உங்கள் பணி?',
+      ctaHeading: 'இதே போல் உங்கள் பணியும் முடிக்கணுமா?',
+      ctaSubtitle: 'இப்போதே தொடர்பு கொண்டு சேவை பதிவு செய்யுங்கள்.',
+      ctaButton: 'WhatsApp மூலம் பதிவு செய்யுங்கள்',
+      works: [
+        { title: 'நெல் அறுவடை பணி',           desc: 'கும்பகோணம் மற்றும் தஞ்சாவூர் பகுதியில் நெல் வயல்களில் GG Harvesters இயந்திரங்களால் செய்யப்பட்ட அறுவடை பணி.',  tag: 'நெல் அறுவடை' },
+        { title: 'மண் பணி & கட்டுமானம்',      desc: 'JCB மற்றும் Mini Excavator மூலம் கால்வாய் தோண்டல், நில சீரமைப்பு மற்றும் கட்டுமான பணிகள்.',                     tag: 'JCB பணி' },
+        { title: 'JCB இயந்திர பணி',            desc: 'JCB இயந்திரம் மூலம் நில தோண்டல், மண் அகற்றல் மற்றும் கட்டுமான அடிப்படை பணிகள்.',                              tag: 'JCB பணி' },
+        { title: 'டிராக்டர் + டெய்லர் பணி',   desc: 'டிராக்டர் + டெய்லர் மூலம் விளைபொருட்கள் மற்றும் பொருட்களை ஒரு இடத்திலிருந்து மற்றொரு இடத்திற்கு கொண்டு செல்லும் பணி.', tag: 'டெய்லர் பணி' },
+        { title: 'டிராக்டர் + ரோட்டவேட்டர் பணி', desc: 'டிராக்டர் ரோட்டவேட்டர் மூலம் நிலத்தை ஆழமாக உழுது விதை விதைப்பிற்கு தயார்படுத்தும் பணி.',                    tag: 'ரோட்டவேட்டர் பணி' },
+        { title: 'லாரி போக்குவரத்து பணி',     desc: 'இயந்திரங்கள் மற்றும் விளைபொருட்களை லாரி மூலம் பாதுகாப்பாக கொண்டு செல்லும் போக்குவரத்து சேவை.',                  tag: 'லாரி பணி' },
+      ],
     },
 
     // ── Service card / modal ──────────────────────────────────
