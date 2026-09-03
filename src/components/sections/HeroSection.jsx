@@ -132,7 +132,7 @@ export default function HeroSection() {
           <p
             className="font-medium leading-snug mt-2"
             style={{ fontSize: 'clamp(1rem, 4.5vw, 1.4rem)', color: 'rgba(255,255,255,0.7)' }}
-          >
+          >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
             {t.englishLine1}<br />
             <span style={{ color: '#f0cc5a' }}>{t.englishLine2}</span>
           </p>
