@@ -23,7 +23,7 @@ export default function HeroSection() {
           alt=""
           aria-hidden="true"
           className="md:hidden w-full h-full object-cover object-center"
-          fetchpriority="high"
+          fetchPriority="high"
           width={800}
           height={1200}
           onError={(e) => { e.target.style.display = 'none'; }}
@@ -32,7 +32,7 @@ export default function HeroSection() {
           src="/images/gallery/gg-paddy-harvester-transport-lorry.jpg"
           alt="GG paddy harvester transport lorry Kumbakonam"
           className="hidden md:block w-full h-full object-cover object-center"
-          fetchpriority="high"
+          fetchPriority="high"
           width={1600}
           height={900}
           onError={(e) => {
